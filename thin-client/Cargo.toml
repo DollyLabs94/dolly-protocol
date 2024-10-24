@@ -1,7 +1,7 @@
 [package]
-name = "solana-thin-client"
+name = "dolly-thin-client"
 description = "Solana Thin Client"
-documentation = "https://docs.rs/solana-thin-client"
+documentation = "https://docs.rs/dolly-thin-client"
 version = { workspace = true }
 authors = { workspace = true }
 repository = { workspace = true }
@@ -13,13 +13,13 @@ edition = { workspace = true }
 bincode = { workspace = true }
 log = { workspace = true }
 rayon = { workspace = true }
-solana-connection-cache = { workspace = true }
-solana-rpc-client = { workspace = true }
-solana-rpc-client-api = { workspace = true }
-solana-sdk = { workspace = true }
+dolly-connection-cache = { workspace = true }
+dolly-rpc-client = { workspace = true }
+dolly-rpc-client-api = { workspace = true }
+dolly-sdk = { workspace = true }
 
 [dev-dependencies]
-solana-logger = { workspace = true }
+dolly-logger = { workspace = true }
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]

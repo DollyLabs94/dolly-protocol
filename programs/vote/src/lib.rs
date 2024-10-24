@@ -5,12 +5,12 @@ pub mod vote_state;
 pub mod vote_transaction;
 
 #[macro_use]
-extern crate solana_metrics;
+extern crate dolly_metrics;
 
 #[macro_use]
-extern crate solana_frozen_abi_macro;
+extern crate dolly_frozen_abi_macro;
 
-pub use solana_sdk::vote::{
+pub use dolly_sdk::vote::{
     authorized_voters, error as vote_error, instruction as vote_instruction,
     program::{check_id, id},
 };

@@ -1,9 +1,9 @@
 use {
-    solana_program::vote::{
+    dolly_program::vote::{
         self,
         state::{Vote, VoteStateUpdate},
     },
-    solana_sdk::{
+    dolly_sdk::{
         clock::Slot,
         hash::Hash,
         signature::{Keypair, Signer},

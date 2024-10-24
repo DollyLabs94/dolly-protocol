@@ -15,7 +15,7 @@ assignees: ''
   an app, or running a validator, don't open an issue here.
 
   Instead, post your question to the Solana Stack Exchange:
-  https://solana.stackexchange.com/questions/ask
+  https://dolly.stackexchange.com/questions/ask
 -->
 <!-- If reporting a crash, degraded performance, etc, please include the software version(s) you are using. -->
 

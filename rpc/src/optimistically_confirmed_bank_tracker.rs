@@ -11,11 +11,11 @@
 use {
     crate::rpc_subscriptions::RpcSubscriptions,
     crossbeam_channel::{Receiver, RecvTimeoutError, Sender},
-    solana_rpc_client_api::response::{SlotTransactionStats, SlotUpdate},
-    solana_runtime::{
+    dolly_rpc_client_api::response::{SlotTransactionStats, SlotUpdate},
+    dolly_runtime::{
         bank::Bank, bank_forks::BankForks, prioritization_fee_cache::PrioritizationFeeCache,
     },
-    solana_sdk::{clock::Slot, timing::timestamp},
+    dolly_sdk::{clock::Slot, timing::timestamp},
     std::{
         collections::HashSet,
         sync::{
@@ -401,11 +401,11 @@ mod tests {
     use {
         super::*,
         crossbeam_channel::unbounded,
-        solana_ledger::genesis_utils::{create_genesis_config, GenesisConfigInfo},
-        solana_runtime::{
+        dolly_ledger::genesis_utils::{create_genesis_config, GenesisConfigInfo},
+        dolly_runtime::{
             accounts_background_service::AbsRequestSender, commitment::BlockCommitmentCache,
         },
-        solana_sdk::pubkey::Pubkey,
+        dolly_sdk::pubkey::Pubkey,
         std::sync::atomic::AtomicU64,
     };
 

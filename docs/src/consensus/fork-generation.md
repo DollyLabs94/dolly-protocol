@@ -21,7 +21,7 @@ This section describes how forks naturally occur as a consequence of
 
 ## Overview
 
-Nodes take turns being [leader](https://solana.com/docs/terminology#leader) and
+Nodes take turns being [leader](https://dolly.com/docs/terminology#leader) and
 generating the PoH that encodes state changes. The cluster can tolerate loss of
 connection to any leader by synthesizing what the leader _**would**_ have
 generated had it been connected but not ingesting any state changes.

@@ -15,10 +15,10 @@ use {
         sanitize::Sanitize,
         signature::Signature,
         simple_vote_transaction_checker::is_simple_vote_transaction,
-        solana_sdk::feature_set,
+        dolly_sdk::feature_set,
         transaction::{Result, Transaction, TransactionError, VersionedTransaction},
     },
-    solana_program::message::SanitizedVersionedMessage,
+    dolly_program::message::SanitizedVersionedMessage,
 };
 
 /// Maximum number of accounts that a transaction may lock.
@@ -293,7 +293,7 @@ mod tests {
     use {
         super::*,
         crate::signer::{keypair::Keypair, Signer},
-        solana_program::vote::{self, state::Vote},
+        dolly_program::vote::{self, state::Vote},
     };
 
     #[test]

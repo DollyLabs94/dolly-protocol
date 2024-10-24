@@ -1,8 +1,8 @@
 use {
     crate::bench_tps_client::{BenchTpsClient, BenchTpsError, Result},
-    solana_rpc_client_api::config::RpcBlockConfig,
-    solana_runtime::bank_client::BankClient,
-    solana_sdk::{
+    dolly_rpc_client_api::config::RpcBlockConfig,
+    dolly_runtime::bank_client::BankClient,
+    dolly_sdk::{
         account::Account,
         client::{AsyncClient, SyncClient},
         commitment_config::CommitmentConfig,
@@ -14,7 +14,7 @@ use {
         slot_history::Slot,
         transaction::Transaction,
     },
-    solana_transaction_status::UiConfirmedBlock,
+    dolly_transaction_status::UiConfirmedBlock,
 };
 
 impl BenchTpsClient for BankClient {

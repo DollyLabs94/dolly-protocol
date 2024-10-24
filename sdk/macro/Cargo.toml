@@ -1,7 +1,7 @@
 [package]
-name = "solana-sdk-macro"
+name = "dolly-sdk-macro"
 description = "Solana SDK Macro"
-documentation = "https://docs.rs/solana-sdk-macro"
+documentation = "https://docs.rs/dolly-sdk-macro"
 version = { workspace = true }
 authors = { workspace = true }
 repository = { workspace = true }

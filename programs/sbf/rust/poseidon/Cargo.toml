@@ -1,5 +1,5 @@
 [package]
-name = "solana-sbf-rust-poseidon"
+name = "dolly-sbf-rust-poseidon"
 description = "Solana SBF test program written in Rust"
 version = { workspace = true }
 authors = { workspace = true }
@@ -10,7 +10,7 @@ edition = { workspace = true }
 
 [dependencies]
 array-bytes = { workspace = true }
-solana-program = { workspace = true }
+dolly-program = { workspace = true }
 
 [lib]
 crate-type = ["cdylib"]

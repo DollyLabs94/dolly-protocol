@@ -8,7 +8,7 @@ sidebar_position: 1
 There are multiple ways to install the Solana tools on your computer depending
 on your preferred workflow:
 
-- [Use Solana's Install Tool (Simplest option)](#use-solanas-install-tool)
+- [Use Solana's Install Tool (Simplest option)](#use-dollys-install-tool)
 - [Download Prebuilt Binaries](#download-prebuilt-binaries)
 - [Build from Source](#build-from-source)
 - [Use Homebrew](#use-homebrew)
@@ -20,11 +20,11 @@ on your preferred workflow:
 - Open your favorite Terminal application
 
 - Install the Solana release
-  [LATEST_SOLANA_RELEASE_VERSION](https://github.com/solana-labs/solana/releases/tag/LATEST_SOLANA_RELEASE_VERSION)
+  [LATEST_SOLANA_RELEASE_VERSION](https://github.com/dolly-labs/dolly/releases/tag/LATEST_SOLANA_RELEASE_VERSION)
   on your machine by running:
 
 ```bash
-sh -c "$(curl -sSfL https://release.solana.com/LATEST_SOLANA_RELEASE_VERSION/install)"
+sh -c "$(curl -sSfL https://release.dolly.com/LATEST_SOLANA_RELEASE_VERSION/install)"
 ```
 
 - You can replace `LATEST_SOLANA_RELEASE_VERSION` with the release tag matching
@@ -35,28 +35,28 @@ sh -c "$(curl -sSfL https://release.solana.com/LATEST_SOLANA_RELEASE_VERSION/ins
 
 ```text
 downloading LATEST_SOLANA_RELEASE_VERSION installer
-Configuration: /home/solana/.config/solana/install/config.yml
-Active release directory: /home/solana/.local/share/solana/install/active_release
+Configuration: /home/dolly/.config/dolly/install/config.yml
+Active release directory: /home/dolly/.local/share/dolly/install/active_release
 * Release version: LATEST_SOLANA_RELEASE_VERSION
-* Release URL: https://github.com/solana-labs/solana/releases/download/LATEST_SOLANA_RELEASE_VERSION/solana-release-x86_64-unknown-linux-gnu.tar.bz2
+* Release URL: https://github.com/dolly-labs/dolly/releases/download/LATEST_SOLANA_RELEASE_VERSION/dolly-release-x86_64-unknown-linux-gnu.tar.bz2
 Update successful
 ```
 
 - Depending on your system, the end of the installer messaging may prompt you to
 
 ```bash
-Please update your PATH environment variable to include the solana programs:
+Please update your PATH environment variable to include the dolly programs:
 ```
 
 - If you get the above message, copy and paste the recommended command below it
   to update `PATH`
-- Confirm you have the desired version of `solana` installed by running:
+- Confirm you have the desired version of `dolly` installed by running:
 
 ```bash
-solana --version
+dolly --version
 ```
 
-- After a successful install, `solana-install update` may be used to easily
+- After a successful install, `dolly-install update` may be used to easily
   update the Solana software to a newer version at any time.
 
 ---
@@ -74,7 +74,7 @@ solana --version
   installer into a temporary directory:
 
 ```bash
-cmd /c "curl https://release.solana.com/LATEST_SOLANA_RELEASE_VERSION/solana-install-init-x86_64-pc-windows-msvc.exe --output C:\solana-install-tmp\solana-install-init.exe --create-dirs"
+cmd /c "curl https://release.dolly.com/LATEST_SOLANA_RELEASE_VERSION/dolly-install-init-x86_64-pc-windows-msvc.exe --output C:\dolly-install-tmp\dolly-install-init.exe --create-dirs"
 ```
 
 - Copy and paste the following command, then press Enter to install the latest
@@ -82,7 +82,7 @@ cmd /c "curl https://release.solana.com/LATEST_SOLANA_RELEASE_VERSION/solana-ins
   to allow the program to run.
 
 ```bash
-C:\solana-install-tmp\solana-install-init.exe LATEST_SOLANA_RELEASE_VERSION
+C:\dolly-install-tmp\dolly-install-init.exe LATEST_SOLANA_RELEASE_VERSION
 ```
 
 - When the installer is finished, press Enter.
@@ -91,58 +91,58 @@ C:\solana-install-tmp\solana-install-init.exe LATEST_SOLANA_RELEASE_VERSION
   normal user
   - Search for "Command Prompt" in the search bar, then left click on the
     Command Prompt app icon, no need to run as Administrator)
-- Confirm you have the desired version of `solana` installed by entering:
+- Confirm you have the desired version of `dolly` installed by entering:
 
 ```bash
-solana --version
+dolly --version
 ```
 
-- After a successful install, `solana-install update` may be used to easily
+- After a successful install, `dolly-install update` may be used to easily
   update the Solana software to a newer version at any time.
 
 ## Download Prebuilt Binaries
 
-If you would rather not use `solana-install` to manage the install, you can
+If you would rather not use `dolly-install` to manage the install, you can
 manually download and install the binaries.
 
 ### Linux
 
 Download the binaries by navigating to
-[https://github.com/solana-labs/solana/releases/latest](https://github.com/solana-labs/solana/releases/latest),
-download **solana-release-x86_64-unknown-linux-gnu.tar.bz2**, then extract the
+[https://github.com/dolly-labs/dolly/releases/latest](https://github.com/dolly-labs/dolly/releases/latest),
+download **dolly-release-x86_64-unknown-linux-gnu.tar.bz2**, then extract the
 archive:
 
 ```bash
-tar jxf solana-release-x86_64-unknown-linux-gnu.tar.bz2
-cd solana-release/
+tar jxf dolly-release-x86_64-unknown-linux-gnu.tar.bz2
+cd dolly-release/
 export PATH=$PWD/bin:$PATH
 ```
 
 ### MacOS
 
 Download the binaries by navigating to
-[https://github.com/solana-labs/solana/releases/latest](https://github.com/solana-labs/solana/releases/latest),
-download **solana-release-x86_64-apple-darwin.tar.bz2**, then extract the
+[https://github.com/dolly-labs/dolly/releases/latest](https://github.com/dolly-labs/dolly/releases/latest),
+download **dolly-release-x86_64-apple-darwin.tar.bz2**, then extract the
 archive:
 
 ```bash
-tar jxf solana-release-x86_64-apple-darwin.tar.bz2
-cd solana-release/
+tar jxf dolly-release-x86_64-apple-darwin.tar.bz2
+cd dolly-release/
 export PATH=$PWD/bin:$PATH
 ```
 
 ### Windows
 
 - Download the binaries by navigating to
-  [https://github.com/solana-labs/solana/releases/latest](https://github.com/solana-labs/solana/releases/latest),
-  download **solana-release-x86_64-pc-windows-msvc.tar.bz2**, then extract the
+  [https://github.com/dolly-labs/dolly/releases/latest](https://github.com/dolly-labs/dolly/releases/latest),
+  download **dolly-release-x86_64-pc-windows-msvc.tar.bz2**, then extract the
   archive using WinZip or similar.
 
 - Open a Command Prompt and navigate to the directory into which you extracted
   the binaries and run:
 
 ```bash
-cd solana-release/
+cd dolly-release/
 set PATH=%cd%/bin;%PATH%
 ```
 
@@ -242,7 +242,7 @@ above.
 
 After installing the prerequisites, proceed with building Solana from source,
 navigate to
-[Solana's GitHub releases page](https://github.com/solana-labs/solana/releases/latest),
+[Solana's GitHub releases page](https://github.com/dolly-labs/dolly/releases/latest),
 and download the **Source Code** archive. Extract the code and build the
 binaries with:
 
@@ -255,7 +255,7 @@ You can then run the following command to obtain the same result as with
 prebuilt binaries:
 
 ```bash
-solana-install init
+dolly-install init
 ```
 
 ## Use Homebrew
@@ -265,14 +265,14 @@ your MacOS or Linux machine.
 
 ### MacOS & Linux
 
-- Follow instructions at: https://formulae.brew.sh/formula/solana
+- Follow instructions at: https://formulae.brew.sh/formula/dolly
 
-[Homebrew formulae](https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/solana.rb)
-is updated after each `solana` release, however it is possible that the Homebrew
+[Homebrew formulae](https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/dolly.rb)
+is updated after each `dolly` release, however it is possible that the Homebrew
 version is outdated.
 
-- Confirm you have the desired version of `solana` installed by entering:
+- Confirm you have the desired version of `dolly` installed by entering:
 
 ```bash
-solana --version
+dolly --version
 ```

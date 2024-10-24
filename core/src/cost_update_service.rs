@@ -2,8 +2,8 @@
 
 use {
     crossbeam_channel::Receiver,
-    solana_ledger::blockstore::Blockstore,
-    solana_runtime::bank::Bank,
+    dolly_ledger::blockstore::Blockstore,
+    dolly_runtime::bank::Bank,
     std::{
         sync::Arc,
         thread::{self, Builder, JoinHandle},

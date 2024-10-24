@@ -1,7 +1,7 @@
 [package]
-name = "solana-bloom"
+name = "dolly-bloom"
 description = "Solana bloom filter"
-documentation = "https://docs.rs/solana-bloom"
+documentation = "https://docs.rs/dolly-bloom"
 version = { workspace = true }
 authors = { workspace = true }
 repository = { workspace = true }
@@ -17,13 +17,13 @@ rand = { workspace = true }
 rayon = { workspace = true }
 serde = { workspace = true, features = ["rc"] }
 serde_derive = { workspace = true }
-solana-frozen-abi = { workspace = true }
-solana-frozen-abi-macro = { workspace = true }
-solana-sdk = { workspace = true }
+dolly-frozen-abi = { workspace = true }
+dolly-frozen-abi-macro = { workspace = true }
+dolly-sdk = { workspace = true }
 
 [lib]
 crate-type = ["lib"]
-name = "solana_bloom"
+name = "dolly_bloom"
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]

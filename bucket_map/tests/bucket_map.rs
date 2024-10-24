@@ -1,8 +1,8 @@
 use {
     rayon::prelude::*,
-    solana_bucket_map::bucket_map::{BucketMap, BucketMapConfig},
-    solana_measure::measure::Measure,
-    solana_sdk::pubkey::Pubkey,
+    dolly_bucket_map::bucket_map::{BucketMap, BucketMapConfig},
+    dolly_measure::measure::Measure,
+    dolly_sdk::pubkey::Pubkey,
     std::path::PathBuf,
 };
 #[test]

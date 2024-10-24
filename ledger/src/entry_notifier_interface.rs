@@ -1,4 +1,4 @@
-use {solana_entry::entry::EntrySummary, solana_sdk::clock::Slot, std::sync::Arc};
+use {dolly_entry::entry::EntrySummary, dolly_sdk::clock::Slot, std::sync::Arc};
 
 pub trait EntryNotifier {
     fn notify_entry(

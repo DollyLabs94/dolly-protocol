@@ -1,7 +1,7 @@
 [package]
-name = "solana-ledger-tool"
+name = "dolly-ledger-tool"
 description = "Blockchain, Rebuilt for Scale"
-documentation = "https://docs.rs/solana-ledger-tool"
+documentation = "https://docs.rs/dolly-ledger-tool"
 version = { workspace = true }
 authors = { workspace = true }
 repository = { workspace = true }
@@ -24,31 +24,31 @@ num_cpus = { workspace = true }
 regex = { workspace = true }
 serde = { workspace = true, features = ["derive"] }
 serde_json = { workspace = true }
-solana-account-decoder = { workspace = true }
-solana-accounts-db = { workspace = true }
-solana-bpf-loader-program = { workspace = true }
-solana-clap-utils = { workspace = true }
-solana-cli-output = { workspace = true }
-solana-core = { workspace = true }
-solana-cost-model = { workspace = true }
-solana-entry = { workspace = true }
-solana-geyser-plugin-manager = { workspace = true }
-solana-gossip = { workspace = true }
-solana-ledger = { workspace = true }
-solana-logger = { workspace = true }
-solana-measure = { workspace = true }
-solana-program-runtime = { workspace = true }
-solana-rpc = { workspace = true }
-solana-runtime = { workspace = true, features = ["dev-context-only-utils"] }
-solana-sdk = { workspace = true }
-solana-stake-program = { workspace = true }
-solana-storage-bigtable = { workspace = true }
-solana-streamer = { workspace = true }
-solana-transaction-status = { workspace = true }
-solana-unified-scheduler-pool = { workspace = true }
-solana-version = { workspace = true }
-solana-vote-program = { workspace = true }
-solana_rbpf = { workspace = true, features = ["debugger"] }
+dolly-account-decoder = { workspace = true }
+dolly-accounts-db = { workspace = true }
+dolly-bpf-loader-program = { workspace = true }
+dolly-clap-utils = { workspace = true }
+dolly-cli-output = { workspace = true }
+dolly-core = { workspace = true }
+dolly-cost-model = { workspace = true }
+dolly-entry = { workspace = true }
+dolly-geyser-plugin-manager = { workspace = true }
+dolly-gossip = { workspace = true }
+dolly-ledger = { workspace = true }
+dolly-logger = { workspace = true }
+dolly-measure = { workspace = true }
+dolly-program-runtime = { workspace = true }
+dolly-rpc = { workspace = true }
+dolly-runtime = { workspace = true, features = ["dev-context-only-utils"] }
+dolly-sdk = { workspace = true }
+dolly-stake-program = { workspace = true }
+dolly-storage-bigtable = { workspace = true }
+dolly-streamer = { workspace = true }
+dolly-transaction-status = { workspace = true }
+dolly-unified-scheduler-pool = { workspace = true }
+dolly-version = { workspace = true }
+dolly-vote-program = { workspace = true }
+dolly_rbpf = { workspace = true, features = ["debugger"] }
 thiserror = { workspace = true }
 tokio = { workspace = true, features = ["full"] }
 

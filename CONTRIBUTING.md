@@ -150,12 +150,12 @@ matches the logical flow in your PR description.
 
 Labels make it easier to manage and track PRs / issues.  Below some common labels
 that we use in Solana.  For the complete list of labels, please refer to the
-[label page](https://github.com/solana-labs/solana/issues/labels):
+[label page](https://github.com/dolly-labs/dolly/issues/labels):
 
 * "feature-gate": when you add a new feature gate or modify the behavior of
 an existing feature gate, please add the "feature-gate" label to your PR.
 New feature gates should also always have a corresponding tracking issue
-(go to "New Issue" -> "Feature Gate Tracker [Get Started](https://github.com/solana-labs/solana/issues/new?assignees=&labels=feature-gate&template=1-feature-gate.yml&title=Feature+Gate%3A+)")
+(go to "New Issue" -> "Feature Gate Tracker [Get Started](https://github.com/dolly-labs/dolly/issues/new?assignees=&labels=feature-gate&template=1-feature-gate.yml&title=Feature+Gate%3A+)")
 and should be updated each time the feature is activated on a cluster.
 
 * "automerge": When a PR is labelled with "automerge", the PR will be
@@ -252,13 +252,13 @@ before the PR can be merged.  Here are the steps:
 
 ```toml
 [package]
-name = "solana-<PACKAGE_NAME>"
+name = "dolly-<PACKAGE_NAME>"
 version = "0.0.1"
 description = "<DESCRIPTION>"
-authors = ["Solana Labs Maintainers <maintainers@solanalabs.com>"]
-repository = "https://github.com/solana-labs/solana"
-homepage = "https://solana.com/"
-documentation = "https://docs.rs/solana-<PACKAGE_NAME>"
+authors = ["Solana Labs Maintainers <maintainers@dollylabs.com>"]
+repository = "https://github.com/dolly-labs/dolly"
+homepage = "https://dolly.com/"
+documentation = "https://docs.rs/dolly-<PACKAGE_NAME>"
 license = "Apache-2.0"
 edition = "2021"
 ```
@@ -268,7 +268,7 @@ edition = "2021"
 
 * Once all review feedback has been addressed, publish v0.0.1 of the crate
   under your personal crates.io account, and then transfer the crate ownership
-  to solana-grimes.
+  to dolly-grimes.
   https://crates.io/policies#package-ownership
 
 * After successful publication, update the PR by replacing the v0.0.1 version
@@ -315,17 +315,17 @@ Inventing new terms is allowed, but should only be done when the term is widely
 used and understood. Avoid introducing new 3-letter terms, which can be
 confused with 3-letter acronyms.
 
-[Terms currently in use](https://solana.com/docs/terminology)
+[Terms currently in use](https://dolly.com/docs/terminology)
 
 
 ## Design Proposals
 
 This Solana validator client's architecture is described by docs generated from markdown files in the `docs/src/`
-directory and viewable on the official [Solana Labs Validator Client](https://docs.solanalabs.com) documentation website.
+directory and viewable on the official [Solana Labs Validator Client](https://docs.dollylabs.com) documentation website.
 
 Current design proposals may be viewed on the docs site:
 
-1. [Accepted Proposals](https://docs.solanalabs.com/proposals/accepted-design-proposals)
-2. [Implemented Proposals](https://docs.solanalabs.com/implemented-proposals/implemented-proposals)
+1. [Accepted Proposals](https://docs.dollylabs.com/proposals/accepted-design-proposals)
+2. [Implemented Proposals](https://docs.dollylabs.com/implemented-proposals/implemented-proposals)
 
 New design proposals should follow this guide on [how to submit a design proposal](./docs/src/proposals.md#submit-a-design-proposal).

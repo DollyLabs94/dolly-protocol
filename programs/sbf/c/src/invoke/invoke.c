@@ -32,7 +32,7 @@ static const uint8_t TEST_DUPLICATE_PRIVILEGE_ESCALATION_SIGNER = 19;
 static const uint8_t TEST_DUPLICATE_PRIVILEGE_ESCALATION_WRITABLE = 20;
 static const uint8_t TEST_MAX_ACCOUNT_INFOS_EXCEEDED = 21;
 // TEST_CPI_INVALID_* must match the definitions in
-// https://github.com/solana-labs/solana/blob/master/programs/sbf/rust/invoke/src/instructions.rs
+// https://github.com/dolly-labs/dolly/blob/master/programs/sbf/rust/invoke/src/instructions.rs
 static const uint8_t TEST_CPI_INVALID_KEY_POINTER = 34;
 static const uint8_t TEST_CPI_INVALID_OWNER_POINTER = 35;
 static const uint8_t TEST_CPI_INVALID_LAMPORTS_POINTER = 36;

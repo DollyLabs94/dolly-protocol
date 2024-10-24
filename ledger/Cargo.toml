@@ -1,7 +1,7 @@
 [package]
-name = "solana-ledger"
+name = "dolly-ledger"
 description = "Solana ledger"
-documentation = "https://docs.rs/solana-ledger"
+documentation = "https://docs.rs/dolly-ledger"
 version = { workspace = true }
 authors = { workspace = true }
 repository = { workspace = true }
@@ -37,27 +37,27 @@ scopeguard = { workspace = true }
 serde = { workspace = true }
 serde_bytes = { workspace = true }
 sha2 = { workspace = true }
-solana-account-decoder = { workspace = true }
-solana-accounts-db = { workspace = true }
-solana-bpf-loader-program = { workspace = true }
-solana-cost-model = { workspace = true }
-solana-entry = { workspace = true }
-solana-frozen-abi = { workspace = true }
-solana-frozen-abi-macro = { workspace = true }
-solana-measure = { workspace = true }
-solana-metrics = { workspace = true }
-solana-perf = { workspace = true }
-solana-program-runtime = { workspace = true }
-solana-rayon-threadlimit = { workspace = true }
-solana-runtime = { workspace = true }
-solana-sdk = { workspace = true }
-solana-stake-program = { workspace = true }
-solana-storage-bigtable = { workspace = true }
-solana-storage-proto = { workspace = true }
-solana-svm = { workspace = true }
-solana-transaction-status = { workspace = true }
-solana-vote = { workspace = true }
-solana-vote-program = { workspace = true }
+dolly-account-decoder = { workspace = true }
+dolly-accounts-db = { workspace = true }
+dolly-bpf-loader-program = { workspace = true }
+dolly-cost-model = { workspace = true }
+dolly-entry = { workspace = true }
+dolly-frozen-abi = { workspace = true }
+dolly-frozen-abi-macro = { workspace = true }
+dolly-measure = { workspace = true }
+dolly-metrics = { workspace = true }
+dolly-perf = { workspace = true }
+dolly-program-runtime = { workspace = true }
+dolly-rayon-threadlimit = { workspace = true }
+dolly-runtime = { workspace = true }
+dolly-sdk = { workspace = true }
+dolly-stake-program = { workspace = true }
+dolly-storage-bigtable = { workspace = true }
+dolly-storage-proto = { workspace = true }
+dolly-svm = { workspace = true }
+dolly-transaction-status = { workspace = true }
+dolly-vote = { workspace = true }
+dolly-vote-program = { workspace = true }
 spl-token = { workspace = true, features = ["no-entrypoint"] }
 spl-token-2022 = { workspace = true, features = ["no-entrypoint"] }
 static_assertions = { workspace = true }
@@ -78,9 +78,9 @@ features = ["lz4"]
 
 [dev-dependencies]
 bs58 = { workspace = true }
-solana-account-decoder = { workspace = true }
-solana-logger = { workspace = true }
-solana-runtime = { workspace = true, features = ["dev-context-only-utils"] }
+dolly-account-decoder = { workspace = true }
+dolly-logger = { workspace = true }
+dolly-runtime = { workspace = true, features = ["dev-context-only-utils"] }
 spl-pod = { workspace = true }
 test-case = { workspace = true }
 
@@ -92,7 +92,7 @@ dev-context-only-utils = []
 
 [lib]
 crate-type = ["lib"]
-name = "solana_ledger"
+name = "dolly_ledger"
 
 [[bench]]
 name = "sigverify_shreds"

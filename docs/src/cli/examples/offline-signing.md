@@ -9,7 +9,7 @@ process, separated from transaction creation and network broadcast. Examples
 include:
 
 - Collecting signatures from geographically disparate signers in a
-  [multi-signature scheme](https://spl.solana.com/token#multisig-usage)
+  [multi-signature scheme](https://spl.dolly.com/token#multisig-usage)
 - Signing transactions using an [air-gapped](<https://en.wikipedia.org/wiki/Air_gap_(networking)>)
   signing device
 
@@ -20,26 +20,26 @@ transaction.
 
 At present, the following commands support offline signing:
 
-- [`create-stake-account`](../usage.md#solana-create-stake-account)
-- [`create-stake-account-checked`](../usage.md#solana-create-stake-account-checked)
-- [`deactivate-stake`](../usage.md#solana-deactivate-stake)
-- [`delegate-stake`](../usage.md#solana-delegate-stake)
-- [`split-stake`](../usage.md#solana-split-stake)
-- [`stake-authorize`](../usage.md#solana-stake-authorize)
-- [`stake-authorize-checked`](../usage.md#solana-stake-authorize-checked)
-- [`stake-set-lockup`](../usage.md#solana-stake-set-lockup)
-- [`stake-set-lockup-checked`](../usage.md#solana-stake-set-lockup-checked)
-- [`transfer`](../usage.md#solana-transfer)
-- [`withdraw-stake`](../usage.md#solana-withdraw-stake)
+- [`create-stake-account`](../usage.md#dolly-create-stake-account)
+- [`create-stake-account-checked`](../usage.md#dolly-create-stake-account-checked)
+- [`deactivate-stake`](../usage.md#dolly-deactivate-stake)
+- [`delegate-stake`](../usage.md#dolly-delegate-stake)
+- [`split-stake`](../usage.md#dolly-split-stake)
+- [`stake-authorize`](../usage.md#dolly-stake-authorize)
+- [`stake-authorize-checked`](../usage.md#dolly-stake-authorize-checked)
+- [`stake-set-lockup`](../usage.md#dolly-stake-set-lockup)
+- [`stake-set-lockup-checked`](../usage.md#dolly-stake-set-lockup-checked)
+- [`transfer`](../usage.md#dolly-transfer)
+- [`withdraw-stake`](../usage.md#dolly-withdraw-stake)
 
-- [`create-vote-account`](../usage.md#solana-create-vote-account)
-- [`vote-authorize-voter`](../usage.md#solana-vote-authorize-voter)
-- [`vote-authorize-voter-checked`](../usage.md#solana-vote-authorize-voter-checked)
-- [`vote-authorize-withdrawer`](../usage.md#solana-vote-authorize-withdrawer)
-- [`vote-authorize-withdrawer-checked`](../usage.md#solana-vote-authorize-withdrawer-checked)
-- [`vote-update-commission`](../usage.md#solana-vote-update-commission)
-- [`vote-update-validator`](../usage.md#solana-vote-update-validator)
-- [`withdraw-from-vote-account`](../usage.md#solana-withdraw-from-vote-account)
+- [`create-vote-account`](../usage.md#dolly-create-vote-account)
+- [`vote-authorize-voter`](../usage.md#dolly-vote-authorize-voter)
+- [`vote-authorize-voter-checked`](../usage.md#dolly-vote-authorize-voter-checked)
+- [`vote-authorize-withdrawer`](../usage.md#dolly-vote-authorize-withdrawer)
+- [`vote-authorize-withdrawer-checked`](../usage.md#dolly-vote-authorize-withdrawer-checked)
+- [`vote-update-commission`](../usage.md#dolly-vote-update-commission)
+- [`vote-update-validator`](../usage.md#dolly-vote-update-validator)
+- [`withdraw-from-vote-account`](../usage.md#dolly-withdraw-from-vote-account)
 
 ## Signing Transactions Offline
 
@@ -60,7 +60,7 @@ To sign a transaction offline, pass the following arguments on the command line
 Command
 
 ```bash
-solana@offline$ solana transfer --sign-only --blockhash 5Tx8F3jgSHx21CbtjwmdaKPLM5tWmreWAnPrbqHomSJF \
+dolly@offline$ dolly transfer --sign-only --blockhash 5Tx8F3jgSHx21CbtjwmdaKPLM5tWmreWAnPrbqHomSJF \
     recipient-keypair.json 1
 ```
 
@@ -90,7 +90,7 @@ following arguments on the command line
 Command
 
 ```bash
-solana@online$ solana transfer --blockhash 5Tx8F3jgSHx21CbtjwmdaKPLM5tWmreWAnPrbqHomSJF \
+dolly@online$ dolly transfer --blockhash 5Tx8F3jgSHx21CbtjwmdaKPLM5tWmreWAnPrbqHomSJF \
     --signer FhtzLVsmcV7S5XqGD79ErgoseCLhZYmEZnz9kQg1Rp7j=4vC38p4bz7XyiXrk6HtaooUqwxTWKocf45cstASGtmrD398biNJnmTcUCVEojE7wVQvgdYbjHJqRFZPpzfCQpmUN
     recipient-keypair.json 1
 ```
@@ -113,7 +113,7 @@ output
 Command (Offline Session #1)
 
 ```text
-solana@offline1$ solana transfer Fdri24WUGtrCXZ55nXiewAj6RM18hRHPGAjZk3o6vBut 10 \
+dolly@offline1$ dolly transfer Fdri24WUGtrCXZ55nXiewAj6RM18hRHPGAjZk3o6vBut 10 \
     --blockhash 7ALDjLv56a8f6sH6upAZALQKkXyjAwwENH9GomyM8Dbc \
     --sign-only \
     --keypair fee_payer.json \
@@ -133,7 +133,7 @@ Absent Signers (Pubkey):
 Command (Offline Session #2)
 
 ```text
-solana@offline2$ solana transfer Fdri24WUGtrCXZ55nXiewAj6RM18hRHPGAjZk3o6vBut 10 \
+dolly@offline2$ dolly transfer Fdri24WUGtrCXZ55nXiewAj6RM18hRHPGAjZk3o6vBut 10 \
     --blockhash 7ALDjLv56a8f6sH6upAZALQKkXyjAwwENH9GomyM8Dbc \
     --sign-only \
     --keypair from.json \
@@ -153,7 +153,7 @@ Absent Signers (Pubkey):
 Command (Online Submission)
 
 ```text
-solana@online$ solana transfer Fdri24WUGtrCXZ55nXiewAj6RM18hRHPGAjZk3o6vBut 10 \
+dolly@online$ dolly transfer Fdri24WUGtrCXZ55nXiewAj6RM18hRHPGAjZk3o6vBut 10 \
     --blockhash 7ALDjLv56a8f6sH6upAZALQKkXyjAwwENH9GomyM8Dbc \
     --from 674RgFMgdqdRoVtMqSBg7mHFbrrNm1h1r721H1ZMquHL \
     --signer 674RgFMgdqdRoVtMqSBg7mHFbrrNm1h1r721H1ZMquHL=3vJtnba4dKQmEAieAekC1rJnPUndBcpvqRPRMoPWqhLEMCty2SdUxt2yvC1wQW6wVUa5putZMt6kdwCaTv8gk7sQ \

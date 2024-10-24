@@ -1,9 +1,9 @@
 use {
-    solana_gossip::{
+    dolly_gossip::{
         cluster_info::ClusterInfo, legacy_contact_info::LegacyContactInfo as ContactInfo,
     },
-    solana_poh::poh_recorder::PohRecorder,
-    solana_sdk::{clock::FORWARD_TRANSACTIONS_TO_LEADER_AT_SLOT_OFFSET, pubkey::Pubkey},
+    dolly_poh::poh_recorder::PohRecorder,
+    dolly_sdk::{clock::FORWARD_TRANSACTIONS_TO_LEADER_AT_SLOT_OFFSET, pubkey::Pubkey},
     std::{net::SocketAddr, sync::RwLock},
 };
 

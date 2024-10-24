@@ -1,12 +1,12 @@
 use {
-    solana_rpc_client_api::{client_error::Error as ClientError, config::RpcBlockConfig},
-    solana_sdk::{
+    dolly_rpc_client_api::{client_error::Error as ClientError, config::RpcBlockConfig},
+    dolly_sdk::{
         account::Account, commitment_config::CommitmentConfig, epoch_info::EpochInfo, hash::Hash,
         message::Message, pubkey::Pubkey, signature::Signature, slot_history::Slot,
         transaction::Transaction, transport::TransportError,
     },
-    solana_tpu_client::tpu_client::TpuSenderError,
-    solana_transaction_status::UiConfirmedBlock,
+    dolly_tpu_client::tpu_client::TpuSenderError,
+    dolly_transaction_status::UiConfirmedBlock,
     thiserror::Error,
 };
 

@@ -1,5 +1,5 @@
 [package]
-name = "solana-loader-v4-program"
+name = "dolly-loader-v4-program"
 description = "Solana Loader v4"
 version = { workspace = true }
 authors = { workspace = true }
@@ -10,17 +10,17 @@ edition = { workspace = true }
 
 [dependencies]
 log = { workspace = true }
-solana-measure = { workspace = true }
-solana-program-runtime = { workspace = true }
-solana-sdk = { workspace = true }
-solana_rbpf = { workspace = true }
+dolly-measure = { workspace = true }
+dolly-program-runtime = { workspace = true }
+dolly-sdk = { workspace = true }
+dolly_rbpf = { workspace = true }
 
 [dev-dependencies]
 bincode = { workspace = true }
 
 [lib]
 crate-type = ["lib"]
-name = "solana_loader_v4_program"
+name = "dolly_loader_v4_program"
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]

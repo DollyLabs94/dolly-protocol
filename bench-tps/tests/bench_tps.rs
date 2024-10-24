@@ -2,30 +2,30 @@
 
 use {
     serial_test::serial,
-    solana_bench_tps::{
+    dolly_bench_tps::{
         bench::{do_bench_tps, generate_and_fund_keypairs},
         cli::{Config, InstructionPaddingConfig},
         send_batch::generate_durable_nonce_accounts,
     },
-    solana_client::tpu_client::{TpuClient, TpuClientConfig},
-    solana_core::validator::ValidatorConfig,
-    solana_faucet::faucet::run_local_faucet,
-    solana_local_cluster::{
+    dolly_client::tpu_client::{TpuClient, TpuClientConfig},
+    dolly_core::validator::ValidatorConfig,
+    dolly_faucet::faucet::run_local_faucet,
+    dolly_local_cluster::{
         cluster::Cluster,
         local_cluster::{ClusterConfig, LocalCluster},
         validator_configs::make_identical_validator_configs,
     },
-    solana_rpc::rpc::JsonRpcConfig,
-    solana_rpc_client::rpc_client::RpcClient,
-    solana_sdk::{
+    dolly_rpc::rpc::JsonRpcConfig,
+    dolly_rpc_client::rpc_client::RpcClient,
+    dolly_sdk::{
         account::{Account, AccountSharedData},
         commitment_config::CommitmentConfig,
         fee_calculator::FeeRateGovernor,
         rent::Rent,
         signature::{Keypair, Signer},
     },
-    solana_streamer::socket::SocketAddrSpace,
-    solana_test_validator::TestValidatorGenesis,
+    dolly_streamer::socket::SocketAddrSpace,
+    dolly_test_validator::TestValidatorGenesis,
     std::{sync::Arc, time::Duration},
 };
 
@@ -33,7 +33,7 @@ fn program_account(program_data: &[u8]) -> AccountSharedData {
     AccountSharedData::from(Account {
         lamports: Rent::default().minimum_balance(program_data.len()).min(1),
         data: program_data.to_vec(),
-        owner: solana_sdk::bpf_loader::id(),
+        owner: dolly_sdk::bpf_loader::id(),
         executable: true,
         rent_epoch: 0,
     })
@@ -46,7 +46,7 @@ fn test_bench_tps_local_cluster(config: Config) {
         program_account(include_bytes!("fixtures/spl_instruction_padding.so")),
     )];
 
-    solana_logger::setup();
+    dolly_logger::setup();
 
     let faucet_keypair = Keypair::new();
     let faucet_pubkey = faucet_keypair.pubkey();
@@ -100,7 +100,7 @@ fn test_bench_tps_local_cluster(config: Config) {
 }
 
 fn test_bench_tps_test_validator(config: Config) {
-    solana_logger::setup();
+    dolly_logger::setup();
 
     let mint_keypair = Keypair::new();
     let mint_pubkey = mint_keypair.pubkey();
@@ -153,7 +153,7 @@ fn test_bench_tps_test_validator(config: Config) {
 
 #[test]
 #[serial]
-fn test_bench_tps_local_cluster_solana() {
+fn test_bench_tps_local_cluster_dolly() {
     test_bench_tps_local_cluster(Config {
         tx_count: 100,
         duration: Duration::from_secs(10),

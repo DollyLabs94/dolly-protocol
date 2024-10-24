@@ -1,7 +1,7 @@
 [package]
-name = "solana-turbine"
+name = "dolly-turbine"
 description = "Blockchain, Rebuilt for Scale"
-documentation = "https://docs.rs/solana-turbine"
+documentation = "https://docs.rs/dolly-turbine"
 version = { workspace = true }
 authors = { workspace = true }
 repository = { workspace = true }
@@ -22,27 +22,27 @@ rand = { workspace = true }
 rand_chacha = { workspace = true }
 rayon = { workspace = true }
 rustls = { workspace = true }
-solana-entry = { workspace = true }
-solana-gossip = { workspace = true }
-solana-ledger = { workspace = true }
-solana-measure = { workspace = true }
-solana-metrics = { workspace = true }
-solana-perf = { workspace = true }
-solana-poh = { workspace = true }
-solana-quic-client = { workspace = true }
-solana-rayon-threadlimit = { workspace = true }
-solana-rpc = { workspace = true }
-solana-rpc-client-api = { workspace = true }
-solana-runtime = { workspace = true }
-solana-sdk = { workspace = true }
-solana-streamer = { workspace = true }
+dolly-entry = { workspace = true }
+dolly-gossip = { workspace = true }
+dolly-ledger = { workspace = true }
+dolly-measure = { workspace = true }
+dolly-metrics = { workspace = true }
+dolly-perf = { workspace = true }
+dolly-poh = { workspace = true }
+dolly-quic-client = { workspace = true }
+dolly-rayon-threadlimit = { workspace = true }
+dolly-rpc = { workspace = true }
+dolly-rpc-client-api = { workspace = true }
+dolly-runtime = { workspace = true }
+dolly-sdk = { workspace = true }
+dolly-streamer = { workspace = true }
 thiserror = { workspace = true }
 tokio = { workspace = true }
 
 [dev-dependencies]
 assert_matches = { workspace = true }
-solana-logger = { workspace = true }
-solana-runtime = { workspace = true, features = ["dev-context-only-utils"] }
+dolly-logger = { workspace = true }
+dolly-runtime = { workspace = true, features = ["dev-context-only-utils"] }
 test-case = { workspace = true }
 
 [[bench]]

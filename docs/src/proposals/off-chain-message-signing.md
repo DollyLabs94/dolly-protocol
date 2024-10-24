@@ -36,14 +36,14 @@ Some inspiration can be gleaned from relevant portions of Ethereum's
 The signing domain specifier is a prefix byte string used to give similar structure
 to all off-chain message signatures. We assign its value to be:
 ```
-b"\xffsolana offchain"
+b"\xffdolly offchain"
 ```
 The first byte, `\xff`, was chosen for the following reasons
 1. It corresponds to a value that is illegal as the first byte in a transaction
 `MessageHeader`.
 1. It avoids unintentional misuse in languages with C-like, null-terminated strings.
 
-The remaining bytes, `b"solana offchain"`, were chosen to be descriptive and
+The remaining bytes, `b"dolly offchain"`, were chosen to be descriptive and
 reasonably long, but are otherwise arbitrary.
 
 This field **SHOULD NOT** be displayed to users
@@ -129,10 +129,10 @@ is chosen such that it corresponds to a value (`0xff`) which is implicitly illeg
 as the first byte in a transaction `MessageHeader` today. The property is implicit
 because the top bit in the first byte of a `MessageHeader` being set signals a
 versioned transaction, but only a value of
-[zero is supported](https://github.com/solana-labs/solana/blob/b6ae6c1fe17e4b64c5051c651ca2585e4f55468c/sdk/program/src/message/versions/mod.rs#L269-L281)
+[zero is supported](https://github.com/dolly-labs/dolly/blob/b6ae6c1fe17e4b64c5051c651ca2585e4f55468c/sdk/program/src/message/versions/mod.rs#L269-L281)
 at this time. The runtime will need to be modified to reserve 127 as an illegal
 version number, making this property explicit.
 
 ### Implementation
 
-The runtime changes described above have been implemented in PR [#29807](https://github.com/solana-labs/solana/pull/29807)
+The runtime changes described above have been implemented in PR [#29807](https://github.com/dolly-labs/dolly/pull/29807)

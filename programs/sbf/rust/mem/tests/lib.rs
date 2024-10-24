@@ -1,9 +1,9 @@
 #![cfg(feature = "test-bpf")]
 
 use {
-    solana_program_test::*,
-    solana_sbf_rust_mem::entrypoint::process_instruction,
-    solana_sdk::{
+    dolly_program_test::*,
+    dolly_sbf_rust_mem::entrypoint::process_instruction,
+    dolly_sdk::{
         instruction::Instruction, pubkey::Pubkey, signature::Signer, transaction::Transaction,
     },
 };
@@ -12,7 +12,7 @@ use {
 async fn test_mem() {
     let program_id = Pubkey::new_unique();
     let program_test = ProgramTest::new(
-        "solana_sbf_rust_mem",
+        "dolly_sbf_rust_mem",
         program_id,
         processor!(process_instruction),
     );

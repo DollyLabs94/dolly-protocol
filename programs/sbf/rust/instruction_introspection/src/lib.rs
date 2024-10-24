@@ -1,7 +1,7 @@
 //! Example Rust-based SBF program that exercises instruction introspection
 
-extern crate solana_program;
-use solana_program::{
+extern crate dolly_program;
+use dolly_program::{
     account_info::AccountInfo,
     entrypoint::ProgramResult,
     instruction::{AccountMeta, Instruction},
@@ -12,7 +12,7 @@ use solana_program::{
     sysvar::instructions,
 };
 
-solana_program::entrypoint!(process_instruction);
+dolly_program::entrypoint!(process_instruction);
 fn process_instruction(
     program_id: &Pubkey,
     accounts: &[AccountInfo],

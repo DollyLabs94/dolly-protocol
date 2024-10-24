@@ -90,28 +90,28 @@ if [[ $CI_OS_NAME = windows ]]; then
     cargo-build-sbf
     cargo-test-bpf
     cargo-test-sbf
-    solana
-    solana-install
-    solana-install-init
-    solana-keygen
-    solana-stake-accounts
-    solana-test-validator
-    solana-tokens
+    dolly
+    dolly-install
+    dolly-install-init
+    dolly-keygen
+    dolly-stake-accounts
+    dolly-test-validator
+    dolly-tokens
   )
 else
   ./fetch-perf-libs.sh
 
   BINS=(
-    solana
-    solana-bench-tps
-    solana-faucet
-    solana-gossip
-    solana-install
-    solana-keygen
-    solana-ledger-tool
-    solana-log-analyzer
-    solana-net-shaper
-    solana-validator
+    dolly
+    dolly-bench-tps
+    dolly-faucet
+    dolly-gossip
+    dolly-install
+    dolly-keygen
+    dolly-ledger-tool
+    dolly-log-analyzer
+    dolly-net-shaper
+    dolly-validator
     rbpf-cli
   )
 
@@ -122,18 +122,18 @@ else
       cargo-build-sbf
       cargo-test-bpf
       cargo-test-sbf
-      solana-dos
-      solana-install-init
-      solana-stake-accounts
-      solana-test-validator
-      solana-tokens
-      solana-watchtower
+      dolly-dos
+      dolly-install-init
+      dolly-stake-accounts
+      dolly-test-validator
+      dolly-tokens
+      dolly-watchtower
     )
   fi
 
-  #XXX: Ensure `solana-genesis` is built LAST!
-  # See https://github.com/solana-labs/solana/issues/5826
-  BINS+=(solana-genesis)
+  #XXX: Ensure `dolly-genesis` is built LAST!
+  # See https://github.com/dolly-labs/dolly/issues/5826
+  BINS+=(dolly-genesis)
 fi
 
 binArgs=()
@@ -156,7 +156,7 @@ mkdir -p "$installDir/bin"
     # the patch-related configs are needed for rust 1.69+ on Windows; see Cargo.toml
     # shellcheck disable=SC2086 # Don't want to double quote $rust_version
     "$cargo" $maybeRustVersion \
-      --config 'patch.crates-io.ntapi.git="https://github.com/solana-labs/ntapi"' \
+      --config 'patch.crates-io.ntapi.git="https://github.com/dolly-labs/ntapi"' \
       --config 'patch.crates-io.ntapi.rev="97ede981a1777883ff86d142b75024b023f04fad"' \
       install --locked spl-token-cli --root "$installDir" $maybeSplTokenCliVersionArg
   fi
@@ -217,7 +217,7 @@ fi
   set -x
   # deps dir can be empty
   shopt -s nullglob
-  for dep in target/"$buildProfile"/deps/libsolana*program.*; do
+  for dep in target/"$buildProfile"/deps/libdolly*program.*; do
     cp -fv "$dep" "$installDir/bin/deps"
   done
 )

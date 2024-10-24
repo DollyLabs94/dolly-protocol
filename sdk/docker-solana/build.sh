@@ -20,16 +20,16 @@ fi
 
 cd "$(dirname "$0")"
 rm -rf usr/
-../../ci/docker-run-default-image.sh scripts/cargo-install-all.sh sdk/docker-solana/usr
+../../ci/docker-run-default-image.sh scripts/cargo-install-all.sh sdk/docker-dolly/usr
 
-cp -f ../../scripts/run.sh usr/bin/solana-run.sh
+cp -f ../../scripts/run.sh usr/bin/dolly-run.sh
 cp -f ../../fetch-spl.sh usr/bin/
 (
   cd usr/bin
   ./fetch-spl.sh
 )
 
-docker build -t solanalabs/solana:"$CHANNEL_OR_TAG" .
+docker build -t dollylabs/dolly:"$CHANNEL_OR_TAG" .
 
 maybeEcho=
 if [[ -z $CI ]]; then
@@ -43,4 +43,4 @@ else
     fi
   )
 fi
-$maybeEcho docker push solanalabs/solana:"$CHANNEL_OR_TAG"
+$maybeEcho docker push dollylabs/dolly:"$CHANNEL_OR_TAG"

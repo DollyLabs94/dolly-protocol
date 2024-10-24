@@ -3,12 +3,12 @@
 
 use {
     rand::{thread_rng, Rng},
-    solana_client::{
+    dolly_client::{
         connection_cache::{ConnectionCache, Protocol},
         tpu_connection::TpuConnection,
     },
-    solana_gossip::cluster_info::ClusterInfo,
-    solana_poh::poh_recorder::PohRecorder,
+    dolly_gossip::cluster_info::ClusterInfo,
+    dolly_poh::poh_recorder::PohRecorder,
     std::{
         sync::{
             atomic::{AtomicBool, Ordering},

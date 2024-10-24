@@ -2,8 +2,8 @@
 extern crate test;
 
 use {
-    solana_entry::entry::{next_entry_mut, Entry, EntrySlice},
-    solana_sdk::{
+    dolly_entry::entry::{next_entry_mut, Entry, EntrySlice},
+    dolly_sdk::{
         hash::{hash, Hash},
         signature::{Keypair, Signer},
         system_transaction,
@@ -16,7 +16,7 @@ const NUM_ENTRIES: usize = 800;
 
 #[bench]
 fn bench_poh_verify_ticks(bencher: &mut Bencher) {
-    solana_logger::setup();
+    dolly_logger::setup();
     let zero = Hash::default();
     let start_hash = hash(zero.as_ref());
     let mut cur_hash = start_hash;

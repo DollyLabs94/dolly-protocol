@@ -36,8 +36,8 @@ $NOPULL || docker pull "$IMAGE"
 shift
 
 ARGS=(
-  --workdir /solana
-  --volume "$PWD:/solana"
+  --workdir /dolly
+  --volume "$PWD:/dolly"
   --rm
 )
 

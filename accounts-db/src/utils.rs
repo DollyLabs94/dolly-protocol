@@ -1,7 +1,7 @@
 use {
     lazy_static,
     log::*,
-    solana_measure::measure,
+    dolly_measure::measure,
     std::{
         collections::HashSet,
         fs,

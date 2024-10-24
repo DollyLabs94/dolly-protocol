@@ -90,15 +90,15 @@ mod tests {
             tests::{create_slow_genesis_config, new_test_cluster_info, simulate_poh},
         },
         crossbeam_channel::unbounded,
-        solana_client::connection_cache::ConnectionCache,
-        solana_ledger::{
+        dolly_client::connection_cache::ConnectionCache,
+        dolly_ledger::{
             blockstore::Blockstore, genesis_utils::GenesisConfigInfo,
             get_tmp_ledger_path_auto_delete, leader_schedule_cache::LeaderScheduleCache,
         },
-        solana_perf::packet::to_packet_batches,
-        solana_poh::poh_recorder::{PohRecorder, WorkingBankEntry},
-        solana_runtime::bank::Bank,
-        solana_sdk::{
+        dolly_perf::packet::to_packet_batches,
+        dolly_poh::poh_recorder::{PohRecorder, WorkingBankEntry},
+        dolly_runtime::bank::Bank,
+        dolly_sdk::{
             genesis_config::GenesisConfig, poh_config::PohConfig, pubkey::Pubkey,
             signature::Keypair, system_transaction,
         },

@@ -1,8 +1,8 @@
 [package]
-name = "solana-validator"
+name = "dolly-validator"
 description = "Blockchain, Rebuilt for Scale"
-documentation = "https://docs.rs/solana-validator"
-default-run = "solana-validator"
+documentation = "https://docs.rs/dolly-validator"
+default-run = "dolly-validator"
 version = { workspace = true }
 authors = { workspace = true }
 repository = { workspace = true }
@@ -32,45 +32,45 @@ rayon = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 serde_yaml = { workspace = true }
-solana-accounts-db = { workspace = true }
-solana-clap-utils = { workspace = true }
-solana-cli-config = { workspace = true }
-solana-core = { workspace = true }
-solana-download-utils = { workspace = true }
-solana-entry = { workspace = true }
-solana-faucet = { workspace = true }
-solana-genesis-utils = { workspace = true }
-solana-geyser-plugin-interface = { workspace = true }
-solana-geyser-plugin-manager = { workspace = true }
-solana-gossip = { workspace = true }
-solana-ledger = { workspace = true }
-solana-logger = { workspace = true }
-solana-metrics = { workspace = true }
-solana-net-utils = { workspace = true }
-solana-perf = { workspace = true }
-solana-poh = { workspace = true }
-solana-program-runtime = { workspace = true }
-solana-rayon-threadlimit = { workspace = true }
-solana-rpc = { workspace = true }
-solana-rpc-client = { workspace = true }
-solana-rpc-client-api = { workspace = true }
-solana-runtime = { workspace = true }
-solana-sdk = { workspace = true }
-solana-send-transaction-service = { workspace = true }
-solana-storage-bigtable = { workspace = true }
-solana-streamer = { workspace = true }
-solana-test-validator = { workspace = true }
-solana-tpu-client = { workspace = true }
-solana-unified-scheduler-pool = { workspace = true }
-solana-version = { workspace = true }
-solana-vote-program = { workspace = true }
+dolly-accounts-db = { workspace = true }
+dolly-clap-utils = { workspace = true }
+dolly-cli-config = { workspace = true }
+dolly-core = { workspace = true }
+dolly-download-utils = { workspace = true }
+dolly-entry = { workspace = true }
+dolly-faucet = { workspace = true }
+dolly-genesis-utils = { workspace = true }
+dolly-geyser-plugin-interface = { workspace = true }
+dolly-geyser-plugin-manager = { workspace = true }
+dolly-gossip = { workspace = true }
+dolly-ledger = { workspace = true }
+dolly-logger = { workspace = true }
+dolly-metrics = { workspace = true }
+dolly-net-utils = { workspace = true }
+dolly-perf = { workspace = true }
+dolly-poh = { workspace = true }
+dolly-program-runtime = { workspace = true }
+dolly-rayon-threadlimit = { workspace = true }
+dolly-rpc = { workspace = true }
+dolly-rpc-client = { workspace = true }
+dolly-rpc-client-api = { workspace = true }
+dolly-runtime = { workspace = true }
+dolly-sdk = { workspace = true }
+dolly-send-transaction-service = { workspace = true }
+dolly-storage-bigtable = { workspace = true }
+dolly-streamer = { workspace = true }
+dolly-test-validator = { workspace = true }
+dolly-tpu-client = { workspace = true }
+dolly-unified-scheduler-pool = { workspace = true }
+dolly-version = { workspace = true }
+dolly-vote-program = { workspace = true }
 symlink = { workspace = true }
 thiserror = { workspace = true }
 tokio = { workspace = true }
 
 [dev-dependencies]
-solana-account-decoder = { workspace = true }
-solana-runtime = { workspace = true, features = ["dev-context-only-utils"] }
+dolly-account-decoder = { workspace = true }
+dolly-runtime = { workspace = true, features = ["dev-context-only-utils"] }
 spl-token-2022 = { workspace = true, features = ["no-entrypoint"] }
 
 [target.'cfg(not(target_env = "msvc"))'.dependencies]

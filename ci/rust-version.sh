@@ -37,7 +37,7 @@ export rust_stable="$stable_version"
 
 export rust_nightly=nightly-"$nightly_version"
 
-export ci_docker_image="solanalabs/ci:rust_${rust_stable}_${rust_nightly}"
+export ci_docker_image="dollylabs/ci:rust_${rust_stable}_${rust_nightly}"
 
 [[ -z $1 ]] || (
 

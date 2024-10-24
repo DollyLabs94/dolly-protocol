@@ -4,9 +4,9 @@
 extern crate test;
 
 use {
-    solana_accounts_db::epoch_accounts_hash::EpochAccountsHash,
-    solana_runtime::bank::*,
-    solana_sdk::{
+    dolly_accounts_db::epoch_accounts_hash::EpochAccountsHash,
+    dolly_runtime::bank::*,
+    dolly_sdk::{
         account::{AccountSharedData, ReadableAccount},
         genesis_config::create_genesis_config,
         hash::Hash,
@@ -19,7 +19,7 @@ use {
 
 fn deposit_many(bank: &Bank, pubkeys: &mut Vec<Pubkey>, num: usize) -> Result<(), LamportsError> {
     for t in 0..num {
-        let pubkey = solana_sdk::pubkey::new_rand();
+        let pubkey = dolly_sdk::pubkey::new_rand();
         let account =
             AccountSharedData::new((t + 1) as u64, 0, AccountSharedData::default().owner());
         pubkeys.push(pubkey);

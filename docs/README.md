@@ -7,10 +7,10 @@ Static content delivery is handled using `vercel`.
 > Solana validator client maintained by Solana Labs. The more "common"
 > documentation, which is generalized to the Solana protocol as a whole and applies
 > to all Solana validator implementations, is maintained within the
-> [`developer-content`](https://github.com/solana-foundation/developer-content/)
+> [`developer-content`](https://github.com/dolly-foundation/developer-content/)
 > repo. Those "common docs" are managed by the Solana Foundation within their
 > GitHub organization and are publicly accessible via
-> [solana.com/docs](https://solana.com/docs)
+> [dolly.com/docs](https://dolly.com/docs)
 
 ## Local Development
 
@@ -39,7 +39,7 @@ The build script generates static content into the `build` directory and can be 
 ./build.sh
 ```
 
-Running this build script requires **Docker**, and will auto fetch the [solanalabs/rust](https://hub.docker.com/r/solanalabs/rust) image from Docker hub to compile the desired version of the [Solana CLI](https://docs.solanalabs.com/cli) from source.
+Running this build script requires **Docker**, and will auto fetch the [dollylabs/rust](https://hub.docker.com/r/dollylabs/rust) image from Docker hub to compile the desired version of the [Solana CLI](https://docs.dollylabs.com/cli) from source.
 
 This build script will also:
 
@@ -84,7 +84,7 @@ npm run crowdin:upload
 ```
 
 > Translations are only included when deploying the `STABLE` channel of the docs
-> (via `build.sh`). Resulting in only the `docs.solanalabs.com` documentation
+> (via `build.sh`). Resulting in only the `docs.dollylabs.com` documentation
 > site to include translated content. Therefore, the `edge` and `beta` docs
 > sites are not expected to include translated content, even though the language
 > selector will still be present.
@@ -113,7 +113,7 @@ generating the static version of the docs.
 
 There are several known locales that fail to build the current documentation.
 They are listed in the commented out `localesNotBuilding` attribute in the
-[`docusaurus.config.js`](https://github.com/solana-labs/solana/blob/master/docs/docusaurus.config.js)
+[`docusaurus.config.js`](https://github.com/dolly-labs/dolly/blob/master/docs/docusaurus.config.js)
 
 ## CI Build Flow
 
@@ -121,9 +121,9 @@ The docs are built and published in Travis CI with the `./build.sh` script. On e
 
 In each post-commit build, docs are built and published using `vercel` to their respective domain depending on the build branch.
 
-- Master branch docs are published to `edge.docs.solanalabs.com`
-- Beta branch docs are published to `beta.docs.solanalabs.com`
-- Latest release tag docs are published to `docs.solanalabs.com`
+- Master branch docs are published to `edge.docs.dollylabs.com`
+- Beta branch docs are published to `beta.docs.dollylabs.com`
+- Latest release tag docs are published to `docs.dollylabs.com`
 
 ## Common Issues
 

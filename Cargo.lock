@@ -1417,7 +1417,7 @@ dependencies = [
 [[package]]
 name = "crossbeam-epoch"
 version = "0.9.5"
-source = "git+https://github.com/solana-labs/crossbeam?rev=fd279d707025f0e60951e429bf778b4813d1b6bf#fd279d707025f0e60951e429bf778b4813d1b6bf"
+source = "git+https://github.com/dolly-labs/crossbeam?rev=fd279d707025f0e60951e429bf778b4813d1b6bf#fd279d707025f0e60951e429bf778b4813d1b6bf"
 dependencies = [
  "cfg-if 1.0.0",
  "crossbeam-utils",
@@ -1504,7 +1504,7 @@ dependencies = [
 [[package]]
 name = "curve25519-dalek"
 version = "3.2.1"
-source = "git+https://github.com/solana-labs/curve25519-dalek.git?rev=b500cdc2a920cd5bff9e2dd974d7b97349d61464#b500cdc2a920cd5bff9e2dd974d7b97349d61464"
+source = "git+https://github.com/dolly-labs/curve25519-dalek.git?rev=b500cdc2a920cd5bff9e2dd974d7b97349d61464#b500cdc2a920cd5bff9e2dd974d7b97349d61464"
 dependencies = [
  "byteorder",
  "digest 0.9.0",
@@ -5099,7 +5099,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-account-decoder"
+name = "dolly-account-decoder"
 version = "2.0.0"
 dependencies = [
  "Inflector",
@@ -5112,8 +5112,8 @@ dependencies = [
  "serde",
  "serde_derive",
  "serde_json",
- "solana-config-program",
- "solana-sdk",
+ "dolly-config-program",
+ "dolly-sdk",
  "spl-pod",
  "spl-token",
  "spl-token-2022",
@@ -5124,51 +5124,51 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-accounts-bench"
+name = "dolly-accounts-bench"
 version = "2.0.0"
 dependencies = [
  "clap 2.33.3",
  "log",
  "rayon",
- "solana-accounts-db",
- "solana-logger",
- "solana-measure",
- "solana-sdk",
- "solana-version",
+ "dolly-accounts-db",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-sdk",
+ "dolly-version",
 ]
 
 [[package]]
-name = "solana-accounts-cluster-bench"
+name = "dolly-accounts-cluster-bench"
 version = "2.0.0"
 dependencies = [
  "clap 2.33.3",
  "log",
  "rand 0.8.5",
  "rayon",
- "solana-account-decoder",
- "solana-accounts-db",
- "solana-clap-utils",
- "solana-cli-config",
- "solana-client",
- "solana-core",
- "solana-faucet",
- "solana-gossip",
- "solana-local-cluster",
- "solana-logger",
- "solana-measure",
- "solana-net-utils",
- "solana-rpc-client",
- "solana-runtime",
- "solana-sdk",
- "solana-streamer",
- "solana-test-validator",
- "solana-transaction-status",
- "solana-version",
+ "dolly-account-decoder",
+ "dolly-accounts-db",
+ "dolly-clap-utils",
+ "dolly-cli-config",
+ "dolly-client",
+ "dolly-core",
+ "dolly-faucet",
+ "dolly-gossip",
+ "dolly-local-cluster",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-net-utils",
+ "dolly-rpc-client",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-test-validator",
+ "dolly-transaction-status",
+ "dolly-version",
  "spl-token",
 ]
 
 [[package]]
-name = "solana-accounts-db"
+name = "dolly-accounts-db"
 version = "2.0.0"
 dependencies = [
  "arrayref",
@@ -5211,22 +5211,22 @@ dependencies = [
  "serde",
  "serde_derive",
  "smallvec",
- "solana-accounts-db",
- "solana-bucket-map",
- "solana-config-program",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-nohash-hasher",
- "solana-program-runtime",
- "solana-rayon-threadlimit",
- "solana-sdk",
- "solana-stake-program",
- "solana-svm",
- "solana-system-program",
- "solana-vote-program",
+ "dolly-accounts-db",
+ "dolly-bucket-map",
+ "dolly-config-program",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-nohash-hasher",
+ "dolly-program-runtime",
+ "dolly-rayon-threadlimit",
+ "dolly-sdk",
+ "dolly-stake-program",
+ "dolly-svm",
+ "dolly-system-program",
+ "dolly-vote-program",
  "static_assertions",
  "strum",
  "strum_macros",
@@ -5237,7 +5237,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-address-lookup-table-program"
+name = "dolly-address-lookup-table-program"
 version = "2.0.0"
 dependencies = [
  "bincode",
@@ -5247,27 +5247,27 @@ dependencies = [
  "num-traits",
  "rustc_version 0.4.0",
  "serde",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-program",
- "solana-program-runtime",
- "solana-sdk",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-program",
+ "dolly-program-runtime",
+ "dolly-sdk",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-address-lookup-table-program-tests"
+name = "dolly-address-lookup-table-program-tests"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
  "bincode",
- "solana-address-lookup-table-program",
- "solana-program-test",
- "solana-sdk",
+ "dolly-address-lookup-table-program",
+ "dolly-program-test",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-banking-bench"
+name = "dolly-banking-bench"
 version = "2.0.0"
 dependencies = [
  "clap 3.2.23",
@@ -5275,32 +5275,32 @@ dependencies = [
  "log",
  "rand 0.8.5",
  "rayon",
- "solana-client",
- "solana-core",
- "solana-gossip",
- "solana-ledger",
- "solana-logger",
- "solana-measure",
- "solana-perf",
- "solana-poh",
- "solana-runtime",
- "solana-sdk",
- "solana-streamer",
- "solana-tpu-client",
- "solana-version",
+ "dolly-client",
+ "dolly-core",
+ "dolly-gossip",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-perf",
+ "dolly-poh",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-tpu-client",
+ "dolly-version",
 ]
 
 [[package]]
-name = "solana-banks-client"
+name = "dolly-banks-client"
 version = "2.0.0"
 dependencies = [
  "borsh 1.2.1",
  "futures 0.3.30",
- "solana-banks-interface",
- "solana-banks-server",
- "solana-program",
- "solana-runtime",
- "solana-sdk",
+ "dolly-banks-interface",
+ "dolly-banks-server",
+ "dolly-program",
+ "dolly-runtime",
+ "dolly-sdk",
  "tarpc",
  "thiserror",
  "tokio",
@@ -5308,45 +5308,45 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-banks-interface"
+name = "dolly-banks-interface"
 version = "2.0.0"
 dependencies = [
  "serde",
- "solana-sdk",
+ "dolly-sdk",
  "tarpc",
 ]
 
 [[package]]
-name = "solana-banks-server"
+name = "dolly-banks-server"
 version = "2.0.0"
 dependencies = [
  "bincode",
  "crossbeam-channel",
  "futures 0.3.30",
- "solana-banks-interface",
- "solana-client",
- "solana-runtime",
- "solana-sdk",
- "solana-send-transaction-service",
- "solana-svm",
+ "dolly-banks-interface",
+ "dolly-client",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-send-transaction-service",
+ "dolly-svm",
  "tarpc",
  "tokio",
  "tokio-serde",
 ]
 
 [[package]]
-name = "solana-bench-streamer"
+name = "dolly-bench-streamer"
 version = "2.0.0"
 dependencies = [
  "clap 3.2.23",
  "crossbeam-channel",
- "solana-net-utils",
- "solana-streamer",
- "solana-version",
+ "dolly-net-utils",
+ "dolly-streamer",
+ "dolly-version",
 ]
 
 [[package]]
-name = "solana-bench-tps"
+name = "dolly-bench-tps"
 version = "2.0.0"
 dependencies = [
  "clap 2.33.3",
@@ -5357,37 +5357,37 @@ dependencies = [
  "serde_json",
  "serde_yaml 0.9.32",
  "serial_test",
- "solana-clap-utils",
- "solana-cli-config",
- "solana-client",
- "solana-connection-cache",
- "solana-core",
- "solana-faucet",
- "solana-genesis",
- "solana-gossip",
- "solana-local-cluster",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-net-utils",
- "solana-rpc",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-rpc-client-nonce-utils",
- "solana-runtime",
- "solana-sdk",
- "solana-streamer",
- "solana-test-validator",
- "solana-tpu-client",
- "solana-transaction-status",
- "solana-version",
+ "dolly-clap-utils",
+ "dolly-cli-config",
+ "dolly-client",
+ "dolly-connection-cache",
+ "dolly-core",
+ "dolly-faucet",
+ "dolly-genesis",
+ "dolly-gossip",
+ "dolly-local-cluster",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-net-utils",
+ "dolly-rpc",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-rpc-client-nonce-utils",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-test-validator",
+ "dolly-tpu-client",
+ "dolly-transaction-status",
+ "dolly-version",
  "spl-instruction-padding",
  "tempfile",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-bloom"
+name = "dolly-bloom"
 version = "2.0.0"
 dependencies = [
  "bv",
@@ -5398,13 +5398,13 @@ dependencies = [
  "rustc_version 0.4.0",
  "serde",
  "serde_derive",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-sdk",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-bpf-loader-program"
+name = "dolly-bpf-loader-program"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -5415,28 +5415,28 @@ dependencies = [
  "memoffset 0.9.0",
  "rand 0.8.5",
  "scopeguard",
- "solana-measure",
- "solana-program-runtime",
- "solana-sdk",
- "solana-zk-token-sdk",
- "solana_rbpf",
+ "dolly-measure",
+ "dolly-program-runtime",
+ "dolly-sdk",
+ "dolly-zk-token-sdk",
+ "dolly_rbpf",
  "test-case",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-bpf-loader-program-tests"
+name = "dolly-bpf-loader-program-tests"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
  "bincode",
- "solana-bpf-loader-program",
- "solana-program-test",
- "solana-sdk",
+ "dolly-bpf-loader-program",
+ "dolly-program-test",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-bucket-map"
+name = "dolly-bucket-map"
 version = "2.0.0"
 dependencies = [
  "bv",
@@ -5448,22 +5448,22 @@ dependencies = [
  "num_enum",
  "rand 0.8.5",
  "rayon",
- "solana-logger",
- "solana-measure",
- "solana-sdk",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-sdk",
  "tempfile",
 ]
 
 [[package]]
-name = "solana-cargo-build-bpf"
+name = "dolly-cargo-build-bpf"
 version = "2.0.0"
 dependencies = [
  "log",
- "solana-logger",
+ "dolly-logger",
 ]
 
 [[package]]
-name = "solana-cargo-build-sbf"
+name = "dolly-cargo-build-sbf"
 version = "2.0.0"
 dependencies = [
  "assert_cmd",
@@ -5477,14 +5477,14 @@ dependencies = [
  "reqwest",
  "semver 1.0.22",
  "serial_test",
- "solana-download-utils",
- "solana-logger",
- "solana-sdk",
+ "dolly-download-utils",
+ "dolly-logger",
+ "dolly-sdk",
  "tar",
 ]
 
 [[package]]
-name = "solana-cargo-registry"
+name = "dolly-cargo-registry"
 version = "2.0.0"
 dependencies = [
  "clap 2.33.3",
@@ -5496,16 +5496,16 @@ dependencies = [
  "serde",
  "serde_json",
  "sha2 0.10.8",
- "solana-clap-utils",
- "solana-cli",
- "solana-cli-config",
- "solana-cli-output",
- "solana-logger",
- "solana-remote-wallet",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-sdk",
- "solana-version",
+ "dolly-clap-utils",
+ "dolly-cli",
+ "dolly-cli-config",
+ "dolly-cli-output",
+ "dolly-logger",
+ "dolly-remote-wallet",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-sdk",
+ "dolly-version",
  "tar",
  "tempfile",
  "tokio",
@@ -5513,30 +5513,30 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-cargo-test-bpf"
+name = "dolly-cargo-test-bpf"
 version = "2.0.0"
 
 [[package]]
-name = "solana-cargo-test-sbf"
+name = "dolly-cargo-test-sbf"
 version = "2.0.0"
 dependencies = [
  "cargo_metadata",
  "clap 3.2.23",
  "itertools",
  "log",
- "solana-logger",
+ "dolly-logger",
 ]
 
 [[package]]
-name = "solana-clap-utils"
+name = "dolly-clap-utils"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
  "chrono",
  "clap 2.33.3",
  "rpassword",
- "solana-remote-wallet",
- "solana-sdk",
+ "dolly-remote-wallet",
+ "dolly-sdk",
  "tempfile",
  "thiserror",
  "tiny-bip39",
@@ -5545,16 +5545,16 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-clap-v3-utils"
+name = "dolly-clap-v3-utils"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
  "chrono",
  "clap 3.2.23",
  "rpassword",
- "solana-remote-wallet",
- "solana-sdk",
- "solana-zk-token-sdk",
+ "dolly-remote-wallet",
+ "dolly-sdk",
+ "dolly-zk-token-sdk",
  "tempfile",
  "thiserror",
  "tiny-bip39",
@@ -5563,7 +5563,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-cli"
+name = "dolly-cli"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -5585,30 +5585,30 @@ dependencies = [
  "serde",
  "serde_derive",
  "serde_json",
- "solana-account-decoder",
- "solana-bpf-loader-program",
- "solana-clap-utils",
- "solana-cli-config",
- "solana-cli-output",
- "solana-client",
- "solana-config-program",
- "solana-faucet",
- "solana-loader-v4-program",
- "solana-logger",
- "solana-program-runtime",
- "solana-pubsub-client",
- "solana-remote-wallet",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-rpc-client-nonce-utils",
- "solana-sdk",
- "solana-streamer",
- "solana-test-validator",
- "solana-tpu-client",
- "solana-transaction-status",
- "solana-version",
- "solana-vote-program",
- "solana_rbpf",
+ "dolly-account-decoder",
+ "dolly-bpf-loader-program",
+ "dolly-clap-utils",
+ "dolly-cli-config",
+ "dolly-cli-output",
+ "dolly-client",
+ "dolly-config-program",
+ "dolly-faucet",
+ "dolly-loader-v4-program",
+ "dolly-logger",
+ "dolly-program-runtime",
+ "dolly-pubsub-client",
+ "dolly-remote-wallet",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-rpc-client-nonce-utils",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-test-validator",
+ "dolly-tpu-client",
+ "dolly-transaction-status",
+ "dolly-version",
+ "dolly-vote-program",
+ "dolly_rbpf",
  "spl-memo",
  "tempfile",
  "test-case",
@@ -5617,7 +5617,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-cli-config"
+name = "dolly-cli-config"
 version = "2.0.0"
 dependencies = [
  "anyhow",
@@ -5626,13 +5626,13 @@ dependencies = [
  "serde",
  "serde_derive",
  "serde_yaml 0.9.32",
- "solana-clap-utils",
- "solana-sdk",
+ "dolly-clap-utils",
+ "dolly-sdk",
  "url 2.5.0",
 ]
 
 [[package]]
-name = "solana-cli-output"
+name = "dolly-cli-output"
 version = "2.0.0"
 dependencies = [
  "Inflector",
@@ -5647,18 +5647,18 @@ dependencies = [
  "semver 1.0.22",
  "serde",
  "serde_json",
- "solana-account-decoder",
- "solana-clap-utils",
- "solana-cli-config",
- "solana-rpc-client-api",
- "solana-sdk",
- "solana-transaction-status",
- "solana-vote-program",
+ "dolly-account-decoder",
+ "dolly-clap-utils",
+ "dolly-cli-config",
+ "dolly-rpc-client-api",
+ "dolly-sdk",
+ "dolly-transaction-status",
+ "dolly-vote-program",
  "spl-memo",
 ]
 
 [[package]]
-name = "solana-client"
+name = "dolly-client"
 version = "2.0.0"
 dependencies = [
  "async-trait",
@@ -5672,76 +5672,76 @@ dependencies = [
  "log",
  "quinn",
  "rayon",
- "solana-connection-cache",
- "solana-measure",
- "solana-metrics",
- "solana-pubsub-client",
- "solana-quic-client",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-rpc-client-nonce-utils",
- "solana-sdk",
- "solana-streamer",
- "solana-thin-client",
- "solana-tpu-client",
- "solana-udp-client",
+ "dolly-connection-cache",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-pubsub-client",
+ "dolly-quic-client",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-rpc-client-nonce-utils",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-thin-client",
+ "dolly-tpu-client",
+ "dolly-udp-client",
  "thiserror",
  "tokio",
 ]
 
 [[package]]
-name = "solana-client-test"
+name = "dolly-client-test"
 version = "2.0.0"
 dependencies = [
  "futures-util",
  "rand 0.8.5",
  "serde_json",
- "solana-client",
- "solana-ledger",
- "solana-logger",
- "solana-measure",
- "solana-merkle-tree",
- "solana-metrics",
- "solana-perf",
- "solana-pubsub-client",
- "solana-rayon-threadlimit",
- "solana-rpc",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-runtime",
- "solana-sdk",
- "solana-streamer",
- "solana-test-validator",
- "solana-transaction-status",
- "solana-version",
+ "dolly-client",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-merkle-tree",
+ "dolly-metrics",
+ "dolly-perf",
+ "dolly-pubsub-client",
+ "dolly-rayon-threadlimit",
+ "dolly-rpc",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-test-validator",
+ "dolly-transaction-status",
+ "dolly-version",
  "systemstat",
  "tokio",
  "tungstenite",
 ]
 
 [[package]]
-name = "solana-compute-budget-program"
+name = "dolly-compute-budget-program"
 version = "2.0.0"
 dependencies = [
- "solana-program-runtime",
- "solana-sdk",
+ "dolly-program-runtime",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-config-program"
+name = "dolly-config-program"
 version = "2.0.0"
 dependencies = [
  "bincode",
  "chrono",
  "serde",
  "serde_derive",
- "solana-logger",
- "solana-program-runtime",
- "solana-sdk",
+ "dolly-logger",
+ "dolly-program-runtime",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-connection-cache"
+name = "dolly-connection-cache"
 version = "2.0.0"
 dependencies = [
  "async-trait",
@@ -5754,17 +5754,17 @@ dependencies = [
  "rand 0.8.5",
  "rand_chacha 0.3.1",
  "rayon",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-net-utils",
- "solana-sdk",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-net-utils",
+ "dolly-sdk",
  "thiserror",
  "tokio",
 ]
 
 [[package]]
-name = "solana-core"
+name = "dolly-core"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -5799,42 +5799,42 @@ dependencies = [
  "serde_derive",
  "serde_json",
  "serial_test",
- "solana-accounts-db",
- "solana-bloom",
- "solana-client",
- "solana-core",
- "solana-cost-model",
- "solana-entry",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-geyser-plugin-manager",
- "solana-gossip",
- "solana-ledger",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-net-utils",
- "solana-perf",
- "solana-poh",
- "solana-program-runtime",
- "solana-quic-client",
- "solana-rayon-threadlimit",
- "solana-rpc",
- "solana-rpc-client-api",
- "solana-runtime",
- "solana-sdk",
- "solana-send-transaction-service",
- "solana-stake-program",
- "solana-streamer",
- "solana-svm",
- "solana-tpu-client",
- "solana-transaction-status",
- "solana-turbine",
- "solana-unified-scheduler-pool",
- "solana-version",
- "solana-vote",
- "solana-vote-program",
- "solana-wen-restart",
+ "dolly-accounts-db",
+ "dolly-bloom",
+ "dolly-client",
+ "dolly-core",
+ "dolly-cost-model",
+ "dolly-entry",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-geyser-plugin-manager",
+ "dolly-gossip",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-net-utils",
+ "dolly-perf",
+ "dolly-poh",
+ "dolly-program-runtime",
+ "dolly-quic-client",
+ "dolly-rayon-threadlimit",
+ "dolly-rpc",
+ "dolly-rpc-client-api",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-send-transaction-service",
+ "dolly-stake-program",
+ "dolly-streamer",
+ "dolly-svm",
+ "dolly-tpu-client",
+ "dolly-transaction-status",
+ "dolly-turbine",
+ "dolly-unified-scheduler-pool",
+ "dolly-version",
+ "dolly-vote",
+ "dolly-vote-program",
+ "dolly-wen-restart",
  "static_assertions",
  "strum",
  "strum_macros",
@@ -5849,32 +5849,32 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-cost-model"
+name = "dolly-cost-model"
 version = "2.0.0"
 dependencies = [
  "lazy_static",
  "log",
  "rustc_version 0.4.0",
- "solana-address-lookup-table-program",
- "solana-bpf-loader-program",
- "solana-compute-budget-program",
- "solana-config-program",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-loader-v4-program",
- "solana-logger",
- "solana-metrics",
- "solana-program-runtime",
- "solana-sdk",
- "solana-stake-program",
- "solana-system-program",
- "solana-vote-program",
+ "dolly-address-lookup-table-program",
+ "dolly-bpf-loader-program",
+ "dolly-compute-budget-program",
+ "dolly-config-program",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-loader-v4-program",
+ "dolly-logger",
+ "dolly-metrics",
+ "dolly-program-runtime",
+ "dolly-sdk",
+ "dolly-stake-program",
+ "dolly-system-program",
+ "dolly-vote-program",
  "static_assertions",
  "test-case",
 ]
 
 [[package]]
-name = "solana-dos"
+name = "dolly-dos"
 version = "2.0.0"
 dependencies = [
  "bincode",
@@ -5884,50 +5884,50 @@ dependencies = [
  "log",
  "rand 0.8.5",
  "serde",
- "solana-bench-tps",
- "solana-client",
- "solana-core",
- "solana-faucet",
- "solana-gossip",
- "solana-local-cluster",
- "solana-logger",
- "solana-measure",
- "solana-net-utils",
- "solana-perf",
- "solana-quic-client",
- "solana-rpc",
- "solana-rpc-client",
- "solana-sdk",
- "solana-streamer",
- "solana-tpu-client",
- "solana-version",
+ "dolly-bench-tps",
+ "dolly-client",
+ "dolly-core",
+ "dolly-faucet",
+ "dolly-gossip",
+ "dolly-local-cluster",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-net-utils",
+ "dolly-perf",
+ "dolly-quic-client",
+ "dolly-rpc",
+ "dolly-rpc-client",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-tpu-client",
+ "dolly-version",
 ]
 
 [[package]]
-name = "solana-download-utils"
+name = "dolly-download-utils"
 version = "2.0.0"
 dependencies = [
  "console",
  "indicatif",
  "log",
  "reqwest",
- "solana-runtime",
- "solana-sdk",
+ "dolly-runtime",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-ed25519-program-tests"
+name = "dolly-ed25519-program-tests"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
  "ed25519-dalek",
  "rand 0.8.5",
- "solana-program-test",
- "solana-sdk",
+ "dolly-program-test",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-entry"
+name = "dolly-entry"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -5939,17 +5939,17 @@ dependencies = [
  "rand 0.8.5",
  "rayon",
  "serde",
- "solana-logger",
- "solana-measure",
- "solana-merkle-tree",
- "solana-metrics",
- "solana-perf",
- "solana-rayon-threadlimit",
- "solana-sdk",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-merkle-tree",
+ "dolly-metrics",
+ "dolly-perf",
+ "dolly-rayon-threadlimit",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-faucet"
+name = "dolly-faucet"
 version = "2.0.0"
 dependencies = [
  "bincode",
@@ -5959,19 +5959,19 @@ dependencies = [
  "log",
  "serde",
  "serde_derive",
- "solana-clap-utils",
- "solana-cli-config",
- "solana-logger",
- "solana-metrics",
- "solana-sdk",
- "solana-version",
+ "dolly-clap-utils",
+ "dolly-cli-config",
+ "dolly-logger",
+ "dolly-metrics",
+ "dolly-sdk",
+ "dolly-version",
  "spl-memo",
  "thiserror",
  "tokio",
 ]
 
 [[package]]
-name = "solana-frozen-abi"
+name = "dolly-frozen-abi"
 version = "2.0.0"
 dependencies = [
  "bitflags 2.4.2",
@@ -5988,14 +5988,14 @@ dependencies = [
  "serde_bytes",
  "serde_derive",
  "sha2 0.10.8",
- "solana-frozen-abi-macro",
- "solana-logger",
+ "dolly-frozen-abi-macro",
+ "dolly-logger",
  "subtle",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-frozen-abi-macro"
+name = "dolly-frozen-abi-macro"
 version = "2.0.0"
 dependencies = [
  "proc-macro2",
@@ -6005,7 +6005,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-genesis"
+name = "dolly-genesis"
 version = "2.0.0"
 dependencies = [
  "base64 0.22.0",
@@ -6015,43 +6015,43 @@ dependencies = [
  "serde",
  "serde_json",
  "serde_yaml 0.9.32",
- "solana-accounts-db",
- "solana-clap-utils",
- "solana-cli-config",
- "solana-entry",
- "solana-ledger",
- "solana-logger",
- "solana-runtime",
- "solana-sdk",
- "solana-stake-program",
- "solana-version",
- "solana-vote-program",
+ "dolly-accounts-db",
+ "dolly-clap-utils",
+ "dolly-cli-config",
+ "dolly-entry",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-stake-program",
+ "dolly-version",
+ "dolly-vote-program",
  "tempfile",
 ]
 
 [[package]]
-name = "solana-genesis-utils"
+name = "dolly-genesis-utils"
 version = "2.0.0"
 dependencies = [
  "log",
- "solana-accounts-db",
- "solana-download-utils",
- "solana-rpc-client",
- "solana-sdk",
+ "dolly-accounts-db",
+ "dolly-download-utils",
+ "dolly-rpc-client",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-geyser-plugin-interface"
+name = "dolly-geyser-plugin-interface"
 version = "2.0.0"
 dependencies = [
  "log",
- "solana-sdk",
- "solana-transaction-status",
+ "dolly-sdk",
+ "dolly-transaction-status",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-geyser-plugin-manager"
+name = "dolly-geyser-plugin-manager"
 version = "2.0.0"
 dependencies = [
  "bs58",
@@ -6061,22 +6061,22 @@ dependencies = [
  "libloading",
  "log",
  "serde_json",
- "solana-accounts-db",
- "solana-entry",
- "solana-geyser-plugin-interface",
- "solana-ledger",
- "solana-measure",
- "solana-metrics",
- "solana-rpc",
- "solana-runtime",
- "solana-sdk",
- "solana-transaction-status",
+ "dolly-accounts-db",
+ "dolly-entry",
+ "dolly-geyser-plugin-interface",
+ "dolly-ledger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-rpc",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-transaction-status",
  "thiserror",
  "tokio",
 ]
 
 [[package]]
-name = "solana-gossip"
+name = "dolly-gossip"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -6100,34 +6100,34 @@ dependencies = [
  "serde_bytes",
  "serde_derive",
  "serial_test",
- "solana-bloom",
- "solana-clap-utils",
- "solana-client",
- "solana-connection-cache",
- "solana-entry",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-ledger",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-net-utils",
- "solana-perf",
- "solana-rayon-threadlimit",
- "solana-runtime",
- "solana-sdk",
- "solana-streamer",
- "solana-tpu-client",
- "solana-version",
- "solana-vote",
- "solana-vote-program",
+ "dolly-bloom",
+ "dolly-clap-utils",
+ "dolly-client",
+ "dolly-connection-cache",
+ "dolly-entry",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-net-utils",
+ "dolly-perf",
+ "dolly-rayon-threadlimit",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-tpu-client",
+ "dolly-version",
+ "dolly-vote",
+ "dolly-vote-program",
  "static_assertions",
  "test-case",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-install"
+name = "dolly-install"
 version = "2.0.0"
 dependencies = [
  "atty",
@@ -6148,12 +6148,12 @@ dependencies = [
  "serde",
  "serde_yaml 0.8.26",
  "serde_yaml 0.9.32",
- "solana-clap-utils",
- "solana-config-program",
- "solana-logger",
- "solana-rpc-client",
- "solana-sdk",
- "solana-version",
+ "dolly-clap-utils",
+ "dolly-config-program",
+ "dolly-logger",
+ "dolly-rpc-client",
+ "dolly-sdk",
+ "dolly-version",
  "tar",
  "tempfile",
  "url 2.5.0",
@@ -6162,24 +6162,24 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-keygen"
+name = "dolly-keygen"
 version = "2.0.0"
 dependencies = [
  "bs58",
  "clap 3.2.23",
  "dirs-next",
  "num_cpus",
- "solana-clap-v3-utils",
- "solana-cli-config",
- "solana-remote-wallet",
- "solana-sdk",
- "solana-version",
+ "dolly-clap-v3-utils",
+ "dolly-cli-config",
+ "dolly-remote-wallet",
+ "dolly-sdk",
+ "dolly-version",
  "tempfile",
  "tiny-bip39",
 ]
 
 [[package]]
-name = "solana-ledger"
+name = "dolly-ledger"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -6212,28 +6212,28 @@ dependencies = [
  "serde",
  "serde_bytes",
  "sha2 0.10.8",
- "solana-account-decoder",
- "solana-accounts-db",
- "solana-bpf-loader-program",
- "solana-cost-model",
- "solana-entry",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-perf",
- "solana-program-runtime",
- "solana-rayon-threadlimit",
- "solana-runtime",
- "solana-sdk",
- "solana-stake-program",
- "solana-storage-bigtable",
- "solana-storage-proto",
- "solana-svm",
- "solana-transaction-status",
- "solana-vote",
- "solana-vote-program",
+ "dolly-account-decoder",
+ "dolly-accounts-db",
+ "dolly-bpf-loader-program",
+ "dolly-cost-model",
+ "dolly-entry",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-perf",
+ "dolly-program-runtime",
+ "dolly-rayon-threadlimit",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-stake-program",
+ "dolly-storage-bigtable",
+ "dolly-storage-proto",
+ "dolly-svm",
+ "dolly-transaction-status",
+ "dolly-vote",
+ "dolly-vote-program",
  "spl-pod",
  "spl-token",
  "spl-token-2022",
@@ -6249,7 +6249,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-ledger-tool"
+name = "dolly-ledger-tool"
 version = "2.0.0"
 dependencies = [
  "assert_cmd",
@@ -6269,50 +6269,50 @@ dependencies = [
  "serde",
  "serde_json",
  "signal-hook",
- "solana-account-decoder",
- "solana-accounts-db",
- "solana-bpf-loader-program",
- "solana-clap-utils",
- "solana-cli-output",
- "solana-core",
- "solana-cost-model",
- "solana-entry",
- "solana-geyser-plugin-manager",
- "solana-gossip",
- "solana-ledger",
- "solana-logger",
- "solana-measure",
- "solana-program-runtime",
- "solana-rpc",
- "solana-runtime",
- "solana-sdk",
- "solana-stake-program",
- "solana-storage-bigtable",
- "solana-streamer",
- "solana-transaction-status",
- "solana-unified-scheduler-pool",
- "solana-version",
- "solana-vote-program",
- "solana_rbpf",
+ "dolly-account-decoder",
+ "dolly-accounts-db",
+ "dolly-bpf-loader-program",
+ "dolly-clap-utils",
+ "dolly-cli-output",
+ "dolly-core",
+ "dolly-cost-model",
+ "dolly-entry",
+ "dolly-geyser-plugin-manager",
+ "dolly-gossip",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-program-runtime",
+ "dolly-rpc",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-stake-program",
+ "dolly-storage-bigtable",
+ "dolly-streamer",
+ "dolly-transaction-status",
+ "dolly-unified-scheduler-pool",
+ "dolly-version",
+ "dolly-vote-program",
+ "dolly_rbpf",
  "thiserror",
  "tikv-jemallocator",
  "tokio",
 ]
 
 [[package]]
-name = "solana-loader-v4-program"
+name = "dolly-loader-v4-program"
 version = "2.0.0"
 dependencies = [
  "bincode",
  "log",
- "solana-measure",
- "solana-program-runtime",
- "solana-sdk",
- "solana_rbpf",
+ "dolly-measure",
+ "dolly-program-runtime",
+ "dolly-sdk",
+ "dolly_rbpf",
 ]
 
 [[package]]
-name = "solana-local-cluster"
+name = "dolly-local-cluster"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -6324,47 +6324,47 @@ dependencies = [
  "rand 0.8.5",
  "rayon",
  "serial_test",
- "solana-accounts-db",
- "solana-client",
- "solana-config-program",
- "solana-core",
- "solana-download-utils",
- "solana-entry",
- "solana-gossip",
- "solana-ledger",
- "solana-logger",
- "solana-pubsub-client",
- "solana-quic-client",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-runtime",
- "solana-sdk",
- "solana-stake-program",
- "solana-streamer",
- "solana-thin-client",
- "solana-tpu-client",
- "solana-turbine",
- "solana-vote",
- "solana-vote-program",
+ "dolly-accounts-db",
+ "dolly-client",
+ "dolly-config-program",
+ "dolly-core",
+ "dolly-download-utils",
+ "dolly-entry",
+ "dolly-gossip",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-pubsub-client",
+ "dolly-quic-client",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-stake-program",
+ "dolly-streamer",
+ "dolly-thin-client",
+ "dolly-tpu-client",
+ "dolly-turbine",
+ "dolly-vote",
+ "dolly-vote-program",
  "static_assertions",
  "tempfile",
  "trees",
 ]
 
 [[package]]
-name = "solana-log-analyzer"
+name = "dolly-log-analyzer"
 version = "2.0.0"
 dependencies = [
  "byte-unit",
  "clap 3.2.23",
  "serde",
  "serde_json",
- "solana-logger",
- "solana-version",
+ "dolly-logger",
+ "dolly-version",
 ]
 
 [[package]]
-name = "solana-logger"
+name = "dolly-logger"
 version = "2.0.0"
 dependencies = [
  "env_logger",
@@ -6373,41 +6373,41 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-measure"
+name = "dolly-measure"
 version = "2.0.0"
 dependencies = [
  "log",
- "solana-sdk",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-memory-management"
+name = "dolly-memory-management"
 version = "2.0.0"
 
 [[package]]
-name = "solana-merkle-root-bench"
+name = "dolly-merkle-root-bench"
 version = "2.0.0"
 dependencies = [
  "clap 2.33.3",
  "log",
- "solana-accounts-db",
- "solana-logger",
- "solana-measure",
- "solana-sdk",
- "solana-version",
+ "dolly-accounts-db",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-sdk",
+ "dolly-version",
 ]
 
 [[package]]
-name = "solana-merkle-tree"
+name = "dolly-merkle-tree"
 version = "2.0.0"
 dependencies = [
  "fast-math",
  "hex",
- "solana-program",
+ "dolly-program",
 ]
 
 [[package]]
-name = "solana-metrics"
+name = "dolly-metrics"
 version = "2.0.0"
 dependencies = [
  "crossbeam-channel",
@@ -6418,23 +6418,23 @@ dependencies = [
  "rand 0.8.5",
  "reqwest",
  "serial_test",
- "solana-sdk",
+ "dolly-sdk",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-net-shaper"
+name = "dolly-net-shaper"
 version = "2.0.0"
 dependencies = [
  "clap 3.2.23",
  "rand 0.8.5",
  "serde",
  "serde_json",
- "solana-logger",
+ "dolly-logger",
 ]
 
 [[package]]
-name = "solana-net-utils"
+name = "dolly-net-utils"
 version = "2.0.0"
 dependencies = [
  "bincode",
@@ -6446,31 +6446,31 @@ dependencies = [
  "serde",
  "serde_derive",
  "socket2 0.5.6",
- "solana-logger",
- "solana-sdk",
- "solana-version",
+ "dolly-logger",
+ "dolly-sdk",
+ "dolly-version",
  "tokio",
  "url 2.5.0",
 ]
 
 [[package]]
-name = "solana-nohash-hasher"
+name = "dolly-nohash-hasher"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8b8a731ed60e89177c8a7ab05fe0f1511cedd3e70e773f288f9de33a9cfdc21e"
 
 [[package]]
-name = "solana-notifier"
+name = "dolly-notifier"
 version = "2.0.0"
 dependencies = [
  "log",
  "reqwest",
  "serde_json",
- "solana-sdk",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-perf"
+name = "dolly-perf"
 version = "2.0.0"
 dependencies = [
  "ahash 0.8.10",
@@ -6490,18 +6490,18 @@ dependencies = [
  "rayon",
  "rustc_version 0.4.0",
  "serde",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-logger",
- "solana-metrics",
- "solana-rayon-threadlimit",
- "solana-sdk",
- "solana-vote-program",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-logger",
+ "dolly-metrics",
+ "dolly-rayon-threadlimit",
+ "dolly-sdk",
+ "dolly-vote-program",
  "test-case",
 ]
 
 [[package]]
-name = "solana-poh"
+name = "dolly-poh"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -6510,35 +6510,35 @@ dependencies = [
  "crossbeam-channel",
  "log",
  "rand 0.8.5",
- "solana-entry",
- "solana-ledger",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-perf",
- "solana-poh",
- "solana-runtime",
- "solana-sdk",
+ "dolly-entry",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-perf",
+ "dolly-poh",
+ "dolly-runtime",
+ "dolly-sdk",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-poh-bench"
+name = "dolly-poh-bench"
 version = "2.0.0"
 dependencies = [
  "clap 3.2.23",
  "log",
  "rayon",
- "solana-entry",
- "solana-logger",
- "solana-measure",
- "solana-perf",
- "solana-sdk",
- "solana-version",
+ "dolly-entry",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-perf",
+ "dolly-sdk",
+ "dolly-version",
 ]
 
 [[package]]
-name = "solana-program"
+name = "dolly-program"
 version = "2.0.0"
 dependencies = [
  "anyhow",
@@ -6585,10 +6585,10 @@ dependencies = [
  "serde_json",
  "sha2 0.10.8",
  "sha3 0.10.8",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-logger",
- "solana-sdk-macro",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-logger",
+ "dolly-sdk-macro",
  "static_assertions",
  "thiserror",
  "tiny-bip39",
@@ -6597,7 +6597,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-program-runtime"
+name = "dolly-program-runtime"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -6615,19 +6615,19 @@ dependencies = [
  "rand 0.8.5",
  "rustc_version 0.4.0",
  "serde",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-sdk",
- "solana_rbpf",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-sdk",
+ "dolly_rbpf",
  "test-case",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-program-test"
+name = "dolly-program-test"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -6638,26 +6638,26 @@ dependencies = [
  "crossbeam-channel",
  "log",
  "serde",
- "solana-accounts-db",
- "solana-banks-client",
- "solana-banks-interface",
- "solana-banks-server",
- "solana-bpf-loader-program",
- "solana-logger",
- "solana-program-runtime",
- "solana-runtime",
- "solana-sdk",
- "solana-stake-program",
- "solana-svm",
- "solana-vote-program",
- "solana_rbpf",
+ "dolly-accounts-db",
+ "dolly-banks-client",
+ "dolly-banks-interface",
+ "dolly-banks-server",
+ "dolly-bpf-loader-program",
+ "dolly-logger",
+ "dolly-program-runtime",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-stake-program",
+ "dolly-svm",
+ "dolly-vote-program",
+ "dolly_rbpf",
  "test-case",
  "thiserror",
  "tokio",
 ]
 
 [[package]]
-name = "solana-pubsub-client"
+name = "dolly-pubsub-client"
 version = "2.0.0"
 dependencies = [
  "anyhow",
@@ -6669,9 +6669,9 @@ dependencies = [
  "serde",
  "serde_derive",
  "serde_json",
- "solana-account-decoder",
- "solana-rpc-client-api",
- "solana-sdk",
+ "dolly-account-decoder",
+ "dolly-rpc-client-api",
+ "dolly-sdk",
  "thiserror",
  "tokio",
  "tokio-stream",
@@ -6681,7 +6681,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-quic-client"
+name = "dolly-quic-client"
 version = "2.0.0"
 dependencies = [
  "async-mutex",
@@ -6694,21 +6694,21 @@ dependencies = [
  "quinn",
  "quinn-proto",
  "rustls",
- "solana-connection-cache",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-net-utils",
- "solana-perf",
- "solana-rpc-client-api",
- "solana-sdk",
- "solana-streamer",
+ "dolly-connection-cache",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-net-utils",
+ "dolly-perf",
+ "dolly-rpc-client-api",
+ "dolly-sdk",
+ "dolly-streamer",
  "thiserror",
  "tokio",
 ]
 
 [[package]]
-name = "solana-rayon-threadlimit"
+name = "dolly-rayon-threadlimit"
 version = "2.0.0"
 dependencies = [
  "lazy_static",
@@ -6716,7 +6716,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-remote-wallet"
+name = "dolly-remote-wallet"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -6729,13 +6729,13 @@ dependencies = [
  "parking_lot 0.12.1",
  "qstring",
  "semver 1.0.22",
- "solana-sdk",
+ "dolly-sdk",
  "thiserror",
  "uriparse",
 ]
 
 [[package]]
-name = "solana-rpc"
+name = "dolly-rpc"
 version = "2.0.0"
 dependencies = [
  "base64 0.22.0",
@@ -6758,32 +6758,32 @@ dependencies = [
  "serde_json",
  "serial_test",
  "soketto",
- "solana-account-decoder",
- "solana-accounts-db",
- "solana-client",
- "solana-entry",
- "solana-faucet",
- "solana-gossip",
- "solana-ledger",
- "solana-measure",
- "solana-metrics",
- "solana-net-utils",
- "solana-perf",
- "solana-poh",
- "solana-rayon-threadlimit",
- "solana-rpc-client-api",
- "solana-runtime",
- "solana-sdk",
- "solana-send-transaction-service",
- "solana-stake-program",
- "solana-storage-bigtable",
- "solana-streamer",
- "solana-svm",
- "solana-tpu-client",
- "solana-transaction-status",
- "solana-version",
- "solana-vote",
- "solana-vote-program",
+ "dolly-account-decoder",
+ "dolly-accounts-db",
+ "dolly-client",
+ "dolly-entry",
+ "dolly-faucet",
+ "dolly-gossip",
+ "dolly-ledger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-net-utils",
+ "dolly-perf",
+ "dolly-poh",
+ "dolly-rayon-threadlimit",
+ "dolly-rpc-client-api",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-send-transaction-service",
+ "dolly-stake-program",
+ "dolly-storage-bigtable",
+ "dolly-streamer",
+ "dolly-svm",
+ "dolly-tpu-client",
+ "dolly-transaction-status",
+ "dolly-version",
+ "dolly-vote",
+ "dolly-vote-program",
  "spl-pod",
  "spl-token",
  "spl-token-2022",
@@ -6795,7 +6795,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-rpc-client"
+name = "dolly-rpc-client"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -6814,17 +6814,17 @@ dependencies = [
  "serde",
  "serde_derive",
  "serde_json",
- "solana-account-decoder",
- "solana-rpc-client-api",
- "solana-sdk",
- "solana-transaction-status",
- "solana-version",
- "solana-vote-program",
+ "dolly-account-decoder",
+ "dolly-rpc-client-api",
+ "dolly-sdk",
+ "dolly-transaction-status",
+ "dolly-version",
+ "dolly-vote-program",
  "tokio",
 ]
 
 [[package]]
-name = "solana-rpc-client-api"
+name = "dolly-rpc-client-api"
 version = "2.0.0"
 dependencies = [
  "base64 0.22.0",
@@ -6835,33 +6835,33 @@ dependencies = [
  "serde",
  "serde_derive",
  "serde_json",
- "solana-account-decoder",
- "solana-sdk",
- "solana-transaction-status",
- "solana-version",
+ "dolly-account-decoder",
+ "dolly-sdk",
+ "dolly-transaction-status",
+ "dolly-version",
  "spl-token-2022",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-rpc-client-nonce-utils"
+name = "dolly-rpc-client-nonce-utils"
 version = "2.0.0"
 dependencies = [
  "anyhow",
  "clap 2.33.3",
  "futures 0.3.30",
  "serde_json",
- "solana-account-decoder",
- "solana-clap-utils",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-sdk",
+ "dolly-account-decoder",
+ "dolly-clap-utils",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-sdk",
  "thiserror",
  "tokio",
 ]
 
 [[package]]
-name = "solana-rpc-test"
+name = "dolly-rpc-test"
 version = "2.0.0"
 dependencies = [
  "bincode",
@@ -6872,23 +6872,23 @@ dependencies = [
  "reqwest",
  "serde",
  "serde_json",
- "solana-account-decoder",
- "solana-client",
- "solana-logger",
- "solana-pubsub-client",
- "solana-rpc",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-sdk",
- "solana-streamer",
- "solana-test-validator",
- "solana-tpu-client",
- "solana-transaction-status",
+ "dolly-account-decoder",
+ "dolly-client",
+ "dolly-logger",
+ "dolly-pubsub-client",
+ "dolly-rpc",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-test-validator",
+ "dolly-tpu-client",
+ "dolly-transaction-status",
  "tokio",
 ]
 
 [[package]]
-name = "solana-runtime"
+name = "dolly-runtime"
 version = "2.0.0"
 dependencies = [
  "aquamarine",
@@ -6933,32 +6933,32 @@ dependencies = [
  "serde",
  "serde_derive",
  "serde_json",
- "solana-accounts-db",
- "solana-address-lookup-table-program",
- "solana-bpf-loader-program",
- "solana-bucket-map",
- "solana-compute-budget-program",
- "solana-config-program",
- "solana-cost-model",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-loader-v4-program",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-perf",
- "solana-program-runtime",
- "solana-rayon-threadlimit",
- "solana-runtime",
- "solana-sdk",
- "solana-stake-program",
- "solana-svm",
- "solana-system-program",
- "solana-version",
- "solana-vote",
- "solana-vote-program",
- "solana-zk-token-proof-program",
- "solana-zk-token-sdk",
+ "dolly-accounts-db",
+ "dolly-address-lookup-table-program",
+ "dolly-bpf-loader-program",
+ "dolly-bucket-map",
+ "dolly-compute-budget-program",
+ "dolly-config-program",
+ "dolly-cost-model",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-loader-v4-program",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-perf",
+ "dolly-program-runtime",
+ "dolly-rayon-threadlimit",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-stake-program",
+ "dolly-svm",
+ "dolly-system-program",
+ "dolly-version",
+ "dolly-vote",
+ "dolly-vote-program",
+ "dolly-zk-token-proof-program",
+ "dolly-zk-token-sdk",
  "static_assertions",
  "strum",
  "strum_macros",
@@ -6971,21 +6971,21 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-runtime-transaction"
+name = "dolly-runtime-transaction"
 version = "2.0.0"
 dependencies = [
  "bincode",
  "log",
  "rand 0.8.5",
  "rustc_version 0.4.0",
- "solana-program",
- "solana-program-runtime",
- "solana-sdk",
+ "dolly-program",
+ "dolly-program-runtime",
+ "dolly-sdk",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-sdk"
+name = "dolly-sdk"
 version = "2.0.0"
 dependencies = [
  "anyhow",
@@ -7030,12 +7030,12 @@ dependencies = [
  "sha2 0.10.8",
  "sha3 0.10.8",
  "siphasher",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-logger",
- "solana-program",
- "solana-sdk",
- "solana-sdk-macro",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-logger",
+ "dolly-program",
+ "dolly-sdk",
+ "dolly-sdk-macro",
  "static_assertions",
  "thiserror",
  "tiny-bip39",
@@ -7044,7 +7044,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-sdk-macro"
+name = "dolly-sdk-macro"
 version = "2.0.0"
 dependencies = [
  "bs58",
@@ -7055,44 +7055,44 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-security-txt"
+name = "dolly-security-txt"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "468aa43b7edb1f9b7b7b686d5c3aeb6630dc1708e86e31343499dd5c4d775183"
 
 [[package]]
-name = "solana-send-transaction-service"
+name = "dolly-send-transaction-service"
 version = "2.0.0"
 dependencies = [
  "crossbeam-channel",
  "log",
- "solana-client",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-runtime",
- "solana-sdk",
- "solana-tpu-client",
+ "dolly-client",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-tpu-client",
 ]
 
 [[package]]
-name = "solana-stake-accounts"
+name = "dolly-stake-accounts"
 version = "2.0.0"
 dependencies = [
  "clap 2.33.3",
- "solana-clap-utils",
- "solana-cli-config",
- "solana-remote-wallet",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-runtime",
- "solana-sdk",
- "solana-stake-program",
- "solana-version",
+ "dolly-clap-utils",
+ "dolly-cli-config",
+ "dolly-remote-wallet",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-stake-program",
+ "dolly-version",
 ]
 
 [[package]]
-name = "solana-stake-program"
+name = "dolly-stake-program"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -7100,16 +7100,16 @@ dependencies = [
  "log",
  "proptest",
  "rustc_version 0.4.0",
- "solana-config-program",
- "solana-logger",
- "solana-program-runtime",
- "solana-sdk",
- "solana-vote-program",
+ "dolly-config-program",
+ "dolly-logger",
+ "dolly-program-runtime",
+ "dolly-sdk",
+ "dolly-vote-program",
  "test-case",
 ]
 
 [[package]]
-name = "solana-storage-bigtable"
+name = "dolly-storage-bigtable"
 version = "2.0.0"
 dependencies = [
  "backoff",
@@ -7130,10 +7130,10 @@ dependencies = [
  "serde",
  "serde_derive",
  "smpl_jwt",
- "solana-metrics",
- "solana-sdk",
- "solana-storage-proto",
- "solana-transaction-status",
+ "dolly-metrics",
+ "dolly-sdk",
+ "dolly-storage-proto",
+ "dolly-transaction-status",
  "thiserror",
  "tokio",
  "tonic",
@@ -7141,7 +7141,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-storage-proto"
+name = "dolly-storage-proto"
 version = "2.0.0"
 dependencies = [
  "bincode",
@@ -7150,26 +7150,26 @@ dependencies = [
  "prost",
  "protobuf-src",
  "serde",
- "solana-account-decoder",
- "solana-sdk",
- "solana-transaction-status",
+ "dolly-account-decoder",
+ "dolly-sdk",
+ "dolly-transaction-status",
  "tonic-build",
 ]
 
 [[package]]
-name = "solana-store-tool"
+name = "dolly-store-tool"
 version = "2.0.0"
 dependencies = [
  "clap 2.33.3",
  "log",
- "solana-accounts-db",
- "solana-logger",
- "solana-sdk",
- "solana-version",
+ "dolly-accounts-db",
+ "dolly-logger",
+ "dolly-sdk",
+ "dolly-version",
 ]
 
 [[package]]
-name = "solana-streamer"
+name = "dolly-streamer"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -7189,17 +7189,17 @@ dependencies = [
  "quinn-proto",
  "rand 0.8.5",
  "rustls",
- "solana-logger",
- "solana-metrics",
- "solana-perf",
- "solana-sdk",
+ "dolly-logger",
+ "dolly-metrics",
+ "dolly-perf",
+ "dolly-sdk",
  "thiserror",
  "tokio",
  "x509-parser",
 ]
 
 [[package]]
-name = "solana-svm"
+name = "dolly-svm"
 version = "2.0.0"
 dependencies = [
  "bincode",
@@ -7207,20 +7207,20 @@ dependencies = [
  "log",
  "percentage",
  "rustc_version 0.4.0",
- "solana-bpf-loader-program",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-loader-v4-program",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-program-runtime",
- "solana-sdk",
- "solana-system-program",
+ "dolly-bpf-loader-program",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-loader-v4-program",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-program-runtime",
+ "dolly-sdk",
+ "dolly-system-program",
 ]
 
 [[package]]
-name = "solana-system-program"
+name = "dolly-system-program"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -7228,13 +7228,13 @@ dependencies = [
  "log",
  "serde",
  "serde_derive",
- "solana-logger",
- "solana-program-runtime",
- "solana-sdk",
+ "dolly-logger",
+ "dolly-program-runtime",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-test-validator"
+name = "dolly-test-validator"
 version = "2.0.0"
 dependencies = [
  "base64 0.22.0",
@@ -7243,42 +7243,42 @@ dependencies = [
  "log",
  "serde_derive",
  "serde_json",
- "solana-accounts-db",
- "solana-cli-output",
- "solana-client",
- "solana-core",
- "solana-geyser-plugin-manager",
- "solana-gossip",
- "solana-ledger",
- "solana-logger",
- "solana-net-utils",
- "solana-program-runtime",
- "solana-program-test",
- "solana-rpc",
- "solana-rpc-client",
- "solana-runtime",
- "solana-sdk",
- "solana-streamer",
- "solana-tpu-client",
+ "dolly-accounts-db",
+ "dolly-cli-output",
+ "dolly-client",
+ "dolly-core",
+ "dolly-geyser-plugin-manager",
+ "dolly-gossip",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-net-utils",
+ "dolly-program-runtime",
+ "dolly-program-test",
+ "dolly-rpc",
+ "dolly-rpc-client",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-tpu-client",
  "tokio",
 ]
 
 [[package]]
-name = "solana-thin-client"
+name = "dolly-thin-client"
 version = "2.0.0"
 dependencies = [
  "bincode",
  "log",
  "rayon",
- "solana-connection-cache",
- "solana-logger",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-sdk",
+ "dolly-connection-cache",
+ "dolly-logger",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-tokens"
+name = "dolly-tokens"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -7292,18 +7292,18 @@ dependencies = [
  "indicatif",
  "pickledb",
  "serde",
- "solana-account-decoder",
- "solana-clap-utils",
- "solana-cli-config",
- "solana-logger",
- "solana-remote-wallet",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-sdk",
- "solana-streamer",
- "solana-test-validator",
- "solana-transaction-status",
- "solana-version",
+ "dolly-account-decoder",
+ "dolly-clap-utils",
+ "dolly-cli-config",
+ "dolly-logger",
+ "dolly-remote-wallet",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-test-validator",
+ "dolly-transaction-status",
+ "dolly-version",
  "spl-associated-token-account",
  "spl-token",
  "tempfile",
@@ -7311,7 +7311,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-tpu-client"
+name = "dolly-tpu-client"
 version = "2.0.0"
 dependencies = [
  "async-trait",
@@ -7321,19 +7321,19 @@ dependencies = [
  "indicatif",
  "log",
  "rayon",
- "solana-connection-cache",
- "solana-measure",
- "solana-metrics",
- "solana-pubsub-client",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-sdk",
+ "dolly-connection-cache",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-pubsub-client",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-sdk",
  "thiserror",
  "tokio",
 ]
 
 [[package]]
-name = "solana-transaction-dos"
+name = "dolly-transaction-dos"
 version = "2.0.0"
 dependencies = [
  "bincode",
@@ -7341,26 +7341,26 @@ dependencies = [
  "log",
  "rand 0.8.5",
  "rayon",
- "solana-clap-utils",
- "solana-cli",
- "solana-client",
- "solana-core",
- "solana-faucet",
- "solana-gossip",
- "solana-local-cluster",
- "solana-logger",
- "solana-measure",
- "solana-net-utils",
- "solana-rpc-client",
- "solana-runtime",
- "solana-sdk",
- "solana-streamer",
- "solana-transaction-status",
- "solana-version",
+ "dolly-clap-utils",
+ "dolly-cli",
+ "dolly-client",
+ "dolly-core",
+ "dolly-faucet",
+ "dolly-gossip",
+ "dolly-local-cluster",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-net-utils",
+ "dolly-rpc-client",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-transaction-status",
+ "dolly-version",
 ]
 
 [[package]]
-name = "solana-transaction-status"
+name = "dolly-transaction-status"
 version = "2.0.0"
 dependencies = [
  "Inflector",
@@ -7373,8 +7373,8 @@ dependencies = [
  "serde",
  "serde_derive",
  "serde_json",
- "solana-account-decoder",
- "solana-sdk",
+ "dolly-account-decoder",
+ "dolly-sdk",
  "spl-associated-token-account",
  "spl-memo",
  "spl-token",
@@ -7383,7 +7383,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-turbine"
+name = "dolly-turbine"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -7399,73 +7399,73 @@ dependencies = [
  "rand_chacha 0.3.1",
  "rayon",
  "rustls",
- "solana-entry",
- "solana-gossip",
- "solana-ledger",
- "solana-logger",
- "solana-measure",
- "solana-metrics",
- "solana-perf",
- "solana-poh",
- "solana-quic-client",
- "solana-rayon-threadlimit",
- "solana-rpc",
- "solana-rpc-client-api",
- "solana-runtime",
- "solana-sdk",
- "solana-streamer",
+ "dolly-entry",
+ "dolly-gossip",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-measure",
+ "dolly-metrics",
+ "dolly-perf",
+ "dolly-poh",
+ "dolly-quic-client",
+ "dolly-rayon-threadlimit",
+ "dolly-rpc",
+ "dolly-rpc-client-api",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-streamer",
  "test-case",
  "thiserror",
  "tokio",
 ]
 
 [[package]]
-name = "solana-udp-client"
+name = "dolly-udp-client"
 version = "2.0.0"
 dependencies = [
  "async-trait",
- "solana-connection-cache",
- "solana-net-utils",
- "solana-sdk",
- "solana-streamer",
+ "dolly-connection-cache",
+ "dolly-net-utils",
+ "dolly-sdk",
+ "dolly-streamer",
  "thiserror",
  "tokio",
 ]
 
 [[package]]
-name = "solana-unified-scheduler-logic"
+name = "dolly-unified-scheduler-logic"
 version = "2.0.0"
 dependencies = [
- "solana-sdk",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-unified-scheduler-pool"
+name = "dolly-unified-scheduler-pool"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
  "crossbeam-channel",
  "derivative",
  "log",
- "solana-ledger",
- "solana-logger",
- "solana-program-runtime",
- "solana-runtime",
- "solana-sdk",
- "solana-unified-scheduler-logic",
- "solana-vote",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-program-runtime",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-unified-scheduler-logic",
+ "dolly-vote",
 ]
 
 [[package]]
-name = "solana-upload-perf"
+name = "dolly-upload-perf"
 version = "2.0.0"
 dependencies = [
  "serde_json",
- "solana-metrics",
+ "dolly-metrics",
 ]
 
 [[package]]
-name = "solana-validator"
+name = "dolly-validator"
 version = "2.0.0"
 dependencies = [
  "chrono",
@@ -7491,39 +7491,39 @@ dependencies = [
  "serde_json",
  "serde_yaml 0.9.32",
  "signal-hook",
- "solana-account-decoder",
- "solana-accounts-db",
- "solana-clap-utils",
- "solana-cli-config",
- "solana-core",
- "solana-download-utils",
- "solana-entry",
- "solana-faucet",
- "solana-genesis-utils",
- "solana-geyser-plugin-interface",
- "solana-geyser-plugin-manager",
- "solana-gossip",
- "solana-ledger",
- "solana-logger",
- "solana-metrics",
- "solana-net-utils",
- "solana-perf",
- "solana-poh",
- "solana-program-runtime",
- "solana-rayon-threadlimit",
- "solana-rpc",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-runtime",
- "solana-sdk",
- "solana-send-transaction-service",
- "solana-storage-bigtable",
- "solana-streamer",
- "solana-test-validator",
- "solana-tpu-client",
- "solana-unified-scheduler-pool",
- "solana-version",
- "solana-vote-program",
+ "dolly-account-decoder",
+ "dolly-accounts-db",
+ "dolly-clap-utils",
+ "dolly-cli-config",
+ "dolly-core",
+ "dolly-download-utils",
+ "dolly-entry",
+ "dolly-faucet",
+ "dolly-genesis-utils",
+ "dolly-geyser-plugin-interface",
+ "dolly-geyser-plugin-manager",
+ "dolly-gossip",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-metrics",
+ "dolly-net-utils",
+ "dolly-perf",
+ "dolly-poh",
+ "dolly-program-runtime",
+ "dolly-rayon-threadlimit",
+ "dolly-rpc",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-send-transaction-service",
+ "dolly-storage-bigtable",
+ "dolly-streamer",
+ "dolly-test-validator",
+ "dolly-tpu-client",
+ "dolly-unified-scheduler-pool",
+ "dolly-version",
+ "dolly-vote-program",
  "spl-token-2022",
  "symlink",
  "thiserror",
@@ -7532,7 +7532,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-version"
+name = "dolly-version"
 version = "2.0.0"
 dependencies = [
  "log",
@@ -7540,13 +7540,13 @@ dependencies = [
  "semver 1.0.22",
  "serde",
  "serde_derive",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-sdk",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-sdk",
 ]
 
 [[package]]
-name = "solana-vote"
+name = "dolly-vote"
 version = "2.0.0"
 dependencies = [
  "bincode",
@@ -7557,15 +7557,15 @@ dependencies = [
  "rustc_version 0.4.0",
  "serde",
  "serde_derive",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-sdk",
- "solana-vote-program",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-sdk",
+ "dolly-vote-program",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-vote-program"
+name = "dolly-vote-program"
 version = "2.0.0"
 dependencies = [
  "assert_matches",
@@ -7576,38 +7576,38 @@ dependencies = [
  "rustc_version 0.4.0",
  "serde",
  "serde_derive",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-logger",
- "solana-metrics",
- "solana-program",
- "solana-program-runtime",
- "solana-sdk",
+ "dolly-frozen-abi",
+ "dolly-frozen-abi-macro",
+ "dolly-logger",
+ "dolly-metrics",
+ "dolly-program",
+ "dolly-program-runtime",
+ "dolly-sdk",
  "test-case",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-watchtower"
+name = "dolly-watchtower"
 version = "2.0.0"
 dependencies = [
  "clap 2.33.3",
  "humantime",
  "log",
- "solana-clap-utils",
- "solana-cli-config",
- "solana-cli-output",
- "solana-logger",
- "solana-metrics",
- "solana-notifier",
- "solana-rpc-client",
- "solana-rpc-client-api",
- "solana-sdk",
- "solana-version",
+ "dolly-clap-utils",
+ "dolly-cli-config",
+ "dolly-cli-output",
+ "dolly-logger",
+ "dolly-metrics",
+ "dolly-notifier",
+ "dolly-rpc-client",
+ "dolly-rpc-client-api",
+ "dolly-sdk",
+ "dolly-version",
 ]
 
 [[package]]
-name = "solana-wen-restart"
+name = "dolly-wen-restart"
 version = "2.0.0"
 dependencies = [
  "anyhow",
@@ -7620,40 +7620,40 @@ dependencies = [
  "rand 0.8.5",
  "rustc_version 0.4.0",
  "serial_test",
- "solana-accounts-db",
- "solana-entry",
- "solana-gossip",
- "solana-ledger",
- "solana-logger",
- "solana-program",
- "solana-runtime",
- "solana-sdk",
- "solana-streamer",
- "solana-vote-program",
+ "dolly-accounts-db",
+ "dolly-entry",
+ "dolly-gossip",
+ "dolly-ledger",
+ "dolly-logger",
+ "dolly-program",
+ "dolly-runtime",
+ "dolly-sdk",
+ "dolly-streamer",
+ "dolly-vote-program",
  "tempfile",
 ]
 
 [[package]]
-name = "solana-zk-keygen"
+name = "dolly-zk-keygen"
 version = "2.0.0"
 dependencies = [
  "bs58",
  "clap 3.2.23",
  "dirs-next",
  "num_cpus",
- "solana-clap-v3-utils",
- "solana-cli-config",
- "solana-remote-wallet",
- "solana-sdk",
- "solana-version",
- "solana-zk-token-sdk",
+ "dolly-clap-v3-utils",
+ "dolly-cli-config",
+ "dolly-remote-wallet",
+ "dolly-sdk",
+ "dolly-version",
+ "dolly-zk-token-sdk",
  "tempfile",
  "thiserror",
  "tiny-bip39",
 ]
 
 [[package]]
-name = "solana-zk-token-proof-program"
+name = "dolly-zk-token-proof-program"
 version = "2.0.0"
 dependencies = [
  "bytemuck",
@@ -7661,25 +7661,25 @@ dependencies = [
  "curve25519-dalek",
  "num-derive",
  "num-traits",
- "solana-program-runtime",
- "solana-sdk",
- "solana-zk-token-sdk",
+ "dolly-program-runtime",
+ "dolly-sdk",
+ "dolly-zk-token-sdk",
 ]
 
 [[package]]
-name = "solana-zk-token-proof-program-tests"
+name = "dolly-zk-token-proof-program-tests"
 version = "2.0.0"
 dependencies = [
  "bytemuck",
  "curve25519-dalek",
- "solana-program-runtime",
- "solana-program-test",
- "solana-sdk",
- "solana-zk-token-sdk",
+ "dolly-program-runtime",
+ "dolly-program-test",
+ "dolly-sdk",
+ "dolly-zk-token-sdk",
 ]
 
 [[package]]
-name = "solana-zk-token-sdk"
+name = "dolly-zk-token-sdk"
 version = "2.0.0"
 dependencies = [
  "aes-gcm-siv",
@@ -7698,8 +7698,8 @@ dependencies = [
  "serde",
  "serde_json",
  "sha3 0.9.1",
- "solana-program",
- "solana-sdk",
+ "dolly-program",
+ "dolly-sdk",
  "subtle",
  "thiserror",
  "tiny-bip39",
@@ -7707,7 +7707,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana_rbpf"
+name = "dolly_rbpf"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d457cc2ba742c120492a64b7fa60e22c575e891f6b55039f4d736568fb112a3"
@@ -7748,7 +7748,7 @@ dependencies = [
  "borsh 0.10.3",
  "num-derive",
  "num-traits",
- "solana-program",
+ "dolly-program",
  "spl-token",
  "spl-token-2022",
  "thiserror",
@@ -7761,7 +7761,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "daa600f2fe56f32e923261719bae640d873edadbc5237681a39b8e37bfd4d263"
 dependencies = [
  "bytemuck",
- "solana-program",
+ "dolly-program",
  "spl-discriminator-derive",
 ]
 
@@ -7796,7 +7796,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "be3f0c53b6eb2dfccb77b5710bddb04548da338a3f56bed214177f6a577d1ca6"
 dependencies = [
  "num_enum",
- "solana-program",
+ "dolly-program",
 ]
 
 [[package]]
@@ -7805,7 +7805,7 @@ version = "4.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "58e9bae02de3405079a057fe244c867a08f92d48327d231fc60da831f94caf0a"
 dependencies = [
- "solana-program",
+ "dolly-program",
 ]
 
 [[package]]
@@ -7816,8 +7816,8 @@ checksum = "85a5db7e4efb1107b0b8e52a13f035437cdcb36ef99c58f6d467f089d9b2915a"
 dependencies = [
  "borsh 0.10.3",
  "bytemuck",
- "solana-program",
- "solana-zk-token-sdk",
+ "dolly-program",
+ "dolly-zk-token-sdk",
  "spl-program-error",
 ]
 
@@ -7829,7 +7829,7 @@ checksum = "7e0657b6490196971d9e729520ba934911ff41fbb2cb9004463dbe23cf8b4b4f"
 dependencies = [
  "num-derive",
  "num-traits",
- "solana-program",
+ "dolly-program",
  "spl-program-error-derive",
  "thiserror",
 ]
@@ -7853,7 +7853,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "56f335787add7fa711819f9e7c573f8145a5358a709446fe2d24bf2a88117c90"
 dependencies = [
  "bytemuck",
- "solana-program",
+ "dolly-program",
  "spl-discriminator",
  "spl-pod",
  "spl-program-error",
@@ -7871,7 +7871,7 @@ dependencies = [
  "num-derive",
  "num-traits",
  "num_enum",
- "solana-program",
+ "dolly-program",
  "thiserror",
 ]
 
@@ -7886,9 +7886,9 @@ dependencies = [
  "num-derive",
  "num-traits",
  "num_enum",
- "solana-program",
- "solana-security-txt",
- "solana-zk-token-sdk",
+ "dolly-program",
+ "dolly-security-txt",
+ "dolly-zk-token-sdk",
  "spl-memo",
  "spl-pod",
  "spl-token",
@@ -7906,7 +7906,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7eb67fbacd587377a400aba81718abe4424d0e9d5ea510034d3b7f130d102153"
 dependencies = [
  "bytemuck",
- "solana-program",
+ "dolly-program",
  "spl-discriminator",
  "spl-pod",
  "spl-program-error",
@@ -7919,7 +7919,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e16aa8f64b6e0eaab3f5034e84d867c8435d8216497b4543a4978a31f4b6e8a8"
 dependencies = [
  "borsh 0.10.3",
- "solana-program",
+ "dolly-program",
  "spl-discriminator",
  "spl-pod",
  "spl-program-error",
@@ -7934,7 +7934,7 @@ checksum = "5f6dfe329fcff44cbe2eea994bd8f737f0b0a69faed39e56f9b6ee03badf7e14"
 dependencies = [
  "arrayref",
  "bytemuck",
- "solana-program",
+ "dolly-program",
  "spl-discriminator",
  "spl-pod",
  "spl-program-error",
@@ -7949,7 +7949,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f9ebd75d29c5f48de5f6a9c114e08531030b75b8ac2c557600ac7da0b73b1e8"
 dependencies = [
  "bytemuck",
- "solana-program",
+ "dolly-program",
  "spl-discriminator",
  "spl-pod",
  "spl-program-error",
@@ -8372,7 +8372,7 @@ checksum = "cda74da7e1a664f795bb1f8a87ec406fb89a02522cf6e50620d016add6dbbf5c"
 [[package]]
 name = "tokio"
 version = "1.29.1"
-source = "git+https://github.com/solana-labs/solana-tokio.git?rev=7cf47705faacf7bf0e43e4131a5377b3291fce21#7cf47705faacf7bf0e43e4131a5377b3291fce21"
+source = "git+https://github.com/dolly-labs/dolly-tokio.git?rev=7cf47705faacf7bf0e43e4131a5377b3291fce21#7cf47705faacf7bf0e43e4131a5377b3291fce21"
 dependencies = [
  "autocfg",
  "backtrace",
@@ -8401,7 +8401,7 @@ dependencies = [
 [[package]]
 name = "tokio-macros"
 version = "2.1.0"
-source = "git+https://github.com/solana-labs/solana-tokio.git?rev=7cf47705faacf7bf0e43e4131a5377b3291fce21#7cf47705faacf7bf0e43e4131a5377b3291fce21"
+source = "git+https://github.com/dolly-labs/dolly-tokio.git?rev=7cf47705faacf7bf0e43e4131a5377b3291fce21#7cf47705faacf7bf0e43e4131a5377b3291fce21"
 dependencies = [
  "proc-macro2",
  "quote",

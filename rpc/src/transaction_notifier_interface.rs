@@ -1,6 +1,6 @@
 use {
-    solana_sdk::{clock::Slot, signature::Signature, transaction::SanitizedTransaction},
-    solana_transaction_status::TransactionStatusMeta,
+    dolly_sdk::{clock::Slot, signature::Signature, transaction::SanitizedTransaction},
+    dolly_transaction_status::TransactionStatusMeta,
     std::sync::Arc,
 };
 

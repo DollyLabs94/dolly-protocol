@@ -18,12 +18,12 @@
 //! more keypairs, and this signing is typically performed by an abstract
 //! [`Signer`], which may be a [`Keypair`] but may also be other types of
 //! signers including remote wallets, such as Ledger devices, as represented by
-//! the [`RemoteKeypair`] type in the [`solana-remote-wallet`] crate.
+//! the [`RemoteKeypair`] type in the [`dolly-remote-wallet`] crate.
 //!
 //! [`Signer`]: crate::signer::Signer
 //! [`Keypair`]: crate::signer::keypair::Keypair
-//! [`solana-remote-wallet`]: https://docs.rs/solana-remote-wallet/latest/
-//! [`RemoteKeypair`]: https://docs.rs/solana-remote-wallet/latest/solana_remote_wallet/remote_keypair/struct.RemoteKeypair.html
+//! [`dolly-remote-wallet`]: https://docs.rs/dolly-remote-wallet/latest/
+//! [`RemoteKeypair`]: https://docs.rs/dolly-remote-wallet/latest/dolly_remote_wallet/remote_keypair/struct.RemoteKeypair.html
 //!
 //! Every transaction must be signed by a fee-paying account, the account from
 //! which the cost of executing the transaction is withdrawn. Other required
@@ -42,22 +42,22 @@
 //! transaction nonce]_ mechanism instead of a recent blockhash to ensure unique
 //! transactions.
 //!
-//! [`RpcClient::get_latest_blockhash`]: https://docs.rs/solana-rpc-client/latest/solana_rpc_client/rpc_client/struct.RpcClient.html#method.get_latest_blockhash
-//! [durable transaction nonce]: https://docs.solanalabs.com/implemented-proposals/durable-tx-nonces
+//! [`RpcClient::get_latest_blockhash`]: https://docs.rs/dolly-rpc-client/latest/dolly_rpc_client/rpc_client/struct.RpcClient.html#method.get_latest_blockhash
+//! [durable transaction nonce]: https://docs.dollylabs.com/implemented-proposals/durable-tx-nonces
 //!
 //! # Examples
 //!
-//! This example uses the [`solana_rpc_client`] and [`anyhow`] crates.
+//! This example uses the [`dolly_rpc_client`] and [`anyhow`] crates.
 //!
-//! [`solana_rpc_client`]: https://docs.rs/solana-rpc-client
+//! [`dolly_rpc_client`]: https://docs.rs/dolly-rpc-client
 //! [`anyhow`]: https://docs.rs/anyhow
 //!
 //! ```
-//! # use solana_sdk::example_mocks::solana_rpc_client;
+//! # use dolly_sdk::example_mocks::dolly_rpc_client;
 //! use anyhow::Result;
 //! use borsh::{BorshSerialize, BorshDeserialize};
-//! use solana_rpc_client::rpc_client::RpcClient;
-//! use solana_sdk::{
+//! use dolly_rpc_client::rpc_client::RpcClient;
+//! use dolly_sdk::{
 //!      instruction::Instruction,
 //!      message::Message,
 //!      pubkey::Pubkey,
@@ -127,8 +127,8 @@ use {
         wasm_bindgen,
     },
     serde::Serialize,
-    solana_program::{system_instruction::SystemInstruction, system_program},
-    solana_sdk::feature_set,
+    dolly_program::{system_instruction::SystemInstruction, system_program},
+    dolly_sdk::feature_set,
     std::result,
 };
 
@@ -206,17 +206,17 @@ impl Transaction {
     ///
     /// # Examples
     ///
-    /// This example uses the [`solana_rpc_client`] and [`anyhow`] crates.
+    /// This example uses the [`dolly_rpc_client`] and [`anyhow`] crates.
     ///
-    /// [`solana_rpc_client`]: https://docs.rs/solana-rpc-client
+    /// [`dolly_rpc_client`]: https://docs.rs/dolly-rpc-client
     /// [`anyhow`]: https://docs.rs/anyhow
     ///
     /// ```
-    /// # use solana_sdk::example_mocks::solana_rpc_client;
+    /// # use dolly_sdk::example_mocks::dolly_rpc_client;
     /// use anyhow::Result;
     /// use borsh::{BorshSerialize, BorshDeserialize};
-    /// use solana_rpc_client::rpc_client::RpcClient;
-    /// use solana_sdk::{
+    /// use dolly_rpc_client::rpc_client::RpcClient;
+    /// use dolly_sdk::{
     ///      instruction::Instruction,
     ///      message::Message,
     ///      pubkey::Pubkey,
@@ -285,17 +285,17 @@ impl Transaction {
     ///
     /// # Examples
     ///
-    /// This example uses the [`solana_rpc_client`] and [`anyhow`] crates.
+    /// This example uses the [`dolly_rpc_client`] and [`anyhow`] crates.
     ///
-    /// [`solana_rpc_client`]: https://docs.rs/solana-rpc-client
+    /// [`dolly_rpc_client`]: https://docs.rs/dolly-rpc-client
     /// [`anyhow`]: https://docs.rs/anyhow
     ///
     /// ```
-    /// # use solana_sdk::example_mocks::solana_rpc_client;
+    /// # use dolly_sdk::example_mocks::dolly_rpc_client;
     /// use anyhow::Result;
     /// use borsh::{BorshSerialize, BorshDeserialize};
-    /// use solana_rpc_client::rpc_client::RpcClient;
-    /// use solana_sdk::{
+    /// use dolly_rpc_client::rpc_client::RpcClient;
+    /// use dolly_sdk::{
     ///      instruction::Instruction,
     ///      message::Message,
     ///      pubkey::Pubkey,
@@ -364,17 +364,17 @@ impl Transaction {
     ///
     /// # Examples
     ///
-    /// This example uses the [`solana_rpc_client`] and [`anyhow`] crates.
+    /// This example uses the [`dolly_rpc_client`] and [`anyhow`] crates.
     ///
-    /// [`solana_rpc_client`]: https://docs.rs/solana-rpc-client
+    /// [`dolly_rpc_client`]: https://docs.rs/dolly-rpc-client
     /// [`anyhow`]: https://docs.rs/anyhow
     ///
     /// ```
-    /// # use solana_sdk::example_mocks::solana_rpc_client;
+    /// # use dolly_sdk::example_mocks::dolly_rpc_client;
     /// use anyhow::Result;
     /// use borsh::{BorshSerialize, BorshDeserialize};
-    /// use solana_rpc_client::rpc_client::RpcClient;
-    /// use solana_sdk::{
+    /// use dolly_rpc_client::rpc_client::RpcClient;
+    /// use dolly_sdk::{
     ///      instruction::Instruction,
     ///      message::Message,
     ///      pubkey::Pubkey,
@@ -440,17 +440,17 @@ impl Transaction {
     ///
     /// # Examples
     ///
-    /// This example uses the [`solana_rpc_client`] and [`anyhow`] crates.
+    /// This example uses the [`dolly_rpc_client`] and [`anyhow`] crates.
     ///
-    /// [`solana_rpc_client`]: https://docs.rs/solana-rpc-client
+    /// [`dolly_rpc_client`]: https://docs.rs/dolly-rpc-client
     /// [`anyhow`]: https://docs.rs/anyhow
     ///
     /// ```
-    /// # use solana_sdk::example_mocks::solana_rpc_client;
+    /// # use dolly_sdk::example_mocks::dolly_rpc_client;
     /// use anyhow::Result;
     /// use borsh::{BorshSerialize, BorshDeserialize};
-    /// use solana_rpc_client::rpc_client::RpcClient;
-    /// use solana_sdk::{
+    /// use dolly_rpc_client::rpc_client::RpcClient;
+    /// use dolly_sdk::{
     ///      instruction::Instruction,
     ///      message::Message,
     ///      pubkey::Pubkey,
@@ -648,17 +648,17 @@ impl Transaction {
     ///
     /// # Examples
     ///
-    /// This example uses the [`solana_rpc_client`] and [`anyhow`] crates.
+    /// This example uses the [`dolly_rpc_client`] and [`anyhow`] crates.
     ///
-    /// [`solana_rpc_client`]: https://docs.rs/solana-rpc-client
+    /// [`dolly_rpc_client`]: https://docs.rs/dolly-rpc-client
     /// [`anyhow`]: https://docs.rs/anyhow
     ///
     /// ```
-    /// # use solana_sdk::example_mocks::solana_rpc_client;
+    /// # use dolly_sdk::example_mocks::dolly_rpc_client;
     /// use anyhow::Result;
     /// use borsh::{BorshSerialize, BorshDeserialize};
-    /// use solana_rpc_client::rpc_client::RpcClient;
-    /// use solana_sdk::{
+    /// use dolly_rpc_client::rpc_client::RpcClient;
+    /// use dolly_sdk::{
     ///      instruction::Instruction,
     ///      message::Message,
     ///      pubkey::Pubkey,
@@ -786,17 +786,17 @@ impl Transaction {
     ///
     /// # Examples
     ///
-    /// This example uses the [`solana_rpc_client`] and [`anyhow`] crates.
+    /// This example uses the [`dolly_rpc_client`] and [`anyhow`] crates.
     ///
-    /// [`solana_rpc_client`]: https://docs.rs/solana-rpc-client
+    /// [`dolly_rpc_client`]: https://docs.rs/dolly-rpc-client
     /// [`anyhow`]: https://docs.rs/anyhow
     ///
     /// ```
-    /// # use solana_sdk::example_mocks::solana_rpc_client;
+    /// # use dolly_sdk::example_mocks::dolly_rpc_client;
     /// use anyhow::Result;
     /// use borsh::{BorshSerialize, BorshDeserialize};
-    /// use solana_rpc_client::rpc_client::RpcClient;
-    /// use solana_sdk::{
+    /// use dolly_rpc_client::rpc_client::RpcClient;
+    /// use dolly_sdk::{
     ///      instruction::Instruction,
     ///      message::Message,
     ///      pubkey::Pubkey,
@@ -896,7 +896,7 @@ impl Transaction {
     ///   - Some device-specific protocol error occurs ([`SignerError::Protocol`]).
     ///   - Some other error occurs ([`SignerError::Custom`]).
     ///
-    /// See the documentation for the [`solana-remote-wallet`] crate for details
+    /// See the documentation for the [`dolly-remote-wallet`] crate for details
     /// on the operation of [`RemoteKeypair`] signers.
     ///
     /// [`num_required_signatures`]: crate::message::MessageHeader::num_required_signatures
@@ -904,8 +904,8 @@ impl Transaction {
     /// [`Presigner`]: crate::signer::presigner::Presigner
     /// [`PresignerError`]: crate::signer::presigner::PresignerError
     /// [`PresignerError::VerificationFailure`]: crate::signer::presigner::PresignerError::VerificationFailure
-    /// [`solana-remote-wallet`]: https://docs.rs/solana-remote-wallet/latest/
-    /// [`RemoteKeypair`]: https://docs.rs/solana-remote-wallet/latest/solana_remote_wallet/remote_keypair/struct.RemoteKeypair.html
+    /// [`dolly-remote-wallet`]: https://docs.rs/dolly-remote-wallet/latest/
+    /// [`RemoteKeypair`]: https://docs.rs/dolly-remote-wallet/latest/dolly_remote_wallet/remote_keypair/struct.RemoteKeypair.html
     pub fn try_partial_sign<T: Signers + ?Sized>(
         &mut self,
         keypairs: &T,
@@ -1130,10 +1130,10 @@ mod tests {
     #[test]
     fn test_refs() {
         let key = Keypair::new();
-        let key1 = solana_sdk::pubkey::new_rand();
-        let key2 = solana_sdk::pubkey::new_rand();
-        let prog1 = solana_sdk::pubkey::new_rand();
-        let prog2 = solana_sdk::pubkey::new_rand();
+        let key1 = dolly_sdk::pubkey::new_rand();
+        let key2 = dolly_sdk::pubkey::new_rand();
+        let prog1 = dolly_sdk::pubkey::new_rand();
+        let prog2 = dolly_sdk::pubkey::new_rand();
         let instructions = vec![
             CompiledInstruction::new(3, &(), vec![0, 1]),
             CompiledInstruction::new(4, &(), vec![0, 2]),
@@ -1201,7 +1201,7 @@ mod tests {
     fn test_sanitize_txs() {
         let key = Keypair::new();
         let id0 = Pubkey::default();
-        let program_id = solana_sdk::pubkey::new_rand();
+        let program_id = dolly_sdk::pubkey::new_rand();
         let ix = Instruction::new_with_bincode(
             program_id,
             &0,
@@ -1300,7 +1300,7 @@ mod tests {
     fn test_transaction_minimum_serialized_size() {
         let alice_keypair = Keypair::new();
         let alice_pubkey = alice_keypair.pubkey();
-        let bob_pubkey = solana_sdk::pubkey::new_rand();
+        let bob_pubkey = dolly_sdk::pubkey::new_rand();
         let ix = system_instruction::transfer(&alice_pubkey, &bob_pubkey, 42);
 
         let expected_data_size = size_of::<u32>() + size_of::<u64>();
@@ -1378,7 +1378,7 @@ mod tests {
     #[should_panic]
     fn test_partial_sign_mismatched_key() {
         let keypair = Keypair::new();
-        let fee_payer = solana_sdk::pubkey::new_rand();
+        let fee_payer = dolly_sdk::pubkey::new_rand();
         let ix = Instruction::new_with_bincode(
             Pubkey::default(),
             &0,
@@ -1461,7 +1461,7 @@ mod tests {
         let program_id = Pubkey::default();
         let keypair0 = Keypair::new();
         let id0 = keypair0.pubkey();
-        let id1 = solana_sdk::pubkey::new_rand();
+        let id1 = dolly_sdk::pubkey::new_rand();
         let ix = Instruction::new_with_bincode(
             program_id,
             &0,
@@ -1512,7 +1512,7 @@ mod tests {
         assert_eq!(tx.signatures[1], presigner_sig);
 
         // Wrong key should error, not panic
-        let another_pubkey = solana_sdk::pubkey::new_rand();
+        let another_pubkey = dolly_sdk::pubkey::new_rand();
         let ix = Instruction::new_with_bincode(
             program_id,
             &0,

@@ -1,6 +1,6 @@
 [package]
-name = "solana-sbf-rust-upgraded"
-documentation = "https://docs.rs/solana-sbf-rust-upgraded"
+name = "dolly-sbf-rust-upgraded"
+documentation = "https://docs.rs/dolly-sbf-rust-upgraded"
 version = { workspace = true }
 description = { workspace = true }
 authors = { workspace = true }
@@ -10,10 +10,10 @@ license = { workspace = true }
 edition = { workspace = true }
 
 [dependencies]
-solana-program = { workspace = true }
+dolly-program = { workspace = true }
 
 [lib]
-name = "solana_sbf_rust_upgraded"
+name = "dolly_sbf_rust_upgraded"
 crate-type = ["cdylib"]
 
 [package.metadata.docs.rs]

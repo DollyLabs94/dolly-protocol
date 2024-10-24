@@ -1,6 +1,6 @@
 use {
-    solana_measure::measure::Measure,
-    solana_program_runtime::{
+    dolly_measure::measure::Measure,
+    dolly_program_runtime::{
         compute_budget::ComputeBudget,
         ic_logger_msg,
         invoke_context::InvokeContext,
@@ -10,7 +10,7 @@ use {
         log_collector::LogCollector,
         stable_log,
     },
-    solana_rbpf::{
+    dolly_rbpf::{
         aligned_memory::AlignedMemory,
         declare_builtin_function, ebpf,
         elf::Executable,
@@ -19,7 +19,7 @@ use {
         program::{BuiltinProgram, FunctionRegistry},
         vm::{Config, ContextObject, EbpfVm},
     },
-    solana_sdk::{
+    dolly_sdk::{
         entrypoint::SUCCESS,
         instruction::InstructionError,
         loader_v4::{self, LoaderV4State, LoaderV4Status, DEPLOYMENT_COOLDOWN_IN_SLOTS},
@@ -615,8 +615,8 @@ pub fn process_instruction_inner(
 mod tests {
     use {
         super::*,
-        solana_program_runtime::invoke_context::mock_process_instruction,
-        solana_sdk::{
+        dolly_program_runtime::invoke_context::mock_process_instruction,
+        dolly_sdk::{
             account::{
                 create_account_shared_data_for_test, AccountSharedData, ReadableAccount,
                 WritableAccount,

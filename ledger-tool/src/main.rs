@@ -18,12 +18,12 @@ use {
     dashmap::DashMap,
     log::*,
     serde::Serialize,
-    solana_account_decoder::UiAccountEncoding,
-    solana_accounts_db::{
+    dolly_account_decoder::UiAccountEncoding,
+    dolly_accounts_db::{
         accounts_db::CalcAccountsHashDataSource, accounts_index::ScanConfig,
         hardened_unpack::MAX_GENESIS_ARCHIVE_UNPACKED_SIZE,
     },
-    solana_clap_utils::{
+    dolly_clap_utils::{
         hidden_unless_forced,
         input_parsers::{cluster_type_of, pubkey_of, pubkeys_of},
         input_validators::{
@@ -32,20 +32,20 @@ use {
             validate_maximum_incremental_snapshot_archives_to_retain,
         },
     },
-    solana_cli_output::OutputFormat,
-    solana_core::{
+    dolly_cli_output::OutputFormat,
+    dolly_core::{
         system_monitor_service::{SystemMonitorService, SystemMonitorStatsReportConfig},
         validator::BlockVerificationMethod,
     },
-    solana_cost_model::{cost_model::CostModel, cost_tracker::CostTracker},
-    solana_ledger::{
+    dolly_cost_model::{cost_model::CostModel, cost_tracker::CostTracker},
+    dolly_ledger::{
         blockstore::{create_new_ledger, Blockstore},
         blockstore_options::{AccessType, LedgerColumnOptions},
         blockstore_processor::ProcessSlotCallback,
         use_snapshot_archives_at_startup,
     },
-    solana_measure::{measure, measure::Measure},
-    solana_runtime::{
+    dolly_measure::{measure, measure::Measure},
+    dolly_runtime::{
         bank::{bank_hash_details, Bank, RewardCalculationEvent},
         bank_forks::BankForks,
         snapshot_archive_info::SnapshotArchiveInfoGetter,
@@ -56,7 +56,7 @@ use {
             SUPPORTED_ARCHIVE_COMPRESSION,
         },
     },
-    solana_sdk::{
+    dolly_sdk::{
         account::{AccountSharedData, ReadableAccount, WritableAccount},
         account_utils::StateMut,
         clock::{Epoch, Slot},
@@ -72,9 +72,9 @@ use {
         system_program,
         transaction::{MessageHash, SanitizedTransaction, SimpleAddressLoader},
     },
-    solana_stake_program::{points::PointValue, stake_state},
-    solana_unified_scheduler_pool::DefaultSchedulerPool,
-    solana_vote_program::{
+    dolly_stake_program::{points::PointValue, stake_state},
+    dolly_unified_scheduler_pool::DefaultSchedulerPool,
+    dolly_vote_program::{
         self,
         vote_state::{self, VoteState},
     },
@@ -555,7 +555,7 @@ fn main() {
     const DEFAULT_MAX_FULL_SNAPSHOT_ARCHIVES_TO_RETAIN: usize = std::usize::MAX;
     const DEFAULT_MAX_INCREMENTAL_SNAPSHOT_ARCHIVES_TO_RETAIN: usize = std::usize::MAX;
 
-    solana_logger::setup_with_default("solana=info");
+    dolly_logger::setup_with_default("dolly=info");
 
     let no_snapshot_arg = Arg::with_name("no_snapshot")
         .long("no-snapshot")
@@ -779,7 +779,7 @@ fn main() {
 
     let matches = App::new(crate_name!())
         .about(crate_description!())
-        .version(solana_version::version!())
+        .version(dolly_version::version!())
         .setting(AppSettings::InferSubcommands)
         .setting(AppSettings::SubcommandRequiredElseHelp)
         .setting(AppSettings::VersionlessSubcommands)
@@ -1488,7 +1488,7 @@ fn main() {
         .program_subcommand()
         .get_matches();
 
-    info!("{} {}", crate_name!(), solana_version::version!());
+    info!("{} {}", crate_name!(), dolly_version::version!());
 
     let ledger_path = PathBuf::from(value_t_or_exit!(matches, "ledger_path", String));
     let snapshot_archive_path = value_t!(matches, "snapshots", String)
@@ -1564,7 +1564,7 @@ fn main() {
 
                     if let Some(hashes_per_tick) = arg_matches.value_of("hashes_per_tick") {
                         genesis_config.poh_config.hashes_per_tick = match hashes_per_tick {
-                            // Note: Unlike `solana-genesis`, "auto" is not supported here.
+                            // Note: Unlike `dolly-genesis`, "auto" is not supported here.
                             "sleep" => None,
                             _ => Some(value_t_or_exit!(arg_matches, "hashes_per_tick", u64)),
                         }
@@ -1573,7 +1573,7 @@ fn main() {
                     create_new_ledger(
                         &output_directory,
                         &genesis_config,
-                        solana_accounts_db::hardened_unpack::MAX_GENESIS_ARCHIVE_UNPACKED_SIZE,
+                        dolly_accounts_db::hardened_unpack::MAX_GENESIS_ARCHIVE_UNPACKED_SIZE,
                         LedgerColumnOptions::default(),
                     )
                     .unwrap_or_else(|err| {
@@ -2032,7 +2032,7 @@ fn main() {
 
                         if let Some(hashes_per_tick) = hashes_per_tick {
                             child_bank.set_hashes_per_tick(match hashes_per_tick {
-                                // Note: Unlike `solana-genesis`, "auto" is not supported here.
+                                // Note: Unlike `dolly-genesis`, "auto" is not supported here.
                                 "sleep" => None,
                                 _ => Some(value_t_or_exit!(arg_matches, "hashes_per_tick", u64)),
                             });
@@ -2138,7 +2138,7 @@ fn main() {
                         // Delete existing vote accounts
                         for (address, mut account) in bank
                             .get_program_accounts(
-                                &solana_vote_program::id(),
+                                &dolly_vote_program::id(),
                                 &ScanConfig::default(),
                             )
                             .unwrap()
@@ -2590,7 +2590,7 @@ fn main() {
                             new_credits_observed: Option<u64>,
                             skipped_reasons: String,
                         }
-                        use solana_stake_program::points::InflationPointCalculationEvent;
+                        use dolly_stake_program::points::InflationPointCalculationEvent;
                         let stake_calculation_details: DashMap<Pubkey, CalculationDetail> =
                             DashMap::new();
                         let last_point_value = Arc::new(RwLock::new(None));
@@ -2767,7 +2767,7 @@ fn main() {
                         for (pubkey, warped_account) in all_accounts {
                             // Don't output sysvars; it's always updated but not related to
                             // inflation.
-                            if solana_sdk::sysvar::is_sysvar_id(&pubkey) {
+                            if dolly_sdk::sysvar::is_sysvar_id(&pubkey) {
                                 continue;
                             }
 

@@ -26,14 +26,14 @@ fi
 # upload install script
 source ci/upload-ci-artifact.sh
 
-cat >release.solana.com-install <<EOF
+cat >release.dolly.com-install <<EOF
 SOLANA_RELEASE=$CHANNEL_OR_TAG
 SOLANA_INSTALL_INIT_ARGS=$CHANNEL_OR_TAG
-SOLANA_DOWNLOAD_ROOT=https://release.solana.com
+SOLANA_DOWNLOAD_ROOT=https://release.dolly.com
 EOF
-cat install/solana-install-init.sh >>release.solana.com-install
+cat install/dolly-install-init.sh >>release.dolly.com-install
 
 echo --- AWS S3 Store: "install"
-upload-s3-artifact "/solana/release.solana.com-install" "s3://release.solana.com/$CHANNEL_OR_TAG/install"
+upload-s3-artifact "/dolly/release.dolly.com-install" "s3://release.dolly.com/$CHANNEL_OR_TAG/install"
 echo Published to:
-ci/format-url.sh https://release.solana.com/"$CHANNEL_OR_TAG"/install
+ci/format-url.sh https://release.dolly.com/"$CHANNEL_OR_TAG"/install

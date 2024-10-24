@@ -1,5 +1,5 @@
 #[deprecated(
     since = "1.15.0",
-    note = "Please use `solana_udp_client::udp_client::UdpClientConnection` instead."
+    note = "Please use `dolly_udp_client::udp_client::UdpClientConnection` instead."
 )]
-pub use solana_udp_client::udp_client::UdpClientConnection as UdpTpuConnection;
+pub use dolly_udp_client::udp_client::UdpClientConnection as UdpTpuConnection;

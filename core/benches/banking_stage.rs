@@ -1,7 +1,7 @@
 #![allow(clippy::arithmetic_side_effects)]
 #![feature(test)]
 
-use solana_core::validator::BlockProductionMethod;
+use dolly_core::validator::BlockProductionMethod;
 
 extern crate test;
 
@@ -10,8 +10,8 @@ use {
     log::*,
     rand::{thread_rng, Rng},
     rayon::prelude::*,
-    solana_client::connection_cache::ConnectionCache,
-    solana_core::{
+    dolly_client::connection_cache::ConnectionCache,
+    dolly_core::{
         banking_stage::{
             committer::Committer,
             consumer::Consumer,
@@ -23,23 +23,23 @@ use {
         },
         banking_trace::{BankingPacketBatch, BankingTracer},
     },
-    solana_entry::entry::{next_hash, Entry},
-    solana_gossip::cluster_info::{ClusterInfo, Node},
-    solana_ledger::{
+    dolly_entry::entry::{next_hash, Entry},
+    dolly_gossip::cluster_info::{ClusterInfo, Node},
+    dolly_ledger::{
         blockstore::Blockstore,
         blockstore_processor::process_entries_for_tests,
         genesis_utils::{create_genesis_config, GenesisConfigInfo},
         get_tmp_ledger_path_auto_delete,
     },
-    solana_perf::{
+    dolly_perf::{
         packet::{to_packet_batches, Packet},
         test_tx::test_tx,
     },
-    solana_poh::poh_recorder::{create_test_recorder, WorkingBankEntry},
-    solana_runtime::{
+    dolly_poh::poh_recorder::{create_test_recorder, WorkingBankEntry},
+    dolly_runtime::{
         bank::Bank, bank_forks::BankForks, prioritization_fee_cache::PrioritizationFeeCache,
     },
-    solana_sdk::{
+    dolly_sdk::{
         genesis_config::GenesisConfig,
         hash::Hash,
         message::Message,
@@ -49,8 +49,8 @@ use {
         timing::{duration_as_us, timestamp},
         transaction::{Transaction, VersionedTransaction},
     },
-    solana_streamer::socket::SocketAddrSpace,
-    solana_vote_program::{
+    dolly_streamer::socket::SocketAddrSpace,
+    dolly_vote_program::{
         vote_state::VoteStateUpdate, vote_transaction::new_vote_state_update_transaction,
     },
     std::{
@@ -193,7 +193,7 @@ enum TransactionType {
 }
 
 fn bench_banking(bencher: &mut Bencher, tx_type: TransactionType) {
-    solana_logger::setup();
+    dolly_logger::setup();
     let num_threads = BankingStage::num_threads() as usize;
     //   a multiple of packet chunk duplicates to avoid races
     const CHUNKS: usize = 8;

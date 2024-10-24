@@ -28,7 +28,7 @@ use {
 /// an error be consistent across software versions.  For example, it is
 /// dangerous to include error strings from 3rd party crates because they could
 /// change at any time and changes to them are difficult to detect.
-#[cfg_attr(not(target_os = "solana"), derive(AbiExample, AbiEnumVisitor))]
+#[cfg_attr(not(target_os = "dolly"), derive(AbiExample, AbiEnumVisitor))]
 #[derive(Serialize, Deserialize, Debug, Error, PartialEq, Eq, Clone)]
 pub enum InstructionError {
     /// Deprecated! Use CustomError instead!
@@ -273,7 +273,7 @@ pub enum InstructionError {
 /// clients. Instructions are also used to describe [cross-program
 /// invocations][cpi].
 ///
-/// [cpi]: https://solana.com/docs/core/cpi
+/// [cpi]: https://dolly.com/docs/core/cpi
 ///
 /// During execution, a program will receive a list of account data as one of
 /// its arguments, in the same order as specified during `Instruction`
@@ -356,7 +356,7 @@ impl Instruction {
     /// # Examples
     ///
     /// ```
-    /// # use solana_program::{
+    /// # use dolly_program::{
     /// #     pubkey::Pubkey,
     /// #     instruction::{AccountMeta, Instruction},
     /// # };
@@ -409,7 +409,7 @@ impl Instruction {
     /// # Examples
     ///
     /// ```
-    /// # use solana_program::{
+    /// # use dolly_program::{
     /// #     pubkey::Pubkey,
     /// #     instruction::{AccountMeta, Instruction},
     /// # };
@@ -462,7 +462,7 @@ impl Instruction {
     /// # Examples
     ///
     /// ```
-    /// # use solana_program::{
+    /// # use dolly_program::{
     /// #     pubkey::Pubkey,
     /// #     instruction::{AccountMeta, Instruction},
     /// # };
@@ -551,7 +551,7 @@ impl AccountMeta {
     /// # Examples
     ///
     /// ```
-    /// # use solana_program::{
+    /// # use dolly_program::{
     /// #     pubkey::Pubkey,
     /// #     instruction::{AccountMeta, Instruction},
     /// # };
@@ -587,7 +587,7 @@ impl AccountMeta {
     /// # Examples
     ///
     /// ```
-    /// # use solana_program::{
+    /// # use dolly_program::{
     /// #     pubkey::Pubkey,
     /// #     instruction::{AccountMeta, Instruction},
     /// # };
@@ -690,7 +690,7 @@ pub struct ProcessedSiblingInstruction {
 /// Then B's processed sibling instruction list is: `[A]`
 /// Then F's processed sibling instruction list is: `[E, C]`
 pub fn get_processed_sibling_instruction(index: usize) -> Option<Instruction> {
-    #[cfg(target_os = "solana")]
+    #[cfg(target_os = "dolly")]
     {
         let mut meta = ProcessedSiblingInstruction::default();
         let mut program_id = Pubkey::default();
@@ -725,7 +725,7 @@ pub fn get_processed_sibling_instruction(index: usize) -> Option<Instruction> {
         }
     }
 
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     crate::program_stubs::sol_get_processed_sibling_instruction(index)
 }
 
@@ -736,12 +736,12 @@ pub const TRANSACTION_LEVEL_STACK_HEIGHT: usize = 1;
 /// TRANSACTION_LEVEL_STACK_HEIGHT, fist invoked inner instruction is height
 /// TRANSACTION_LEVEL_STACK_HEIGHT + 1, etc...
 pub fn get_stack_height() -> usize {
-    #[cfg(target_os = "solana")]
+    #[cfg(target_os = "dolly")]
     unsafe {
         crate::syscalls::sol_get_stack_height() as usize
     }
 
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     {
         crate::program_stubs::sol_get_stack_height() as usize
     }

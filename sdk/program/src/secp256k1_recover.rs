@@ -159,7 +159,7 @@ impl Secp256k1Pubkey {
 /// a unique representation this can be the source of bugs, potentially with
 /// security implications.
 ///
-/// **The solana `secp256k1_recover` function does not prevent signature
+/// **The dolly `secp256k1_recover` function does not prevent signature
 /// malleability**. This is in contrast to the Bitcoin secp256k1 library, which
 /// does prevent malleability by default. Solana accepts signatures with `S`
 /// values that are either in the _high order_ or in the _low order_, and it
@@ -171,7 +171,7 @@ impl Secp256k1Pubkey {
 /// this:
 ///
 /// ```rust
-/// # use solana_program::program_error::ProgramError;
+/// # use dolly_program::program_error::ProgramError;
 /// # let signature_bytes = [
 /// #     0x83, 0x55, 0x81, 0xDF, 0xB1, 0x02, 0xA7, 0xD2,
 /// #     0x2D, 0x33, 0xA4, 0x07, 0xDD, 0x7E, 0xFA, 0x9A,
@@ -267,7 +267,7 @@ impl Secp256k1Pubkey {
 /// the secp256k1 signature to prevent malleability.
 ///
 /// ```no_run
-/// use solana_program::{
+/// use dolly_program::{
 ///     entrypoint::ProgramResult,
 ///     keccak, msg,
 ///     program_error::ProgramError,
@@ -337,11 +337,11 @@ impl Secp256k1Pubkey {
 /// The RPC client program:
 ///
 /// ```no_run
-/// # use solana_program::example_mocks::solana_rpc_client;
-/// # use solana_program::example_mocks::solana_sdk;
+/// # use dolly_program::example_mocks::dolly_rpc_client;
+/// # use dolly_program::example_mocks::dolly_sdk;
 /// use anyhow::Result;
-/// use solana_rpc_client::rpc_client::RpcClient;
-/// use solana_sdk::{
+/// use dolly_rpc_client::rpc_client::RpcClient;
+/// use dolly_sdk::{
 ///     instruction::Instruction,
 ///     keccak,
 ///     pubkey::Pubkey,
@@ -404,7 +404,7 @@ pub fn secp256k1_recover(
     recovery_id: u8,
     signature: &[u8],
 ) -> Result<Secp256k1Pubkey, Secp256k1RecoverError> {
-    #[cfg(target_os = "solana")]
+    #[cfg(target_os = "dolly")]
     {
         let mut pubkey_buffer = [0u8; SECP256K1_PUBLIC_KEY_LENGTH];
         let result = unsafe {
@@ -422,7 +422,7 @@ pub fn secp256k1_recover(
         }
     }
 
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     {
         let message = libsecp256k1::Message::parse_slice(hash)
             .map_err(|_| Secp256k1RecoverError::InvalidHash)?;

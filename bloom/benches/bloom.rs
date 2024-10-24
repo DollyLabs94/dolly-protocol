@@ -5,8 +5,8 @@ use {
     bv::BitVec,
     fnv::FnvHasher,
     rand::Rng,
-    solana_bloom::bloom::{Bloom, BloomHashIndex, ConcurrentBloom},
-    solana_sdk::{
+    dolly_bloom::bloom::{Bloom, BloomHashIndex, ConcurrentBloom},
+    dolly_sdk::{
         hash::{hash, Hash},
         signature::Signature,
     },

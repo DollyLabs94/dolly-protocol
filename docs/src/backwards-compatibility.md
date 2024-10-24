@@ -72,11 +72,11 @@ Major releases:
 
 ### Rust Crates
 
-- [`solana-sdk`](https://docs.rs/solana-sdk/) - Rust SDK for creating transactions and parsing account state
-- [`solana-program`](https://docs.rs/solana-program/) - Rust SDK for writing programs
-- [`solana-client`](https://docs.rs/solana-client/) - Rust client for connecting to RPC API
-- [`solana-cli-config`](https://docs.rs/solana-cli-config/) - Rust client for managing Solana CLI config files
-- [`solana-geyser-plugin-interface`](https://docs.rs/solana-geyser-plugin-interface/) - Rust interface for developing Solana Geyser plugins.
+- [`dolly-sdk`](https://docs.rs/dolly-sdk/) - Rust SDK for creating transactions and parsing account state
+- [`dolly-program`](https://docs.rs/dolly-program/) - Rust SDK for writing programs
+- [`dolly-client`](https://docs.rs/dolly-client/) - Rust client for connecting to RPC API
+- [`dolly-cli-config`](https://docs.rs/dolly-cli-config/) - Rust client for managing Solana CLI config files
+- [`dolly-geyser-plugin-interface`](https://docs.rs/dolly-geyser-plugin-interface/) - Rust interface for developing Solana Geyser plugins.
 
 Patch releases:
 

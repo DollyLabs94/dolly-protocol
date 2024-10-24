@@ -1,6 +1,6 @@
 [package]
-name = "solana-sbf-rust-mem"
-documentation = "https://docs.rs/solana-sbf-rust-mem"
+name = "dolly-sbf-rust-mem"
+documentation = "https://docs.rs/dolly-sbf-rust-mem"
 version = { workspace = true }
 description = { workspace = true }
 authors = { workspace = true }
@@ -15,12 +15,12 @@ test-bpf = []
 dummy-for-ci-check = ["test-bpf"]
 
 [dependencies]
-solana-program = { workspace = true }
+dolly-program = { workspace = true }
 
 [dev-dependencies]
-solana-program-runtime = { workspace = true }
-solana-program-test = { workspace = true }
-solana-sdk = { workspace = true }
+dolly-program-runtime = { workspace = true }
+dolly-program-test = { workspace = true }
+dolly-sdk = { workspace = true }
 
 [lib]
 crate-type = ["cdylib", "lib"]

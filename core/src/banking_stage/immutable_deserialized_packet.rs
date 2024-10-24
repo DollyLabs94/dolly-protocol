@@ -1,7 +1,7 @@
 use {
-    solana_perf::packet::Packet,
-    solana_runtime::compute_budget_details::{ComputeBudgetDetails, GetComputeBudgetDetails},
-    solana_sdk::{
+    dolly_perf::packet::Packet,
+    dolly_runtime::compute_budget_details::{ComputeBudgetDetails, GetComputeBudgetDetails},
+    dolly_sdk::{
         feature_set,
         hash::Hash,
         message::Message,
@@ -150,14 +150,14 @@ fn packet_message(packet: &Packet) -> Result<&[u8], DeserializedPacketError> {
 mod tests {
     use {
         super::*,
-        solana_sdk::{signature::Keypair, system_transaction},
+        dolly_sdk::{signature::Keypair, system_transaction},
     };
 
     #[test]
     fn simple_deserialized_packet() {
         let tx = system_transaction::transfer(
             &Keypair::new(),
-            &solana_sdk::pubkey::new_rand(),
+            &dolly_sdk::pubkey::new_rand(),
             1,
             Hash::new_unique(),
         );

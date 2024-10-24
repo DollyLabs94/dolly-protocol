@@ -1,8 +1,8 @@
 #[allow(deprecated)]
-use solana_sdk::sysvar::recent_blockhashes;
+use dolly_sdk::sysvar::recent_blockhashes;
 use {
     serde::{Deserialize, Serialize},
-    solana_sdk::{
+    dolly_sdk::{
         clock::MAX_RECENT_BLOCKHASHES, fee_calculator::FeeCalculator, hash::Hash, timing::timestamp,
     },
     std::collections::HashMap,
@@ -131,11 +131,11 @@ impl BlockhashQueue {
 #[cfg(test)]
 mod tests {
     #[allow(deprecated)]
-    use solana_sdk::sysvar::recent_blockhashes::IterItem;
+    use dolly_sdk::sysvar::recent_blockhashes::IterItem;
     use {
         super::*,
         bincode::serialize,
-        solana_sdk::{clock::MAX_RECENT_BLOCKHASHES, hash::hash},
+        dolly_sdk::{clock::MAX_RECENT_BLOCKHASHES, hash::hash},
     };
 
     #[test]

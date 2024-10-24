@@ -14,14 +14,14 @@ use {
     indicatif::{ProgressBar, ProgressStyle},
     pickledb::PickleDb,
     serde::{Deserialize, Serialize},
-    solana_account_decoder::parse_token::real_number_string,
-    solana_rpc_client::rpc_client::RpcClient,
-    solana_rpc_client_api::{
+    dolly_account_decoder::parse_token::real_number_string,
+    dolly_rpc_client::rpc_client::RpcClient,
+    dolly_rpc_client_api::{
         client_error::{Error as ClientError, Result as ClientResult},
         config::RpcSendTransactionConfig,
         request::{MAX_GET_SIGNATURE_STATUSES_QUERY_ITEMS, MAX_MULTIPLE_ACCOUNTS},
     },
-    solana_sdk::{
+    dolly_sdk::{
         clock::Slot,
         commitment_config::CommitmentConfig,
         hash::Hash,
@@ -36,9 +36,9 @@ use {
         system_instruction,
         transaction::Transaction,
     },
-    solana_transaction_status::TransactionStatus,
+    dolly_transaction_status::TransactionStatus,
     spl_associated_token_account::get_associated_token_address,
-    spl_token::solana_program::program_error::ProgramError,
+    spl_token::dolly_program::program_error::ProgramError,
     std::{
         cmp::{self},
         io,
@@ -955,7 +955,7 @@ pub fn process_transaction_log(args: &TransactionLogArgs) -> Result<(), Error> {
 
 use {
     crate::db::check_output_file,
-    solana_sdk::{
+    dolly_sdk::{
         pubkey::{self, Pubkey},
         signature::Keypair,
     },
@@ -1307,14 +1307,14 @@ pub fn test_process_distribute_stake_with_client(client: &RpcClient, sender_keyp
 mod tests {
     use {
         super::*,
-        solana_sdk::{
+        dolly_sdk::{
             instruction::AccountMeta,
             signature::{read_keypair_file, write_keypair_file, Signer},
             stake::instruction::StakeInstruction,
         },
-        solana_streamer::socket::SocketAddrSpace,
-        solana_test_validator::TestValidator,
-        solana_transaction_status::TransactionConfirmationStatus,
+        dolly_streamer::socket::SocketAddrSpace,
+        dolly_test_validator::TestValidator,
+        dolly_transaction_status::TransactionConfirmationStatus,
     };
 
     fn one_signer_message(client: &RpcClient) -> Message {
@@ -1948,7 +1948,7 @@ mod tests {
 
     #[test]
     fn test_check_payer_balances_distribute_tokens_separate_payers() {
-        solana_logger::setup();
+        dolly_logger::setup();
         let alice = Keypair::new();
         let test_validator = simple_test_validator(alice.pubkey());
         let url = test_validator.rpc_url();
@@ -2189,7 +2189,7 @@ mod tests {
 
     #[test]
     fn test_check_payer_balances_distribute_stakes_separate_payers() {
-        solana_logger::setup();
+        dolly_logger::setup();
         let alice = Keypair::new();
         let test_validator = simple_test_validator(alice.pubkey());
         let url = test_validator.rpc_url();

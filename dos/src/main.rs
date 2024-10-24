@@ -18,24 +18,24 @@
 //! 1. Without blockhash or payer:
 //! 1.1 With invalid signatures
 //! ```bash
-//! solana-dos $COMMON --num-signatures 8
+//! dolly-dos $COMMON --num-signatures 8
 //! ```
 //! 1.2 With valid signatures
 //! ```bash
-//! solana-dos $COMMON --valid-signatures --num-signatures 8
+//! dolly-dos $COMMON --valid-signatures --num-signatures 8
 //! ```
 //! 2. With blockhash and payer:
 //! 2.1 Single-instruction transaction
 //! ```bash
-//! solana-dos $COMMON --valid-blockhash --transaction-type transfer --num-instructions 1
+//! dolly-dos $COMMON --valid-blockhash --transaction-type transfer --num-instructions 1
 //! ```
 //! 2.2 Multi-instruction transaction
 //! ```bash
-//! solana-dos $COMMON --valid-blockhash --transaction-type transfer --num-instructions 8
+//! dolly-dos $COMMON --valid-blockhash --transaction-type transfer --num-instructions 8
 //! ```
 //! 2.3 Account-creation transaction
 //! ```bash
-//! solana-dos $COMMON --valid-blockhash --transaction-type account-creation
+//! dolly-dos $COMMON --valid-blockhash --transaction-type account-creation
 //! ```
 //!
 #![allow(clippy::arithmetic_side_effects)]
@@ -45,21 +45,21 @@ use {
     itertools::Itertools,
     log::*,
     rand::{thread_rng, Rng},
-    solana_bench_tps::{bench::generate_and_fund_keypairs, bench_tps_client::BenchTpsClient},
-    solana_client::{
+    dolly_bench_tps::{bench::generate_and_fund_keypairs, bench_tps_client::BenchTpsClient},
+    dolly_client::{
         connection_cache::ConnectionCache, tpu_client::TpuClientWrapper,
         tpu_connection::TpuConnection,
     },
-    solana_core::repair::serve_repair::{RepairProtocol, RepairRequestHeader, ServeRepair},
-    solana_dos::cli::*,
-    solana_gossip::{
+    dolly_core::repair::serve_repair::{RepairProtocol, RepairRequestHeader, ServeRepair},
+    dolly_dos::cli::*,
+    dolly_gossip::{
         contact_info::Protocol,
         gossip_service::{discover, get_client},
         legacy_contact_info::LegacyContactInfo as ContactInfo,
     },
-    solana_measure::measure::Measure,
-    solana_rpc_client::rpc_client::RpcClient,
-    solana_sdk::{
+    dolly_measure::measure::Measure,
+    dolly_rpc_client::rpc_client::RpcClient,
+    dolly_sdk::{
         hash::Hash,
         instruction::CompiledInstruction,
         message::Message,
@@ -71,8 +71,8 @@ use {
         timing::timestamp,
         transaction::Transaction,
     },
-    solana_streamer::socket::SocketAddrSpace,
-    solana_tpu_client::tpu_client::DEFAULT_TPU_CONNECTION_POOL_SIZE,
+    dolly_streamer::socket::SocketAddrSpace,
+    dolly_tpu_client::tpu_client::DEFAULT_TPU_CONNECTION_POOL_SIZE,
     std::{
         net::{SocketAddr, UdpSocket},
         process::exit,
@@ -434,7 +434,7 @@ fn get_target(
     let mut target = None;
     if nodes.is_empty() {
         // skip-gossip case
-        target = Some((solana_sdk::pubkey::new_rand(), entrypoint_addr));
+        target = Some((dolly_sdk::pubkey::new_rand(), entrypoint_addr));
     } else {
         info!("************ NODE ***********");
         for node in nodes {
@@ -760,7 +760,7 @@ fn run_dos<T: 'static + BenchTpsClient + Send + Sync>(
 }
 
 fn main() {
-    solana_logger::setup_with_default("solana=info");
+    dolly_logger::setup_with_default("dolly=info");
     let cmd_params = build_cli_parameters();
 
     let (nodes, client) = if !cmd_params.skip_gossip {
@@ -818,17 +818,17 @@ fn main() {
 pub mod test {
     use {
         super::*,
-        solana_client::tpu_client::QuicTpuClient,
-        solana_core::validator::ValidatorConfig,
-        solana_faucet::faucet::run_local_faucet,
-        solana_gossip::contact_info::LegacyContactInfo,
-        solana_local_cluster::{
+        dolly_client::tpu_client::QuicTpuClient,
+        dolly_core::validator::ValidatorConfig,
+        dolly_faucet::faucet::run_local_faucet,
+        dolly_gossip::contact_info::LegacyContactInfo,
+        dolly_local_cluster::{
             cluster::Cluster,
             local_cluster::{ClusterConfig, LocalCluster},
             validator_configs::make_identical_validator_configs,
         },
-        solana_rpc::rpc::JsonRpcConfig,
-        solana_sdk::timing::timestamp,
+        dolly_rpc::rpc::JsonRpcConfig,
+        dolly_sdk::timing::timestamp,
     };
 
     const TEST_SEND_BATCH_SIZE: usize = 1;
@@ -842,7 +842,7 @@ pub mod test {
     #[test]
     fn test_dos() {
         let nodes = [ContactInfo::new_localhost(
-            &solana_sdk::pubkey::new_rand(),
+            &dolly_sdk::pubkey::new_rand(),
             timestamp(),
         )];
         let entrypoint_addr = nodes[0].gossip().unwrap();
@@ -925,7 +925,7 @@ pub mod test {
 
     #[test]
     fn test_dos_random() {
-        solana_logger::setup();
+        dolly_logger::setup();
         let num_nodes = 1;
         let cluster =
             LocalCluster::new_with_equal_stakes(num_nodes, 100, 3, SocketAddrSpace::Unspecified);
@@ -962,7 +962,7 @@ pub mod test {
 
     #[test]
     fn test_dos_without_blockhash() {
-        solana_logger::setup();
+        dolly_logger::setup();
         let num_nodes = 1;
         let cluster =
             LocalCluster::new_with_equal_stakes(num_nodes, 100, 3, SocketAddrSpace::Unspecified);
@@ -1063,7 +1063,7 @@ pub mod test {
     }
 
     fn run_dos_with_blockhash_and_payer(tpu_use_quic: bool) {
-        solana_logger::setup();
+        dolly_logger::setup();
 
         // 1. Create faucet thread
         let faucet_keypair = Keypair::new();

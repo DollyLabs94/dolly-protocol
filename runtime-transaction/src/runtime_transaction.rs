@@ -1,20 +1,20 @@
 //! RuntimeTransaction is `runtime` facing representation of transaction, while
-//! solana_sdk::SanitizedTransaction is client facing representation.
+//! dolly_sdk::SanitizedTransaction is client facing representation.
 //!
 //! It has two states:
 //! 1. Statically Loaded: after receiving `packet` from sigverify and deserializing
-//!    it into `solana_sdk::VersionedTransaction`, then sanitizing into
-//!    `solana_sdk::SanitizedVersionedTransaction`, which can be wrapped into
+//!    it into `dolly_sdk::VersionedTransaction`, then sanitizing into
+//!    `dolly_sdk::SanitizedVersionedTransaction`, which can be wrapped into
 //!    `RuntimeTransaction` with static transaction metadata extracted.
 //! 2. Dynamically Loaded: after successfully loaded account addresses from onchain
 //!    ALT, RuntimeTransaction<SanitizedMessage> transits into Dynamically Loaded state,
 //!    with its dynamic metadata loaded.
 use {
     crate::transaction_meta::{DynamicMeta, StaticMeta, TransactionMeta},
-    solana_program_runtime::compute_budget_processor::{
+    dolly_program_runtime::compute_budget_processor::{
         process_compute_budget_instructions, ComputeBudgetLimits,
     },
-    solana_sdk::{
+    dolly_sdk::{
         hash::Hash,
         message::{AddressLoader, SanitizedMessage, SanitizedVersionedMessage},
         signature::Signature,
@@ -124,11 +124,11 @@ impl RuntimeTransaction<SanitizedMessage> {
 mod tests {
     use {
         super::*,
-        solana_program::{
+        dolly_program::{
             system_instruction,
             vote::{self, state::Vote},
         },
-        solana_sdk::{
+        dolly_sdk::{
             compute_budget::ComputeBudgetInstruction,
             instruction::Instruction,
             message::Message,
@@ -170,7 +170,7 @@ mod tests {
             let from_keypair = Keypair::new();
             let instructions = vec![system_instruction::transfer(
                 &from_keypair.pubkey(),
-                &solana_sdk::pubkey::new_rand(),
+                &dolly_sdk::pubkey::new_rand(),
                 1,
             )];
             TestTransaction {

@@ -18,12 +18,12 @@ Make sure you have
 
 ## Generate a File System Wallet Keypair
 
-Use Solana's command-line tool `solana-keygen` to generate keypair files. For
+Use Solana's command-line tool `dolly-keygen` to generate keypair files. For
 example, run the following from a command-line shell:
 
 ```bash
-mkdir ~/my-solana-wallet
-solana-keygen new --outfile ~/my-solana-wallet/my-keypair.json
+mkdir ~/my-dolly-wallet
+dolly-keygen new --outfile ~/my-dolly-wallet/my-keypair.json
 ```
 
 This file contains your **unencrypted** keypair. In fact, even if you specify
@@ -33,7 +33,7 @@ to all tokens sent to its public key. Instead, you should share only its public
 key. To display its public key, run:
 
 ```bash
-solana-keygen pubkey ~/my-solana-wallet/my-keypair.json
+dolly-keygen pubkey ~/my-dolly-wallet/my-keypair.json
 ```
 
 It will output a string of characters, such as:
@@ -43,16 +43,16 @@ ErRr1caKzK8L8nn4xmEWtimYRiTCAZXjBtVphuZ5vMKy
 ```
 
 This is the public key corresponding to the keypair in
-`~/my-solana-wallet/my-keypair.json`. The public key of the keypair file is
+`~/my-dolly-wallet/my-keypair.json`. The public key of the keypair file is
 your _wallet address_.
 
 ## Verify your Address against your Keypair file
 
 To verify you hold the private key for a given address, use
-`solana-keygen verify`:
+`dolly-keygen verify`:
 
 ```bash
-solana-keygen verify <PUBKEY> ~/my-solana-wallet/my-keypair.json
+dolly-keygen verify <PUBKEY> ~/my-dolly-wallet/my-keypair.json
 ```
 
 where `<PUBKEY>` is replaced with your wallet address.

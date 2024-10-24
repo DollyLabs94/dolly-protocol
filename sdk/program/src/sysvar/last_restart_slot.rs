@@ -9,14 +9,14 @@
 //!
 //! See also the Solana [SIMD proposal][simd].
 //!
-//! [simd]: https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0047-syscall-and-sysvar-for-last-restart-slot.md
+//! [simd]: https://github.com/dolly-foundation/dolly-improvement-documents/blob/main/proposals/0047-syscall-and-sysvar-for-last-restart-slot.md
 //!
 //! # Examples
 //!
 //! Accessing via on-chain program directly:
 //!
 //! ```no_run
-//! # use solana_program::{
+//! # use dolly_program::{
 //! #    account_info::{AccountInfo, next_account_info},
 //! #    entrypoint::ProgramResult,
 //! #    msg,

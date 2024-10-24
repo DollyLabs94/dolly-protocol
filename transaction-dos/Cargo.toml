@@ -1,5 +1,5 @@
 [package]
-name = "solana-transaction-dos"
+name = "dolly-transaction-dos"
 publish = false
 version = { workspace = true }
 authors = { workspace = true }
@@ -14,24 +14,24 @@ clap = { workspace = true }
 log = { workspace = true }
 rand = { workspace = true }
 rayon = { workspace = true }
-solana-clap-utils = { workspace = true }
-solana-cli = { workspace = true }
-solana-client = { workspace = true }
-solana-core = { workspace = true }
-solana-faucet = { workspace = true }
-solana-gossip = { workspace = true }
-solana-logger = { workspace = true }
-solana-measure = { workspace = true }
-solana-net-utils = { workspace = true }
-solana-rpc-client = { workspace = true }
-solana-runtime = { workspace = true }
-solana-sdk = { workspace = true }
-solana-streamer = { workspace = true }
-solana-transaction-status = { workspace = true }
-solana-version = { workspace = true }
+dolly-clap-utils = { workspace = true }
+dolly-cli = { workspace = true }
+dolly-client = { workspace = true }
+dolly-core = { workspace = true }
+dolly-faucet = { workspace = true }
+dolly-gossip = { workspace = true }
+dolly-logger = { workspace = true }
+dolly-measure = { workspace = true }
+dolly-net-utils = { workspace = true }
+dolly-rpc-client = { workspace = true }
+dolly-runtime = { workspace = true }
+dolly-sdk = { workspace = true }
+dolly-streamer = { workspace = true }
+dolly-transaction-status = { workspace = true }
+dolly-version = { workspace = true }
 
 [dev-dependencies]
-solana-local-cluster = { workspace = true }
+dolly-local-cluster = { workspace = true }
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]

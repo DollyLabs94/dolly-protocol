@@ -8,18 +8,18 @@ use {
     },
     log::*,
     serde::{de::Deserializer, Deserialize, Serialize},
-    solana_accounts_db::accounts_index::AccountIndex,
-    solana_core::{
+    dolly_accounts_db::accounts_index::AccountIndex,
+    dolly_core::{
         admin_rpc_post_init::AdminRpcRequestMetadataPostInit,
         consensus::{tower_storage::TowerStorage, Tower},
         repair::repair_service,
         validator::ValidatorStartProgress,
     },
-    solana_geyser_plugin_manager::GeyserPluginManagerRequest,
-    solana_gossip::contact_info::{ContactInfo, Protocol, SOCKET_ADDR_UNSPECIFIED},
-    solana_rpc::rpc::verify_pubkey,
-    solana_rpc_client_api::{config::RpcAccountIndex, custom_error::RpcCustomError},
-    solana_sdk::{
+    dolly_geyser_plugin_manager::GeyserPluginManagerRequest,
+    dolly_gossip::contact_info::{ContactInfo, Protocol, SOCKET_ADDR_UNSPECIFIED},
+    dolly_rpc::rpc::verify_pubkey,
+    dolly_rpc_client_api::{config::RpcAccountIndex, custom_error::RpcCustomError},
+    dolly_sdk::{
         exit::Exit,
         pubkey::Pubkey,
         signature::{read_keypair_file, Keypair, Signer},
@@ -396,7 +396,7 @@ impl AdminRpc for AdminRpcImpl {
 
     fn set_log_filter(&self, filter: String) -> Result<()> {
         debug!("set_log_filter admin rpc request received");
-        solana_logger::setup_with(&filter);
+        dolly_logger::setup_with(&filter);
         Ok(())
     }
 
@@ -719,7 +719,7 @@ impl AdminRpcImpl {
                 }
             }
 
-            solana_metrics::set_host_id(identity_keypair.pubkey().to_string());
+            dolly_metrics::set_host_id(identity_keypair.pubkey().to_string());
             post_init
                 .cluster_info
                 .set_keypair(Arc::new(identity_keypair));
@@ -860,23 +860,23 @@ mod tests {
     use {
         super::*,
         serde_json::Value,
-        solana_accounts_db::{accounts_index::AccountSecondaryIndexes, inline_spl_token},
-        solana_core::consensus::tower_storage::NullTowerStorage,
-        solana_gossip::cluster_info::ClusterInfo,
-        solana_ledger::genesis_utils::{create_genesis_config, GenesisConfigInfo},
-        solana_rpc::rpc::create_validator_exit,
-        solana_runtime::{
+        dolly_accounts_db::{accounts_index::AccountSecondaryIndexes, inline_spl_token},
+        dolly_core::consensus::tower_storage::NullTowerStorage,
+        dolly_gossip::cluster_info::ClusterInfo,
+        dolly_ledger::genesis_utils::{create_genesis_config, GenesisConfigInfo},
+        dolly_rpc::rpc::create_validator_exit,
+        dolly_runtime::{
             bank::{Bank, BankTestConfig},
             bank_forks::BankForks,
         },
-        solana_sdk::{
+        dolly_sdk::{
             account::{Account, AccountSharedData},
             pubkey::Pubkey,
             system_program,
         },
-        solana_streamer::socket::SocketAddrSpace,
+        dolly_streamer::socket::SocketAddrSpace,
         spl_token_2022::{
-            solana_program::{program_option::COption, program_pack::Pack},
+            dolly_program::{program_option::COption, program_pack::Pack},
             state::{Account as TokenAccount, AccountState as TokenAccountState, Mint},
         },
         std::{collections::HashSet, sync::atomic::AtomicBool},
@@ -903,7 +903,7 @@ mod tests {
             let cluster_info = Arc::new(ClusterInfo::new(
                 ContactInfo::new(
                     keypair.pubkey(),
-                    solana_sdk::timing::timestamp(), // wallclock
+                    dolly_sdk::timing::timestamp(), // wallclock
                     0u16,                            // shred_version
                 ),
                 keypair,
@@ -935,7 +935,7 @@ mod tests {
                         RwLock<repair_service::OutstandingShredRepairs>,
                     >::default(),
                     cluster_slots: Arc::new(
-                        solana_core::cluster_slots_service::cluster_slots::ClusterSlots::default(),
+                        dolly_core::cluster_slots_service::cluster_slots::ClusterSlots::default(),
                     ),
                 }))),
                 staked_nodes_overrides: Arc::new(RwLock::new(HashMap::new())),

@@ -2,8 +2,8 @@ use {
     log::*,
     rand::{thread_rng, Rng},
     serde::Serialize,
-    solana_accounts_db::ancestors::Ancestors,
-    solana_sdk::{
+    dolly_accounts_db::ancestors::Ancestors,
+    dolly_sdk::{
         clock::{Slot, MAX_RECENT_BLOCKHASHES},
         hash::Hash,
     },
@@ -283,7 +283,7 @@ impl<T: Serialize + Clone> StatusCache<T> {
 mod tests {
     use {
         super::*,
-        solana_sdk::{hash::hash, signature::Signature},
+        dolly_sdk::{hash::hash, signature::Signature},
     };
 
     type BankStatusCache = StatusCache<()>;

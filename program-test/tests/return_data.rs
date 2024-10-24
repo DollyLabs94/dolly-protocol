@@ -1,8 +1,8 @@
 use {
     assert_matches::assert_matches,
-    solana_banks_client::BanksClientError,
-    solana_program_test::{processor, ProgramTest},
-    solana_sdk::{
+    dolly_banks_client::BanksClientError,
+    dolly_program_test::{processor, ProgramTest},
+    dolly_sdk::{
         account_info::{next_account_info, AccountInfo},
         commitment_config::CommitmentLevel,
         entrypoint::ProgramResult,

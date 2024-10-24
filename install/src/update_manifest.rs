@@ -1,7 +1,7 @@
 use {
     serde::{Deserialize, Serialize},
-    solana_config_program::ConfigState,
-    solana_sdk::{
+    dolly_config_program::ConfigState,
+    dolly_sdk::{
         hash::Hash,
         pubkey::Pubkey,
         signature::{Signable, Signature},

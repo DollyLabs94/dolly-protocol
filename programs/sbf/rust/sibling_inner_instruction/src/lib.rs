@@ -3,7 +3,7 @@
 #![cfg(feature = "program")]
 #![allow(clippy::arithmetic_side_effects)]
 
-use solana_program::{
+use dolly_program::{
     account_info::AccountInfo,
     entrypoint::ProgramResult,
     instruction::{
@@ -14,7 +14,7 @@ use solana_program::{
     pubkey::Pubkey,
 };
 
-solana_program::entrypoint!(process_instruction);
+dolly_program::entrypoint!(process_instruction);
 fn process_instruction(
     _program_id: &Pubkey,
     accounts: &[AccountInfo],

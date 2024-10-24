@@ -1,6 +1,6 @@
 use {
-    solana_program_test::ProgramTestContext,
-    solana_sdk::{
+    dolly_program_test::ProgramTestContext,
+    dolly_sdk::{
         pubkey::Pubkey,
         rent::Rent,
         signature::{Keypair, Signer},
@@ -11,7 +11,7 @@ use {
         system_instruction, system_program,
         transaction::Transaction,
     },
-    solana_vote_program::{
+    dolly_vote_program::{
         vote_instruction,
         vote_state::{self, VoteInit, VoteState},
     },

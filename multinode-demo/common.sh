@@ -25,23 +25,23 @@ if [[ $(uname) != Linux ]]; then
 fi
 
 if [[ -n $USE_INSTALL || ! -f "$SOLANA_ROOT"/Cargo.toml ]]; then
-  solana_program() {
+  dolly_program() {
     declare program="$1"
     if [[ -z $program ]]; then
-      printf "solana"
+      printf "dolly"
     else
-      printf "solana-%s" "$program"
+      printf "dolly-%s" "$program"
     fi
   }
 else
-  solana_program() {
+  dolly_program() {
     declare program="$1"
     declare crate="$program"
     if [[ -z $program ]]; then
       crate="cli"
-      program="solana"
+      program="dolly"
     else
-      program="solana-$program"
+      program="dolly-$program"
     fi
 
     if [[ -n $NDEBUG ]]; then
@@ -61,15 +61,15 @@ else
   }
 fi
 
-solana_bench_tps=$(solana_program bench-tps)
-solana_faucet=$(solana_program faucet)
-solana_validator=$(solana_program validator)
-solana_validator_cuda="$solana_validator --cuda"
-solana_genesis=$(solana_program genesis)
-solana_gossip=$(solana_program gossip)
-solana_keygen=$(solana_program keygen)
-solana_ledger_tool=$(solana_program ledger-tool)
-solana_cli=$(solana_program)
+dolly_bench_tps=$(dolly_program bench-tps)
+dolly_faucet=$(dolly_program faucet)
+dolly_validator=$(dolly_program validator)
+dolly_validator_cuda="$dolly_validator --cuda"
+dolly_genesis=$(dolly_program genesis)
+dolly_gossip=$(dolly_program gossip)
+dolly_keygen=$(dolly_program keygen)
+dolly_ledger_tool=$(dolly_program ledger-tool)
+dolly_cli=$(dolly_program)
 
 export RUST_BACKTRACE=1
 

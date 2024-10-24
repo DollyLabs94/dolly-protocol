@@ -3,16 +3,16 @@
 extern crate test;
 use {
     rayon::ThreadPoolBuilder,
-    solana_ledger::{
+    dolly_ledger::{
         shred::{Shred, ShredFlags, LEGACY_SHRED_DATA_CAPACITY},
         sigverify_shreds::{sign_shreds_cpu, sign_shreds_gpu, sign_shreds_gpu_pinned_keypair},
     },
-    solana_perf::{
+    dolly_perf::{
         packet::{Packet, PacketBatch},
         recycler_cache::RecyclerCache,
     },
-    solana_rayon_threadlimit::get_thread_count,
-    solana_sdk::signature::Keypair,
+    dolly_rayon_threadlimit::get_thread_count,
+    dolly_sdk::signature::Keypair,
     std::sync::Arc,
     test::Bencher,
 };

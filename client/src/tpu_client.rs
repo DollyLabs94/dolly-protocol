@@ -1,24 +1,24 @@
 use {
     crate::connection_cache::ConnectionCache,
-    solana_connection_cache::connection_cache::{
+    dolly_connection_cache::connection_cache::{
         ConnectionCache as BackendConnectionCache, ConnectionManager, ConnectionPool,
         NewConnectionConfig,
     },
-    solana_quic_client::{QuicConfig, QuicConnectionManager, QuicPool},
-    solana_rpc_client::rpc_client::RpcClient,
-    solana_sdk::{
+    dolly_quic_client::{QuicConfig, QuicConnectionManager, QuicPool},
+    dolly_rpc_client::rpc_client::RpcClient,
+    dolly_sdk::{
         message::Message,
         signers::Signers,
         transaction::{Transaction, TransactionError},
         transport::Result as TransportResult,
     },
-    solana_tpu_client::tpu_client::{Result, TpuClient as BackendTpuClient},
-    solana_udp_client::{UdpConfig, UdpConnectionManager, UdpPool},
+    dolly_tpu_client::tpu_client::{Result, TpuClient as BackendTpuClient},
+    dolly_udp_client::{UdpConfig, UdpConnectionManager, UdpPool},
     std::sync::Arc,
 };
 pub use {
     crate::nonblocking::tpu_client::TpuSenderError,
-    solana_tpu_client::tpu_client::{TpuClientConfig, DEFAULT_FANOUT_SLOTS, MAX_FANOUT_SLOTS},
+    dolly_tpu_client::tpu_client::{TpuClientConfig, DEFAULT_FANOUT_SLOTS, MAX_FANOUT_SLOTS},
 };
 
 pub type QuicTpuClient = TpuClient<QuicPool, QuicConnectionManager, QuicConfig>;

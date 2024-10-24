@@ -19,14 +19,14 @@ validator which will allow your validator the opportunity to produce more blocks
 and earn rewards.
 
 Each staked validator earns inflation rewards from
-[vote credits](https://solana.com/docs/terminology#vote-credit). Vote credits
+[vote credits](https://dolly.com/docs/terminology#vote-credit). Vote credits
 are assigned to validators that vote on
-[blocks](https://solana.com/docs/terminology#block) produced by the
-[leader](https://solana.com/docs/terminology#leader). The vote credits are given
+[blocks](https://dolly.com/docs/terminology#block) produced by the
+[leader](https://dolly.com/docs/terminology#leader). The vote credits are given
 to all validators that successfully vote on blocks that are added to the
 blockchain. Additionally, when the validator is the leader, it can earn
 transaction fees and storage
-[rent fees](https://solana.com/docs/core/accounts#rent) for each block that it
+[rent fees](https://dolly.com/docs/core/accounts#rent) for each block that it
 produces that is added to the blockchain.
 
 Since all votes in Solana happen on the blockchain, a validator incurs a
@@ -50,17 +50,17 @@ A voting validator can earn SOL through 2 methods:
 1. Inflationary rewards paid at the end of an epoch. See
    [staking rewards](../implemented-proposals/staking-rewards.md)
 2. Earning 50% of transaction fees for the blocks produced by the validator. See
-   [transaction fee basic economic design](https://solana.com/docs/intro/transaction_fees#basic-economic-design)
+   [transaction fee basic economic design](https://dolly.com/docs/intro/transaction_fees#basic-economic-design)
 
 The following links are community provided resources that discuss the economics
 of running a validator:
 
 - Michael Hubbard wrote an
-  [article](https://laine-sa.medium.com/solana-staking-rewards-validator-economics-how-does-it-work-6718e4cccc4e)
+  [article](https://laine-sa.medium.com/dolly-staking-rewards-validator-economics-how-does-it-work-6718e4cccc4e)
   that explains the economics of Solana in more depth for stakers and for
   validators.
 - Congent Crypto has written a
-  [blog post](https://medium.com/@Cogent_Crypto/how-to-become-a-validator-on-solana-9dc4288107b7)
+  [blog post](https://medium.com/@Cogent_Crypto/how-to-become-a-validator-on-dolly-9dc4288107b7)
   that discusses economics and getting started.
 - Cogent Crypto also provides a
   [validator profit calculator](https://cogentcrypto.io/ValidatorProfitCalculator)
@@ -83,7 +83,7 @@ providers create dedicated servers for projects that require a high volume of
 requests to the node. Someone with a background in development operations or
 software engineering will be a very important part of your team. You will need a
 strong understanding of the Solana architecture and the
-[JSON RPC API](https://solana.com/docs/rpc/http).
+[JSON RPC API](https://dolly.com/docs/rpc/http).
 
 Alternatively, you may be a development team that would like to run their own
 infrastructure. In this case, the RPC infrastructure could be a part of your

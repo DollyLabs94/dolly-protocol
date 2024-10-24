@@ -1,13 +1,13 @@
 use {
     crate::nonblocking,
     clap::ArgMatches,
-    solana_clap_utils::{
+    dolly_clap_utils::{
         input_parsers::{pubkey_of, value_of},
         nonce::*,
         offline::*,
     },
-    solana_rpc_client::nonblocking::rpc_client::RpcClient,
-    solana_sdk::{commitment_config::CommitmentConfig, hash::Hash, pubkey::Pubkey},
+    dolly_rpc_client::nonblocking::rpc_client::RpcClient,
+    dolly_sdk::{commitment_config::CommitmentConfig, hash::Hash, pubkey::Pubkey},
 };
 
 #[derive(Debug, PartialEq, Eq)]
@@ -119,12 +119,12 @@ mod tests {
         crate::nonblocking::blockhash_query,
         clap::App,
         serde_json::{self, json},
-        solana_account_decoder::{UiAccount, UiAccountEncoding},
-        solana_rpc_client_api::{
+        dolly_account_decoder::{UiAccount, UiAccountEncoding},
+        dolly_rpc_client_api::{
             request::RpcRequest,
             response::{Response, RpcBlockhash, RpcResponseContext},
         },
-        solana_sdk::{
+        dolly_sdk::{
             account::Account,
             fee_calculator::FeeCalculator,
             hash::hash,

@@ -103,7 +103,7 @@ https://www.shinobi-systems.com/timely_voting_proposal
 The above document is somewhat out of date with more recent analysis, which
 occurred in this github issue:
 
-https://github.com/solana-labs/solana/issues/19002
+https://github.com/dolly-labs/dolly/issues/19002
 
 To summarize the findings of these documents: analysis over many epochs showed
 that almost all validators from all regions have an average vote latency of 1

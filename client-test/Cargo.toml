@@ -1,7 +1,7 @@
 [package]
-name = "solana-client-test"
+name = "dolly-client-test"
 description = "Solana RPC Test"
-documentation = "https://docs.rs/solana-client-test"
+documentation = "https://docs.rs/dolly-client-test"
 publish = false
 version = { workspace = true }
 authors = { workspace = true }
@@ -14,30 +14,30 @@ edition = { workspace = true }
 futures-util = { workspace = true }
 rand = { workspace = true }
 serde_json = { workspace = true }
-solana-client = { workspace = true }
-solana-ledger = { workspace = true }
-solana-measure = { workspace = true }
-solana-merkle-tree = { workspace = true }
-solana-metrics = { workspace = true }
-solana-perf = { workspace = true }
-solana-pubsub-client = { workspace = true }
-solana-rayon-threadlimit = { workspace = true }
-solana-rpc = { workspace = true }
-solana-rpc-client = { workspace = true }
-solana-rpc-client-api = { workspace = true }
-solana-runtime = { workspace = true }
-solana-sdk = { workspace = true }
-solana-streamer = { workspace = true }
-solana-test-validator = { workspace = true }
-solana-transaction-status = { workspace = true }
-solana-version = { workspace = true }
+dolly-client = { workspace = true }
+dolly-ledger = { workspace = true }
+dolly-measure = { workspace = true }
+dolly-merkle-tree = { workspace = true }
+dolly-metrics = { workspace = true }
+dolly-perf = { workspace = true }
+dolly-pubsub-client = { workspace = true }
+dolly-rayon-threadlimit = { workspace = true }
+dolly-rpc = { workspace = true }
+dolly-rpc-client = { workspace = true }
+dolly-rpc-client-api = { workspace = true }
+dolly-runtime = { workspace = true }
+dolly-sdk = { workspace = true }
+dolly-streamer = { workspace = true }
+dolly-test-validator = { workspace = true }
+dolly-transaction-status = { workspace = true }
+dolly-version = { workspace = true }
 systemstat = { workspace = true }
 tokio = { workspace = true, features = ["full"] }
 tungstenite = { workspace = true, features = ["rustls-tls-webpki-roots"] }
 
 [dev-dependencies]
-solana-logger = { workspace = true }
-solana-runtime = { workspace = true, features = ["dev-context-only-utils"] }
+dolly-logger = { workspace = true }
+dolly-runtime = { workspace = true, features = ["dev-context-only-utils"] }
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]

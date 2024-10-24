@@ -7,20 +7,20 @@ use {
         iter::IndexedParallelIterator,
         prelude::{IntoParallelIterator, IntoParallelRefIterator, ParallelIterator},
     },
-    solana_core::banking_stage::{
+    dolly_core::banking_stage::{
         committer::Committer, consumer::Consumer, qos_service::QosService,
     },
-    solana_entry::entry::Entry,
-    solana_ledger::{
+    dolly_entry::entry::Entry,
+    dolly_ledger::{
         blockstore::Blockstore,
         genesis_utils::{create_genesis_config, GenesisConfigInfo},
     },
-    solana_poh::{
+    dolly_poh::{
         poh_recorder::{create_test_recorder, PohRecorder},
         poh_service::PohService,
     },
-    solana_runtime::bank::Bank,
-    solana_sdk::{
+    dolly_runtime::bank::Bank,
+    dolly_sdk::{
         account::Account, feature_set::apply_cost_tracker_during_replay, signature::Keypair,
         signer::Signer, stake_history::Epoch, system_program, system_transaction,
         transaction::SanitizedTransaction,

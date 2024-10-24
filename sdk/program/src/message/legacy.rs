@@ -7,7 +7,7 @@
 //!
 //! [`legacy`]: crate::message::legacy
 //! [`v0`]: crate::message::v0
-//! [future message format]: https://docs.solanalabs.com/proposals/versioned-transactions
+//! [future message format]: https://docs.dollylabs.com/proposals/versioned-transactions
 
 #![allow(clippy::arithmetic_side_effects)]
 
@@ -169,19 +169,19 @@ impl Message {
     ///
     /// # Examples
     ///
-    /// This example uses the [`solana_sdk`], [`solana_rpc_client`] and [`anyhow`] crates.
+    /// This example uses the [`dolly_sdk`], [`dolly_rpc_client`] and [`anyhow`] crates.
     ///
-    /// [`solana_sdk`]: https://docs.rs/solana-sdk
-    /// [`solana_rpc_client`]: https://docs.rs/solana-rpc-client
+    /// [`dolly_sdk`]: https://docs.rs/dolly-sdk
+    /// [`dolly_rpc_client`]: https://docs.rs/dolly-rpc-client
     /// [`anyhow`]: https://docs.rs/anyhow
     ///
     /// ```
-    /// # use solana_program::example_mocks::solana_sdk;
-    /// # use solana_program::example_mocks::solana_rpc_client;
+    /// # use dolly_program::example_mocks::dolly_sdk;
+    /// # use dolly_program::example_mocks::dolly_rpc_client;
     /// use anyhow::Result;
     /// use borsh::{BorshSerialize, BorshDeserialize};
-    /// use solana_rpc_client::rpc_client::RpcClient;
-    /// use solana_sdk::{
+    /// use dolly_rpc_client::rpc_client::RpcClient;
+    /// use dolly_sdk::{
     ///     instruction::Instruction,
     ///     message::Message,
     ///     pubkey::Pubkey,
@@ -241,19 +241,19 @@ impl Message {
     ///
     /// # Examples
     ///
-    /// This example uses the [`solana_sdk`], [`solana_rpc_client`] and [`anyhow`] crates.
+    /// This example uses the [`dolly_sdk`], [`dolly_rpc_client`] and [`anyhow`] crates.
     ///
-    /// [`solana_sdk`]: https://docs.rs/solana-sdk
-    /// [`solana_rpc_client`]: https://docs.rs/solana-rpc-client
+    /// [`dolly_sdk`]: https://docs.rs/dolly-sdk
+    /// [`dolly_rpc_client`]: https://docs.rs/dolly-rpc-client
     /// [`anyhow`]: https://docs.rs/anyhow
     ///
     /// ```
-    /// # use solana_program::example_mocks::solana_sdk;
-    /// # use solana_program::example_mocks::solana_rpc_client;
+    /// # use dolly_program::example_mocks::dolly_sdk;
+    /// # use dolly_program::example_mocks::dolly_rpc_client;
     /// use anyhow::Result;
     /// use borsh::{BorshSerialize, BorshDeserialize};
-    /// use solana_rpc_client::rpc_client::RpcClient;
-    /// use solana_sdk::{
+    /// use dolly_rpc_client::rpc_client::RpcClient;
+    /// use dolly_sdk::{
     ///     instruction::Instruction,
     ///     message::Message,
     ///     pubkey::Pubkey,
@@ -330,7 +330,7 @@ impl Message {
 
     /// Create a new message for a [nonced transaction].
     ///
-    /// [nonced transaction]: https://docs.solanalabs.com/implemented-proposals/durable-tx-nonces
+    /// [nonced transaction]: https://docs.dollylabs.com/implemented-proposals/durable-tx-nonces
     ///
     /// In this type of transaction, the blockhash is replaced with a _durable
     /// transaction nonce_, allowing for extended time to pass between the
@@ -338,19 +338,19 @@ impl Message {
     ///
     /// # Examples
     ///
-    /// This example uses the [`solana_sdk`], [`solana_rpc_client`] and [`anyhow`] crates.
+    /// This example uses the [`dolly_sdk`], [`dolly_rpc_client`] and [`anyhow`] crates.
     ///
-    /// [`solana_sdk`]: https://docs.rs/solana-sdk
-    /// [`solana_rpc_client`]: https://docs.rs/solana-client
+    /// [`dolly_sdk`]: https://docs.rs/dolly-sdk
+    /// [`dolly_rpc_client`]: https://docs.rs/dolly-client
     /// [`anyhow`]: https://docs.rs/anyhow
     ///
     /// ```
-    /// # use solana_program::example_mocks::solana_sdk;
-    /// # use solana_program::example_mocks::solana_rpc_client;
+    /// # use dolly_program::example_mocks::dolly_sdk;
+    /// # use dolly_program::example_mocks::dolly_rpc_client;
     /// use anyhow::Result;
     /// use borsh::{BorshSerialize, BorshDeserialize};
-    /// use solana_rpc_client::rpc_client::RpcClient;
-    /// use solana_sdk::{
+    /// use dolly_rpc_client::rpc_client::RpcClient;
+    /// use dolly_sdk::{
     ///     hash::Hash,
     ///     instruction::Instruction,
     ///     message::Message,
@@ -468,18 +468,18 @@ impl Message {
     }
 
     /// Compute the blake3 hash of this transaction's message.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     pub fn hash(&self) -> Hash {
         let message_bytes = self.serialize();
         Self::hash_raw_message(&message_bytes)
     }
 
     /// Compute the blake3 hash of a raw transaction message.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     pub fn hash_raw_message(message_bytes: &[u8]) -> Hash {
         use blake3::traits::digest::Digest;
         let mut hasher = blake3::Hasher::new();
-        hasher.update(b"solana-tx-message-v1");
+        hasher.update(b"dolly-tx-message-v1");
         hasher.update(message_bytes);
         Hash(hasher.finalize().into())
     }
@@ -872,7 +872,7 @@ mod tests {
     #[test]
     fn test_message_hash() {
         // when this test fails, it's most likely due to a new serialized format of a message.
-        // in this case, the domain prefix `solana-tx-message-v1` should be updated.
+        // in this case, the domain prefix `dolly-tx-message-v1` should be updated.
         let program_id0 = Pubkey::from_str("4uQeVj5tqViQh7yWWGStvkEG1Zmhx6uasJtWCJziofM").unwrap();
         let program_id1 = Pubkey::from_str("8opHzTAnfzRpPEx21XtnrVTX28YQuCpAjcn1PczScKh").unwrap();
         let id0 = Pubkey::from_str("CiDwVBFgWV9E5MvXWoLgnEgn2hK7rJikbvfWavzAQz3").unwrap();

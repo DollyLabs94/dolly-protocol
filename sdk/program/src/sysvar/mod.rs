@@ -10,7 +10,7 @@
 //! directly from the runtime, as in this example that logs the `clock` sysvar:
 //!
 //! ```
-//! use solana_program::{
+//! use dolly_program::{
 //!     account_info::AccountInfo,
 //!     clock,
 //!     entrypoint::ProgramResult,
@@ -36,7 +36,7 @@
 //! again logs the [`clock`] sysvar.
 //!
 //! ```
-//! use solana_program::{
+//! use dolly_program::{
 //!     account_info::{next_account_info, AccountInfo},
 //!     clock,
 //!     entrypoint::ProgramResult,
@@ -79,7 +79,7 @@
 //!
 //! For more details see the Solana [documentation on sysvars][sysvardoc].
 //!
-//! [sysvardoc]: https://docs.solanalabs.com/runtime/sysvars
+//! [sysvardoc]: https://docs.dollylabs.com/runtime/sysvars
 
 use {
     crate::{account_info::AccountInfo, program_error::ProgramError, pubkey::Pubkey},
@@ -224,10 +224,10 @@ macro_rules! impl_sysvar_get {
             let mut var = Self::default();
             let var_addr = &mut var as *mut _ as *mut u8;
 
-            #[cfg(target_os = "solana")]
+            #[cfg(target_os = "dolly")]
             let result = unsafe { $crate::syscalls::$syscall_name(var_addr) };
 
-            #[cfg(not(target_os = "solana"))]
+            #[cfg(not(target_os = "dolly"))]
             let result = $crate::program_stubs::$syscall_name(var_addr);
 
             match result {

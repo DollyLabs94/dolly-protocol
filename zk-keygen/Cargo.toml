@@ -1,5 +1,5 @@
 [package]
-name = "solana-zk-keygen"
+name = "dolly-zk-keygen"
 description = """
 Solana privacy-related key generation utility
 
@@ -20,12 +20,12 @@ bs58 = { workspace = true }
 clap = { version = "3.1.5", features = ["cargo", "derive"] }
 dirs-next = { workspace = true }
 num_cpus = { workspace = true }
-solana-clap-v3-utils = { workspace = true }
-solana-cli-config = { workspace = true }
-solana-remote-wallet = { workspace = true, features = ["default"] }
-solana-sdk = { workspace = true }
-solana-version = { workspace = true }
-solana-zk-token-sdk = { workspace = true }
+dolly-clap-v3-utils = { workspace = true }
+dolly-cli-config = { workspace = true }
+dolly-remote-wallet = { workspace = true, features = ["default"] }
+dolly-sdk = { workspace = true }
+dolly-version = { workspace = true }
+dolly-zk-token-sdk = { workspace = true }
 thiserror = { workspace = true }
 tiny-bip39 = { workspace = true }
 
@@ -33,7 +33,7 @@ tiny-bip39 = { workspace = true }
 tempfile = { workspace = true }
 
 [[bin]]
-name = "solana-zk-keygen"
+name = "dolly-zk-keygen"
 path = "src/main.rs"
 
 [package.metadata.docs.rs]

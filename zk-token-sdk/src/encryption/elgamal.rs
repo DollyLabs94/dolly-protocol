@@ -31,7 +31,7 @@ use {
         traits::Identity,
     },
     serde::{Deserialize, Serialize},
-    solana_sdk::{
+    dolly_sdk::{
         derivation_path::DerivationPath,
         signature::Signature,
         signer::{
@@ -44,7 +44,7 @@ use {
     thiserror::Error,
     zeroize::Zeroize,
 };
-#[cfg(not(target_os = "solana"))]
+#[cfg(not(target_os = "dolly"))]
 use {
     rand::rngs::OsRng,
     sha3::{Digest, Sha3_512},
@@ -90,7 +90,7 @@ impl ElGamal {
     /// Generates an ElGamal keypair.
     ///
     /// This function is randomized. It internally samples a scalar element using `OsRng`.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     #[allow(non_snake_case)]
     fn keygen() -> ElGamalKeypair {
         // secret scalar should be non-zero except with negligible probability
@@ -104,7 +104,7 @@ impl ElGamal {
     /// Generates an ElGamal keypair from a scalar input that determines the ElGamal private key.
     ///
     /// This function panics if the input scalar is zero, which is not a valid key.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     #[allow(non_snake_case)]
     fn keygen_with_scalar(s: &Scalar) -> ElGamalKeypair {
         let secret = ElGamalSecretKey(*s);
@@ -117,7 +117,7 @@ impl ElGamal {
     /// corresponding ElGamal ciphertext.
     ///
     /// This function is randomized. It internally samples a scalar element using `OsRng`.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     fn encrypt<T: Into<Scalar>>(public: &ElGamalPubkey, amount: T) -> ElGamalCiphertext {
         let (commitment, opening) = Pedersen::new(amount);
         let handle = public.decrypt_handle(&opening);
@@ -127,7 +127,7 @@ impl ElGamal {
 
     /// On input a public key, amount, and Pedersen opening, the function returns the corresponding
     /// ElGamal ciphertext.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     fn encrypt_with<T: Into<Scalar>>(
         amount: T,
         public: &ElGamalPubkey,
@@ -142,7 +142,7 @@ impl ElGamal {
     /// On input an amount, the function returns a twisted ElGamal ciphertext where the associated
     /// Pedersen opening is always zero. Since the opening is zero, any twisted ElGamal ciphertext
     /// of this form is a valid ciphertext under any ElGamal public key.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     pub fn encode<T: Into<Scalar>>(amount: T) -> ElGamalCiphertext {
         let commitment = Pedersen::encode(amount);
         let handle = DecryptHandle(RistrettoPoint::identity());
@@ -155,7 +155,7 @@ impl ElGamal {
     ///
     /// The output of this function is of type `DiscreteLog`. To recover, the originally encrypted
     /// amount, use `DiscreteLog::decode`.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     fn decrypt(secret: &ElGamalSecretKey, ciphertext: &ElGamalCiphertext) -> DiscreteLog {
         DiscreteLog::new(
             *G,
@@ -168,7 +168,7 @@ impl ElGamal {
     ///
     /// If the originally encrypted amount is not a positive 32-bit number, then the function
     /// returns `None`.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     fn decrypt_u32(secret: &ElGamalSecretKey, ciphertext: &ElGamalCiphertext) -> Option<u64> {
         let discrete_log_instance = Self::decrypt(secret, ciphertext);
         discrete_log_instance.decode_u32()
@@ -208,7 +208,7 @@ impl ElGamalKeypair {
     /// wallets, the signing key is not exposed in the API. Therefore, this function uses a signer
     /// to sign a public seed and the resulting signature is then hashed to derive an ElGamal
     /// keypair.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     #[allow(non_snake_case)]
     pub fn new_from_signer(
         signer: &dyn Signer,
@@ -222,7 +222,7 @@ impl ElGamalKeypair {
     /// Generates the public and secret keys for ElGamal encryption.
     ///
     /// This function is randomized. It internally samples a scalar element using `OsRng`.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     pub fn new_rand() -> Self {
         ElGamal::keygen()
     }
@@ -360,7 +360,7 @@ impl ElGamalPubkey {
     /// Encrypts an amount under the public key.
     ///
     /// This function is randomized. It internally samples a scalar element using `OsRng`.
-    #[cfg(not(target_os = "solana"))]
+    #[cfg(not(target_os = "dolly"))]
     pub fn encrypt<T: Into<Scalar>>(&self, amount: T) -> ElGamalCiphertext {
         ElGamal::encrypt(self, amount)
     }
@@ -775,7 +775,7 @@ mod tests {
         super::*,
         crate::encryption::pedersen::Pedersen,
         bip39::{Language, Mnemonic, MnemonicType, Seed},
-        solana_sdk::{pubkey::Pubkey, signature::Keypair, signer::null_signer::NullSigner},
+        dolly_sdk::{pubkey::Pubkey, signature::Keypair, signer::null_signer::NullSigner},
         std::fs::{self, File},
     };
 

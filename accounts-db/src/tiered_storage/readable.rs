@@ -10,7 +10,7 @@ use {
             TieredStorageResult,
         },
     },
-    solana_sdk::pubkey::Pubkey,
+    dolly_sdk::pubkey::Pubkey,
     std::path::Path,
 };
 

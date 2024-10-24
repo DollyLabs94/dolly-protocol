@@ -3,7 +3,7 @@ title: System Design Proposals
 sidebar_label: Overview
 ---
 
-Changes to the Solana architecture are performed through a public proposal process (via pull requests) on the [Solana GitHub repository](https://github.com/solana-labs/solana). New proposals should be submitted with the "[Submit a Design Proposal](#submit-a-design-proposal)" guide below.
+Changes to the Solana architecture are performed through a public proposal process (via pull requests) on the [Solana GitHub repository](https://github.com/dolly-labs/dolly). New proposals should be submitted with the "[Submit a Design Proposal](#submit-a-design-proposal)" guide below.
 
 There are currently two different states of these design proposals:
 
@@ -30,7 +30,7 @@ To submit a new design proposal for Solana:
 2. Add any relevant Solana maintainers to the PR review.
 3. Publish the PR for community review and feedback.
 
-> **NOTE:** All people submitting PRs to the Solana repo should consult the [CONTRIBUTING](https://github.com/solana-labs/solana/blob/master/CONTRIBUTING.md) doc in the repo.
+> **NOTE:** All people submitting PRs to the Solana repo should consult the [CONTRIBUTING](https://github.com/dolly-labs/dolly/blob/master/CONTRIBUTING.md) doc in the repo.
 
 ### After Accepted
 

@@ -5,7 +5,7 @@
 //! In Solana, programs execute instructions, and clients submit sequences
 //! of instructions to the network to be atomically executed as [`Transaction`]s.
 //!
-//! [`Transaction`]: https://docs.rs/solana-sdk/latest/solana-sdk/transaction/struct.Transaction.html
+//! [`Transaction`]: https://docs.rs/dolly-sdk/latest/dolly-sdk/transaction/struct.Transaction.html
 //!
 //! A [`Message`] is the compact internal encoding of a transaction, as
 //! transmitted across the network and stored in, and operated on, by the
@@ -14,7 +14,7 @@
 //! of that account array, a [recent blockhash], and a compact encoding of the
 //! message's instructions.
 //!
-//! [recent blockhash]: https://solana.com/docs/core/transactions#recent-blockhash
+//! [recent blockhash]: https://dolly.com/docs/core/transactions#recent-blockhash
 //!
 //! Clients most often deal with `Instruction`s and `Transaction`s, with
 //! `Message`s being created by `Transaction` constructors.
@@ -30,9 +30,9 @@
 //! more account keys into a transaction than the legacy format. The
 //! [`VersionedMessage`] type is a thin wrapper around either message version.
 //!
-//! [future message format]: https://docs.solanalabs.com/proposals/versioned-transactions
+//! [future message format]: https://docs.dollylabs.com/proposals/versioned-transactions
 //!
-//! Despite living in the `solana-program` crate, there is no way to access the
+//! Despite living in the `dolly-program` crate, there is no way to access the
 //! runtime's messages from within a Solana program, and only the legacy message
 //! types continue to be exposed to Solana programs, for backwards compatibility
 //! reasons.
@@ -40,7 +40,7 @@
 mod compiled_keys;
 pub mod legacy;
 
-#[cfg(not(target_os = "solana"))]
+#[cfg(not(target_os = "dolly"))]
 #[path = ""]
 mod non_bpf_modules {
     mod account_keys;
@@ -51,7 +51,7 @@ mod non_bpf_modules {
     pub use {account_keys::*, address_loader::*, sanitized::*, versions::*};
 }
 
-#[cfg(not(target_os = "solana"))]
+#[cfg(not(target_os = "dolly"))]
 pub use non_bpf_modules::*;
 pub use {compiled_keys::CompileError, legacy::Message};
 
@@ -90,7 +90,7 @@ pub const MESSAGE_HEADER_LENGTH: usize = 3;
 /// may process them in parallel, in a single [PoH] entry. Transactions that
 /// access the same read-write accounts are processed sequentially.
 ///
-/// [PoH]: https://docs.solanalabs.com/consensus/synchronization
+/// [PoH]: https://docs.dollylabs.com/consensus/synchronization
 #[derive(Serialize, Deserialize, Default, Debug, PartialEq, Eq, Clone, Copy, AbiExample)]
 #[serde(rename_all = "camelCase")]
 pub struct MessageHeader {

@@ -27,29 +27,29 @@ use {
     },
     bytes::Bytes,
     crossbeam_channel::{unbounded, Receiver, Sender},
-    solana_client::connection_cache::ConnectionCache,
-    solana_geyser_plugin_manager::block_metadata_notifier_interface::BlockMetadataNotifierArc,
-    solana_gossip::{
+    dolly_client::connection_cache::ConnectionCache,
+    dolly_geyser_plugin_manager::block_metadata_notifier_interface::BlockMetadataNotifierArc,
+    dolly_gossip::{
         cluster_info::ClusterInfo, duplicate_shred_handler::DuplicateShredHandler,
         duplicate_shred_listener::DuplicateShredListener,
     },
-    solana_ledger::{
+    dolly_ledger::{
         blockstore::Blockstore, blockstore_cleanup_service::BlockstoreCleanupService,
         blockstore_processor::TransactionStatusSender, entry_notifier_service::EntryNotifierSender,
         leader_schedule_cache::LeaderScheduleCache,
     },
-    solana_poh::poh_recorder::PohRecorder,
-    solana_rpc::{
+    dolly_poh::poh_recorder::PohRecorder,
+    dolly_rpc::{
         max_slots::MaxSlots, optimistically_confirmed_bank_tracker::BankNotificationSenderConfig,
         rpc_subscriptions::RpcSubscriptions,
     },
-    solana_runtime::{
+    dolly_runtime::{
         accounts_background_service::AbsRequestSender, bank_forks::BankForks,
         commitment::BlockCommitmentCache, prioritization_fee_cache::PrioritizationFeeCache,
     },
-    solana_sdk::{clock::Slot, pubkey::Pubkey, signature::Keypair},
-    solana_turbine::retransmit_stage::RetransmitStage,
-    solana_vote::vote_sender_types::ReplayVoteSender,
+    dolly_sdk::{clock::Slot, pubkey::Pubkey, signature::Keypair},
+    dolly_turbine::retransmit_stage::RetransmitStage,
+    dolly_vote::vote_sender_types::ReplayVoteSender,
     std::{
         collections::HashSet,
         net::{SocketAddr, UdpSocket},
@@ -174,7 +174,7 @@ impl Tvu {
 
         let (verified_sender, verified_receiver) = unbounded();
         let (retransmit_sender, retransmit_receiver) = unbounded();
-        let shred_sigverify = solana_turbine::sigverify_shreds::spawn_shred_sigverify(
+        let shred_sigverify = dolly_turbine::sigverify_shreds::spawn_shred_sigverify(
             cluster_info.clone(),
             bank_forks.clone(),
             leader_schedule_cache.clone(),
@@ -379,18 +379,18 @@ pub mod tests {
         super::*,
         crate::consensus::tower_storage::FileTowerStorage,
         serial_test::serial,
-        solana_gossip::cluster_info::{ClusterInfo, Node},
-        solana_ledger::{
+        dolly_gossip::cluster_info::{ClusterInfo, Node},
+        dolly_ledger::{
             blockstore::BlockstoreSignals,
             blockstore_options::BlockstoreOptions,
             create_new_tmp_ledger,
             genesis_utils::{create_genesis_config, GenesisConfigInfo},
         },
-        solana_poh::poh_recorder::create_test_recorder,
-        solana_rpc::optimistically_confirmed_bank_tracker::OptimisticallyConfirmedBank,
-        solana_runtime::bank::Bank,
-        solana_sdk::signature::{Keypair, Signer},
-        solana_streamer::socket::SocketAddrSpace,
+        dolly_poh::poh_recorder::create_test_recorder,
+        dolly_rpc::optimistically_confirmed_bank_tracker::OptimisticallyConfirmedBank,
+        dolly_runtime::bank::Bank,
+        dolly_sdk::signature::{Keypair, Signer},
+        dolly_streamer::socket::SocketAddrSpace,
         std::sync::atomic::{AtomicU64, Ordering},
     };
 
@@ -398,7 +398,7 @@ pub mod tests {
     #[test]
     #[serial]
     fn test_tvu_exit() {
-        solana_logger::setup();
+        dolly_logger::setup();
         let leader = Node::new_localhost();
         let target1_keypair = Keypair::new();
         let target1 = Node::new_localhost_with_pubkey(&target1_keypair.pubkey());

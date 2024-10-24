@@ -5,9 +5,9 @@ use {
             InsertPacketBatchSummary, UnprocessedTransactionStorage,
         },
     },
-    solana_poh::poh_recorder::BankStart,
-    solana_sdk::{clock::Slot, saturating_add_assign},
-    solana_svm::transaction_error_metrics::*,
+    dolly_poh::poh_recorder::BankStart,
+    dolly_sdk::{clock::Slot, saturating_add_assign},
+    dolly_svm::transaction_error_metrics::*,
     std::time::Instant,
 };
 
@@ -942,8 +942,8 @@ impl LeaderSlotMetricsTracker {
 mod tests {
     use {
         super::*,
-        solana_runtime::{bank::Bank, genesis_utils::create_genesis_config},
-        solana_sdk::pubkey::Pubkey,
+        dolly_runtime::{bank::Bank, genesis_utils::create_genesis_config},
+        dolly_sdk::pubkey::Pubkey,
         std::{mem, sync::Arc},
     };
 

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package solana.storage.Entries;
+package dolly.storage.Entries;
 
 message Entries {
     repeated Entry entries = 1;

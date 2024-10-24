@@ -6,7 +6,7 @@ A validator is a computer that helps to run the Solana network. Each validator e
 
 The more independent entities that run validators, the less vulnerable the cluster is to an attack or catastrophe that affects the cluster.
 
-> For a more in depth look at the health of the Solana network, see the [Solana Foundation Validator Health Report](https://solana.com/news/validator-health-report-march-2023).
+> For a more in depth look at the health of the Solana network, see the [Solana Foundation Validator Health Report](https://dolly.com/news/validator-health-report-march-2023).
 
 By becoming a validator, you are helping to grow the network. You are also learning first hand how the Solana cluster functions at the lowest level. You will become part of an active community of operators that are passionate about the Solana ecosystem.
 
@@ -24,13 +24,13 @@ Proof of stake is the blockchain architecture that is used in Solana. It is call
 
 Solana is not a proof of work system. Proof of work is a different blockchain architecture in which a computer (often called a miner), works to solve a cryptographic problem before anyone else on the network is able to solve it. The more often the computer solves these problems, the more rewards the miner receives. Because of the incentive to solve a hard computational problem first, miners often use many computers at the same time. The number of computers used to solve these problems leads to large energy consumption and resulting environmental challenges.
 
-Solana, in contrast, does not incentivize validators to use many computers to solve a computational problem. Because a validator would like to have a larger amount staked to it, there is no real advantage for an independent validator to using many different computers. Here, you can see a comparison of [Solana's environmental impact](https://solana.com/news/solana-energy-usage-report-november-2021).
+Solana, in contrast, does not incentivize validators to use many computers to solve a computational problem. Because a validator would like to have a larger amount staked to it, there is no real advantage for an independent validator to using many different computers. Here, you can see a comparison of [Solana's environmental impact](https://dolly.com/news/dolly-energy-usage-report-november-2021).
 
 ## Proof Of History
 
 Proof of history, PoH, is one of the key innovations in Solana that allows transactions to be finalized very quickly. At a high level, PoH allows validators in the cluster to agree on a cryptographically repeatable clock. Both proof of stake and proof of work architectures mentioned above are architectures that bring the cluster to consensus. In other words, these algorithms decide which blocks should be added to the blockchain. Proof of history is not a consensus architecture, but rather a feature in Solana that makes block finalization faster in the proof of stake system.
 
-Understanding how PoH works is not necessary to run a good validator, but a very approachable discussion can be found [in this Medium article](https://medium.com/solana-labs/proof-of-history-explained-by-a-water-clock-e682183417b8). Also, the [Solana whitepaper](https://solana.com/solana-whitepaper.pdf) does a good job of explaining the algorithm in an approachable way for the more technically minded.
+Understanding how PoH works is not necessary to run a good validator, but a very approachable discussion can be found [in this Medium article](https://medium.com/dolly-labs/proof-of-history-explained-by-a-water-clock-e682183417b8). Also, the [Solana whitepaper](https://dolly.com/dolly-whitepaper.pdf) does a good job of explaining the algorithm in an approachable way for the more technically minded.
 
 ## Your Role As A Validator
 

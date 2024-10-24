@@ -1,11 +1,11 @@
 use {
-    solana_client::{
+    dolly_client::{
         connection_cache::Protocol,
         nonblocking::tpu_client::{LeaderTpuService, TpuClient},
         tpu_client::TpuClientConfig,
     },
-    solana_sdk::{clock::DEFAULT_MS_PER_SLOT, pubkey::Pubkey, system_transaction},
-    solana_test_validator::TestValidatorGenesis,
+    dolly_sdk::{clock::DEFAULT_MS_PER_SLOT, pubkey::Pubkey, system_transaction},
+    dolly_test_validator::TestValidatorGenesis,
     std::sync::{
         atomic::{AtomicBool, Ordering},
         Arc,

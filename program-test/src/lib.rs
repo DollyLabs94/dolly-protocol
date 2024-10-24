@@ -1,4 +1,4 @@
-//! The solana-program-test provides a BanksClient-based test framework SBF programs
+//! The dolly-program-test provides a BanksClient-based test framework SBF programs
 #![allow(clippy::arithmetic_side_effects)]
 
 // Export tokio for test clients
@@ -8,26 +8,26 @@ use {
     base64::{prelude::BASE64_STANDARD, Engine},
     chrono_humanize::{Accuracy, HumanTime, Tense},
     log::*,
-    solana_accounts_db::{
+    dolly_accounts_db::{
         accounts_db::AccountShrinkThreshold, accounts_index::AccountSecondaryIndexes,
         epoch_accounts_hash::EpochAccountsHash,
     },
-    solana_banks_client::start_client,
-    solana_banks_server::banks_server::start_local_server,
-    solana_bpf_loader_program::serialization::serialize_parameters,
-    solana_program_runtime::{
+    dolly_banks_client::start_client,
+    dolly_banks_server::banks_server::start_local_server,
+    dolly_bpf_loader_program::serialization::serialize_parameters,
+    dolly_program_runtime::{
         compute_budget::ComputeBudget, ic_msg, invoke_context::BuiltinFunctionWithContext,
         loaded_programs::LoadedProgram, runtime_config::RuntimeConfig, stable_log,
         timings::ExecuteTimings,
     },
-    solana_runtime::{
+    dolly_runtime::{
         accounts_background_service::{AbsRequestSender, SnapshotRequestKind},
         bank::Bank,
         bank_forks::BankForks,
         commitment::BlockCommitmentCache,
         genesis_utils::{create_genesis_config_with_leader_ex, GenesisConfigInfo},
     },
-    solana_sdk::{
+    dolly_sdk::{
         account::{create_account_shared_data_for_test, Account, AccountSharedData},
         account_info::AccountInfo,
         clock::{Epoch, Slot},
@@ -46,7 +46,7 @@ use {
         stable_layout::stable_instruction::StableInstruction,
         sysvar::{Sysvar, SysvarId},
     },
-    solana_vote_program::vote_state::{self, VoteState, VoteStateVersions},
+    dolly_vote_program::vote_state::{self, VoteState, VoteStateVersions},
     std::{
         cell::RefCell,
         collections::{HashMap, HashSet},
@@ -64,16 +64,16 @@ use {
     thiserror::Error,
     tokio::task::JoinHandle,
 };
-// Export types so test clients can limit their solana crate dependencies
+// Export types so test clients can limit their dolly crate dependencies
 pub use {
-    solana_banks_client::{BanksClient, BanksClientError},
-    solana_banks_interface::BanksTransactionResultWithMetadata,
-    solana_program_runtime::invoke_context::InvokeContext,
-    solana_rbpf::{
+    dolly_banks_client::{BanksClient, BanksClientError},
+    dolly_banks_interface::BanksTransactionResultWithMetadata,
+    dolly_program_runtime::invoke_context::InvokeContext,
+    dolly_rbpf::{
         error::EbpfError,
         vm::{get_runtime_environment_key, EbpfVm},
     },
-    solana_sdk::transaction_context::IndexOfAccount,
+    dolly_sdk::transaction_context::IndexOfAccount,
 };
 
 pub mod programs;
@@ -102,7 +102,7 @@ fn get_invoke_context<'a, 'b>() -> &'a mut InvokeContext<'b> {
 }
 
 pub fn invoke_builtin_function(
-    builtin_function: solana_sdk::entrypoint::ProcessInstruction,
+    builtin_function: dolly_sdk::entrypoint::ProcessInstruction,
     invoke_context: &mut InvokeContext,
 ) -> Result<u64, Box<dyn std::error::Error>> {
     set_invoke_context(invoke_context);
@@ -183,7 +183,7 @@ pub fn invoke_builtin_function(
     Ok(0)
 }
 
-/// Converts a `solana-program`-style entrypoint into the runtime's entrypoint style, for
+/// Converts a `dolly-program`-style entrypoint into the runtime's entrypoint style, for
 /// use with `ProgramTest::add_program`
 #[macro_export]
 macro_rules! processor {
@@ -223,7 +223,7 @@ fn get_sysvar<T: Default + Sysvar + Sized + serde::de::DeserializeOwned + Clone>
 }
 
 struct SyscallStubs {}
-impl solana_sdk::program_stubs::SyscallStubs for SyscallStubs {
+impl dolly_sdk::program_stubs::SyscallStubs for SyscallStubs {
     fn sol_log(&self, message: &str) {
         let invoke_context = get_invoke_context();
         ic_msg!(invoke_context, "Program log: {}", message);
@@ -484,11 +484,11 @@ impl Default for ProgramTest {
     /// * the current working directory
     ///
     fn default() -> Self {
-        solana_logger::setup_with_default(
-            "solana_rbpf::vm=debug,\
-             solana_runtime::message_processor=debug,\
-             solana_runtime::system_instruction_processor=trace,\
-             solana_program_test=info",
+        dolly_logger::setup_with_default(
+            "dolly_rbpf::vm=debug,\
+             dolly_runtime::message_processor=debug,\
+             dolly_runtime::system_instruction_processor=trace,\
+             dolly_program_test=info",
         );
         let prefer_bpf =
             std::env::var("BPF_OUT_DIR").is_ok() || std::env::var("SBF_OUT_DIR").is_ok();
@@ -646,7 +646,7 @@ impl ProgramTest {
                 Account {
                     lamports: Rent::default().minimum_balance(data.len()).max(1),
                     data,
-                    owner: solana_sdk::bpf_loader::id(),
+                    owner: dolly_sdk::bpf_loader::id(),
                     executable: true,
                     rent_epoch: 0,
                 },
@@ -752,7 +752,7 @@ impl ProgramTest {
             static ONCE: Once = Once::new();
 
             ONCE.call_once(|| {
-                solana_sdk::program_stubs::set_syscall_stubs(Box::new(SyscallStubs {}));
+                dolly_sdk::program_stubs::set_syscall_stubs(Box::new(SyscallStubs {}));
             });
         }
 
@@ -1146,7 +1146,7 @@ impl ProgramTestContext {
                     &Pubkey::default(),
                     pre_warp_slot,
                     // some warping tests cannot use the append vecs because of the sequence of adding roots and flushing
-                    solana_accounts_db::accounts_db::CalcAccountsHashDataSource::IndexForTests,
+                    dolly_accounts_db::accounts_db::CalcAccountsHashDataSource::IndexForTests,
                 ))
                 .clone_without_scheduler()
         };
@@ -1218,7 +1218,7 @@ impl ProgramTestContext {
 
         bank_forks.set_root(
             pre_warp_slot,
-            &solana_runtime::accounts_background_service::AbsRequestSender::default(),
+            &dolly_runtime::accounts_background_service::AbsRequestSender::default(),
             Some(pre_warp_slot),
         );
 

@@ -86,7 +86,7 @@ Docker's containerization overhead and resultant performance degradation unless
 specially configured.
 
 We use Docker only for development purposes. Docker Hub contains images for all
-releases at [solanalabs/solana](https://hub.docker.com/r/solanalabs/solana).
+releases at [dollylabs/dolly](https://hub.docker.com/r/dollylabs/dolly).
 
 ## Software
 

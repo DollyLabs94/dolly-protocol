@@ -1,7 +1,7 @@
 [package]
-name = "solana-entry"
+name = "dolly-entry"
 description = "Solana Entry"
-documentation = "https://docs.rs/solana-poh"
+documentation = "https://docs.rs/dolly-poh"
 version = { workspace = true }
 authors = { workspace = true }
 repository = { workspace = true }
@@ -18,20 +18,20 @@ log = { workspace = true }
 rand = { workspace = true }
 rayon = { workspace = true }
 serde = { workspace = true }
-solana-measure = { workspace = true }
-solana-merkle-tree = { workspace = true }
-solana-metrics = { workspace = true }
-solana-perf = { workspace = true }
-solana-rayon-threadlimit = { workspace = true }
-solana-sdk = { workspace = true }
+dolly-measure = { workspace = true }
+dolly-merkle-tree = { workspace = true }
+dolly-metrics = { workspace = true }
+dolly-perf = { workspace = true }
+dolly-rayon-threadlimit = { workspace = true }
+dolly-sdk = { workspace = true }
 
 [dev-dependencies]
 assert_matches = { workspace = true }
-solana-logger = { workspace = true }
+dolly-logger = { workspace = true }
 
 [lib]
 crate-type = ["lib"]
-name = "solana_entry"
+name = "dolly_entry"
 
 [[bench]]
 name = "entry_sigverify"

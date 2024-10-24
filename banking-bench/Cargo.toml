@@ -1,5 +1,5 @@
 [package]
-name = "solana-banking-bench"
+name = "dolly-banking-bench"
 publish = false
 version = { workspace = true }
 authors = { workspace = true }
@@ -14,19 +14,19 @@ crossbeam-channel = { workspace = true }
 log = { workspace = true }
 rand = { workspace = true }
 rayon = { workspace = true }
-solana-client = { workspace = true }
-solana-core = { workspace = true }
-solana-gossip = { workspace = true }
-solana-ledger = { workspace = true }
-solana-logger = { workspace = true }
-solana-measure = { workspace = true }
-solana-perf = { workspace = true }
-solana-poh = { workspace = true, features = ["dev-context-only-utils"] }
-solana-runtime = { workspace = true, features = ["dev-context-only-utils"] }
-solana-sdk = { workspace = true }
-solana-streamer = { workspace = true }
-solana-tpu-client = { workspace = true }
-solana-version = { workspace = true }
+dolly-client = { workspace = true }
+dolly-core = { workspace = true }
+dolly-gossip = { workspace = true }
+dolly-ledger = { workspace = true }
+dolly-logger = { workspace = true }
+dolly-measure = { workspace = true }
+dolly-perf = { workspace = true }
+dolly-poh = { workspace = true, features = ["dev-context-only-utils"] }
+dolly-runtime = { workspace = true, features = ["dev-context-only-utils"] }
+dolly-sdk = { workspace = true }
+dolly-streamer = { workspace = true }
+dolly-tpu-client = { workspace = true }
+dolly-version = { workspace = true }
 
 [features]
 dev-context-only-utils = []

@@ -1,3 +1,3 @@
 fn main() -> Result<(), String> {
-    solana_install::main()
+    dolly_install::main()
 }

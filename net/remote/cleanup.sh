@@ -8,18 +8,18 @@ if sudo true; then
 fi
 
 echo "pwd: $(pwd)"
-for pid in solana/*.pid; do
+for pid in dolly/*.pid; do
   pgid=$(ps opgid= "$(cat "$pid")" | tr -d '[:space:]')
   if [[ -n $pgid ]]; then
     $sudo kill -- -"$pgid"
   fi
 done
-if [[ -f solana/netem.cfg ]]; then
-  solana/scripts/netem.sh delete < solana/netem.cfg
-  rm -f solana/netem.cfg
+if [[ -f dolly/netem.cfg ]]; then
+  dolly/scripts/netem.sh delete < dolly/netem.cfg
+  rm -f dolly/netem.cfg
 fi
-solana/scripts/net-shaper.sh cleanup
-for pattern in validator.sh boostrap-leader.sh solana- remote- iftop validator client node; do
+dolly/scripts/net-shaper.sh cleanup
+for pattern in validator.sh boostrap-leader.sh dolly- remote- iftop validator client node; do
   echo "killing $pattern"
   pkill -f $pattern
 done

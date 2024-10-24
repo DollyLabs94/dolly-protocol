@@ -3,8 +3,8 @@
 pub mod blockhash_query;
 
 use {
-    solana_rpc_client::nonblocking::rpc_client::RpcClient,
-    solana_sdk::{
+    dolly_rpc_client::nonblocking::rpc_client::RpcClient,
+    dolly_sdk::{
         account::{Account, ReadableAccount},
         account_utils::StateMut,
         commitment_config::CommitmentConfig,
@@ -99,9 +99,9 @@ pub fn account_identity_ok<T: ReadableAccount>(account: &T) -> Result<(), Error>
 /// Determine if a nonce account is initialized:
 ///
 /// ```no_run
-/// use solana_rpc_client_nonce_utils::nonblocking;
-/// use solana_rpc_client::nonblocking::rpc_client::RpcClient;
-/// use solana_sdk::{
+/// use dolly_rpc_client_nonce_utils::nonblocking;
+/// use dolly_rpc_client::nonblocking::rpc_client::RpcClient;
+/// use dolly_sdk::{
 ///     nonce::State,
 ///     pubkey::Pubkey,
 /// };
@@ -149,9 +149,9 @@ pub fn state_from_account<T: ReadableAccount + StateMut<Versions>>(
 /// Create and sign a transaction with a durable nonce:
 ///
 /// ```no_run
-/// use solana_rpc_client_nonce_utils::nonblocking;
-/// use solana_rpc_client::nonblocking::rpc_client::RpcClient;
-/// use solana_sdk::{
+/// use dolly_rpc_client_nonce_utils::nonblocking;
+/// use dolly_rpc_client::nonblocking::rpc_client::RpcClient;
+/// use dolly_sdk::{
 ///     message::Message,
 ///     pubkey::Pubkey,
 ///     signature::{Keypair, Signer},

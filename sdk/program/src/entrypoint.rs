@@ -99,7 +99,7 @@ pub const NON_DUP_MARKER: u8 = u8::MAX;
 /// #[cfg(not(feature = "no-entrypoint"))]
 /// pub mod entrypoint {
 ///
-///     use solana_program::{
+///     use dolly_program::{
 ///         account_info::AccountInfo,
 ///         entrypoint,
 ///         entrypoint::ProgramResult,
@@ -146,7 +146,7 @@ macro_rules! entrypoint {
 /// for [BPF] targets.
 ///
 /// [Cargo features]: https://doc.rust-lang.org/cargo/reference/features.html
-/// [BPF]: https://solana.com/docs/programs/faq#berkeley-packet-filter-bpf
+/// [BPF]: https://dolly.com/docs/programs/faq#berkeley-packet-filter-bpf
 ///
 /// # Cargo features
 ///
@@ -161,7 +161,7 @@ macro_rules! entrypoint {
 #[macro_export]
 macro_rules! custom_heap_default {
     () => {
-        #[cfg(all(not(feature = "custom-heap"), target_os = "solana"))]
+        #[cfg(all(not(feature = "custom-heap"), target_os = "dolly"))]
         #[global_allocator]
         static A: $crate::entrypoint::BumpAllocator = $crate::entrypoint::BumpAllocator {
             start: $crate::entrypoint::HEAP_START_ADDRESS as usize,
@@ -181,7 +181,7 @@ macro_rules! custom_heap_default {
 /// for [BPF] targets.
 ///
 /// [Cargo features]: https://doc.rust-lang.org/cargo/reference/features.html
-/// [BPF]: https://solana.com/docs/programs/faq#berkeley-packet-filter-bpf
+/// [BPF]: https://dolly.com/docs/programs/faq#berkeley-packet-filter-bpf
 ///
 /// # Cargo features
 ///
@@ -206,7 +206,7 @@ macro_rules! custom_heap_default {
 /// with the `#[no_mangle]` attribute, as below:
 ///
 /// ```ignore
-/// #[cfg(all(feature = "custom-panic", target_os = "solana"))]
+/// #[cfg(all(feature = "custom-panic", target_os = "dolly"))]
 /// #[no_mangle]
 /// fn custom_panic(info: &core::panic::PanicInfo<'_>) {
 ///     $crate::msg!("{}", info);
@@ -217,7 +217,7 @@ macro_rules! custom_heap_default {
 #[macro_export]
 macro_rules! custom_panic_default {
     () => {
-        #[cfg(all(not(feature = "custom-panic"), target_os = "solana"))]
+        #[cfg(all(not(feature = "custom-panic"), target_os = "dolly"))]
         #[no_mangle]
         fn custom_panic(info: &core::panic::PanicInfo<'_>) {
             // Full panic reporting

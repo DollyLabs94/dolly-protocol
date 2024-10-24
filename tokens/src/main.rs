@@ -1,8 +1,8 @@
 use {
-    solana_clap_utils::input_validators::normalize_to_url_if_moniker,
-    solana_cli_config::{Config, CONFIG_FILE},
-    solana_rpc_client::rpc_client::RpcClient,
-    solana_tokens::{arg_parser::parse_args, args::Command, commands, spl_token, stake},
+    dolly_clap_utils::input_validators::normalize_to_url_if_moniker,
+    dolly_cli_config::{Config, CONFIG_FILE},
+    dolly_rpc_client::rpc_client::RpcClient,
+    dolly_tokens::{arg_parser::parse_args, args::Command, commands, spl_token, stake},
     std::{
         env,
         error::Error,

@@ -1,6 +1,6 @@
 [package]
 description = "Solana Program Test Framework"
-name = "solana-program-test"
+name = "dolly-program-test"
 version = { workspace = true }
 authors = { workspace = true }
 repository = { workspace = true }
@@ -17,21 +17,21 @@ chrono-humanize = { workspace = true }
 crossbeam-channel = { workspace = true }
 log = { workspace = true }
 serde = { workspace = true }
-solana-accounts-db = { workspace = true }
-solana-banks-client = { workspace = true }
-solana-banks-interface = { workspace = true }
-solana-banks-server = { workspace = true }
-solana-bpf-loader-program = { workspace = true }
-solana-logger = { workspace = true }
-solana-program-runtime = { workspace = true }
-solana-runtime = { workspace = true }
-solana-sdk = { workspace = true }
-solana-svm = { workspace = true }
-solana-vote-program = { workspace = true }
-solana_rbpf = { workspace = true }
+dolly-accounts-db = { workspace = true }
+dolly-banks-client = { workspace = true }
+dolly-banks-interface = { workspace = true }
+dolly-banks-server = { workspace = true }
+dolly-bpf-loader-program = { workspace = true }
+dolly-logger = { workspace = true }
+dolly-program-runtime = { workspace = true }
+dolly-runtime = { workspace = true }
+dolly-sdk = { workspace = true }
+dolly-svm = { workspace = true }
+dolly-vote-program = { workspace = true }
+dolly_rbpf = { workspace = true }
 test-case = { workspace = true }
 thiserror = { workspace = true }
 tokio = { workspace = true, features = ["full"] }
 
 [dev-dependencies]
-solana-stake-program = { workspace = true }
+dolly-stake-program = { workspace = true }

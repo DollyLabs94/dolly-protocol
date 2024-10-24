@@ -1,17 +1,17 @@
 use {
     crate::cli::{CliCommand, CliCommandInfo, CliConfig, CliError, ProcessResult},
     clap::{App, Arg, ArgMatches, SubCommand},
-    solana_clap_utils::{
+    dolly_clap_utils::{
         input_parsers::{pubkeys_of, value_of},
         input_validators::is_valid_pubkey,
         keypair::*,
     },
-    solana_cli_output::{
+    dolly_cli_output::{
         CliEpochRewardshMetadata, CliInflation, CliKeyedEpochReward, CliKeyedEpochRewards,
     },
-    solana_remote_wallet::remote_wallet::RemoteWalletManager,
-    solana_rpc_client::rpc_client::RpcClient,
-    solana_sdk::{clock::Epoch, pubkey::Pubkey},
+    dolly_remote_wallet::remote_wallet::RemoteWalletManager,
+    dolly_rpc_client::rpc_client::RpcClient,
+    dolly_sdk::{clock::Epoch, pubkey::Pubkey},
     std::rc::Rc,
 };
 

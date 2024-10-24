@@ -1,8 +1,8 @@
 use {
     clap::ArgMatches,
-    solana_clap_utils::keypair::{pubkey_from_path, signer_from_path},
-    solana_remote_wallet::remote_wallet::RemoteWalletManager,
-    solana_sdk::{
+    dolly_clap_utils::keypair::{pubkey_from_path, signer_from_path},
+    dolly_remote_wallet::remote_wallet::RemoteWalletManager,
+    dolly_sdk::{
         clock::{Epoch, UnixTimestamp},
         pubkey::Pubkey,
         signature::Signer,
